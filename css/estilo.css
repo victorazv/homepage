@@ -108,6 +108,10 @@ p {
 
 /* Estilo para os posts
 ------------------------------------- */
+.blog_block{
+	height: 100%;
+	margin-top: 5%;
+}
 
 .btn_expert{
 	margin-top: 4vh;
@@ -217,6 +221,9 @@ p {
 	transform: scale(1.2);
 }
 
+.social_images{
+	margin-left: -48px;
+}
 
 @media screen and (max-width: 500px) {
 	#main-footer h1 { 
