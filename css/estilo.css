@@ -1,5 +1,9 @@
 /* Estilo CSS */
 
+p {
+	font-family: 'Muli';
+}
+
 .botao_gradiente {
   background-image: linear-gradient(to right, #B495C1 , #8AB5E1);
   color: #fff;
@@ -10,6 +14,11 @@
   padding-bottom: 5px;
   padding-left: 10px;
   font-size: 15px;
+}
+
+.btn_quadro{
+	position: absolute;
+	bottom: 12%;
 }
 
 /* Estilo do Header
@@ -37,8 +46,8 @@
 .quadro{
 	float: right;
 	background: #fff;
-	width: 20%;
-	height: 30vh;
+	width: 18%;
+	height: 18em;
 	padding: 1%;
 }
 
@@ -91,7 +100,7 @@
 }
 
 .slogan h2 {
-	font-size: 3em;	
+	font-size: 2.5em;	
 	font-family: 'Muli';
 }
 
@@ -100,6 +109,14 @@
 /* Estilo para os posts
 ------------------------------------- */
 
+.btn_expert{
+	margin-top: 4vh;
+}
+
+.title_expert{
+	margin-right: 1%;
+}
+
 .footer_list{
 	list-style: none;
 	padding-left: 0;
@@ -107,8 +124,8 @@
 
 .footer_text{
 	text-align: center;
-	position: fixed;
-	bottom: 1%;
+	position: block;
+	margin-top: 10%;
 	font-size: 12px;
 }
 
@@ -116,15 +133,16 @@
 	transform: rotate(20deg);
 	margin-top: -65%;
 	margin-left: 45%;
+	box-shadow: 0 8px 14px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19) !important;
 }
 
 .image_back{
 	transform: rotate(-5deg);
+	box-shadow: 0 8px 14px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19) !important;
 }
 
 .title_item{
-	margin-top: 8px;
-	
+	margin-left: 13%;	
 }
 
 .expert{
