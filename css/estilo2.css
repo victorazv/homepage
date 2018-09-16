@@ -5,7 +5,91 @@ Global
 html, body {
     max-width: 100%;
     overflow-x: hidden;
+    margin-bottom: 50px;
 }
+
+a.custom-btn, button.custom-btn {
+    background-image: linear-gradient(to right, #B495C1 , #8AB5E1);
+    color: #fff;
+    border: none;
+    padding: 5px 20px;
+    font-size: 15px;
+    font-weight: 200;
+}
+
+.expert-callout {
+    position: fixed;
+    bottom: 0;
+    background: #fff;
+    width: 100%;
+    height:110px;
+}
+
+.expert-callout .custom-bg {
+    background: #f0f0f0;
+    min-height: 110px;
+}
+
+.expert-callout h4 {
+    font-weight: 200;
+}
+
+@media (min-width: 768px) {
+    html, body {
+        margin-bottom: 0;
+    }
+}
+
+/*
+Banner
+ */
+section.banner {
+    background: url("../images/bg-header.jpeg") no-repeat center center fixed;
+    background-size: cover;
+    position: relative;
+    min-height: 500px;
+}
+
+section.banner .card {
+    padding: 10px;
+    background: #FFF;
+    border-radius: 0;
+    height: 250px;
+}
+
+section.banner .card-title {
+    font-weight: 200;
+
+}
+
+section.banner .card-body {
+    background: #f0f0f0;
+}
+
+section.banner .layer {
+    background: -moz-linear-gradient(left, rgba(0,0,0,0.65) 0%, rgba(0,0,0,0) 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(left, rgba(0,0,0,0.65) 0%,rgba(0,0,0,0) 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to right, rgba(0,0,0,0.65) 0%,rgba(0,0,0,0) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a6000000', endColorstr='#00000000',GradientType=1 ); /* IE6-9 */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+section.banner h1 {
+    color: #FFF;
+    font-weight: 400;
+    font-size: 2.6rem;
+}
+
+section.banner p {
+    color: #FFF;
+    font-weight: 200;
+    font-size: 0.9em;
+}
+
 
 /*
 How it Works Section
@@ -30,6 +114,10 @@ section.how-it-works button {
 
 section.how-it-works .list-icon {
     width: 6em;
+}
+
+section.how-it-works .item-description {
+    max-width: 70%;
 }
 
 /*
@@ -101,14 +189,6 @@ section.expert h1 {
     font-size: 2em;
 }
 
-section.expert button {
-    background-image: linear-gradient(to right, #B495C1 , #8AB5E1);
-    color: #fff;
-    border: none;
-    padding: 5px 20px;
-    font-size: 15px;
-}
-
 
 @media (min-width: 992px) {
     section.expert {
@@ -125,12 +205,12 @@ section.expert button {
 }
 
 h5.footer-title {
-    font-weight: bold;
+    font-weight: 600;
     font-size: medium;
 }
 
 p.footer-link {
-    font-weight: lighter;
+    font-weight: 200;
     font-size: 0.7em;
     margin-bottom: 5px;
 }
