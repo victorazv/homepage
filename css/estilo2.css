@@ -1,0 +1,19 @@
+.section-footer {
+    background: #f0f0f0;
+}
+
+h5.footer-title {
+    font-weight: bold;
+    font-size: medium;
+}
+
+p.footer-link {
+    font-weight: lighter;
+    font-size: 0.7em;
+    margin-bottom: 5px;
+}
+
+p.footer-menu {
+    font-weight: lighter;
+    font-size: 0.7em;
+}
