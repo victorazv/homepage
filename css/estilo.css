@@ -23,20 +23,39 @@ p {
 
 /* Estilo do Header
 ------------------------------------ */
+@media screen and (min-width: 768px) {
+    .navbar-nav{
+    	float: right;
+    	margin-right: 25vh;
+    	margin-top: 10vh;
+    }
+
+    .item_login{
+		margin-left: 18vh
+	}
+
+	.img_logo{
+		margin-left: 14vw;
+	}
+}
+
+
+@media screen and (max-width: 768px) {
+    .img_logo{
+    	margin-left: 17vh;
+    	width: 35vw;
+    }
+}
 
 .menu{
 	background-color: #fff;
 	border-color: #fff;
-	height: 115px;
+	
 }
 
 .block_menu{
 	margin-top: 60px;
 	font-size: 12px;
-}
-
-.item_login{
-	margin-left: 95px
 }
 
 .submessage_header{
@@ -128,8 +147,6 @@ p {
 
 .footer_text{
 	text-align: center;
-	position: block;
-	margin-top: 10%;
 	font-size: 12px;
 }
 
