@@ -1,3 +1,125 @@
+/*
+Global
+ */
+
+html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+/*
+How it Works Section
+ */
+
+section.how-it-works {
+    background: #fff;
+}
+
+section.how-it-works h1 {
+    font-weight: bold;
+    font-size: 2em;
+}
+
+section.how-it-works button {
+    background-image: linear-gradient(to right, #B495C1 , #8AB5E1);
+    color: #fff;
+    border: none;
+    padding: 5px 20px;
+    font-size: 15px;
+}
+
+section.how-it-works .list-icon {
+    width: 6em;
+}
+
+/*
+Blog Section
+ */
+
+section.blog {
+    background: #f0f0f0;
+    position: relative;
+}
+
+section.blog h1 {
+    font-weight: bold;
+    font-size: 2em;
+}
+
+section.blog button {
+    background-image: linear-gradient(to right, #B495C1 , #8AB5E1);
+    color: #fff;
+    border: none;
+    padding: 5px 20px;
+    font-size: 15px;
+}
+
+section.blog .pic-images {
+    position: absolute;
+    top: 20px;
+    right: 50px;
+    width: 120px;
+}
+
+section.blog .img-front {
+    transform: rotate(20deg);
+    margin-top: -65%;
+    margin-left: 45%;
+    box-shadow: 0 8px 14px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19) !important;
+}
+
+section.blog  .img-back {
+    transform: rotate(-3deg);
+    box-shadow: 0 8px 14px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19) !important;
+}
+
+@media (min-width: 992px) {
+    section.blog {
+        background: #f0f0f0;
+        position: relative;
+        padding-bottom: 6rem !important;
+        padding-top: 6rem !important;
+    }
+    section.blog .pic-images {
+        position: absolute;
+        top: -10px;
+        right: 30%;
+        width: 280px;
+    }
+}
+
+/*
+Expert Section
+ */
+
+section.expert {
+
+}
+
+section.expert h1 {
+    font-weight: bold;
+    font-size: 2em;
+}
+
+section.expert button {
+    background-image: linear-gradient(to right, #B495C1 , #8AB5E1);
+    color: #fff;
+    border: none;
+    padding: 5px 20px;
+    font-size: 15px;
+}
+
+
+@media (min-width: 992px) {
+    section.expert {
+        padding-bottom: 6rem !important;
+        padding-top: 6rem !important;
+    }
+}
+
+/*
+   Footer
+ */
 .section-footer {
     background: #f0f0f0;
 }
