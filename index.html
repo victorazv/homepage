@@ -248,5 +248,17 @@
     </div>
 </div>
 <script type="text/javascript" src="vendor/bootstrap-4/js/bootstrap.min.js"></script>
+<script>
+    $(window).scroll(function() {
+
+        $('section.blog .img-front').css({
+            transform: 'rotate('+ (20*window.pageYOffset/(document.body.clientHeight - window.innerHeight)) +'deg)',
+            marginLeft: 45*window.pageYOffset/(document.body.clientHeight - window.innerHeight),
+        });
+
+        $('.img-back').css({transform: 'rotate('+ (-3*window.pageYOffset/(document.body.clientHeight - window.innerHeight)) +'deg)'});
+
+    });
+</script>
 </body>
 </html>

@@ -229,14 +229,14 @@ section.blog .pic-images {
 }
 
 section.blog .img-front {
-    transform: rotate(20deg);
+    transform: rotate(0deg);
     margin-top: -65%;
-    margin-left: 45%;
+    margin-left: 0;
     box-shadow: 0 8px 14px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19) !important;
 }
 
 section.blog  .img-back {
-    transform: rotate(-3deg);
+    transform: rotate(0deg);
     box-shadow: 0 8px 14px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19) !important;
 }
 
