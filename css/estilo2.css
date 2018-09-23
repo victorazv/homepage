@@ -51,8 +51,7 @@ input:checked + label{
     color: #fff;
 }
 
-/*--------*/
-
+/*---------------------*/
 
 h5 {
     color: #fff;
@@ -84,6 +83,10 @@ section.banner_form {
     min-height: 500px;
 }
 
+.banner_title{
+    color: #fff;
+}
+
 .detail1 {
     font-weight: 300;
 }
@@ -97,16 +100,35 @@ section.banner_form {
 }
 
 .text_sec_1{
-    font-weight: 200;
+    font-weight: 300;
 }
 
 .sec_1a_text{
     font-size: 14px;
+    font-weight: 200;
+    text-align: justify;
 }
 
+.title_sec2{
+    font-weight: 800;
+}
 
+.text_sec_2a{
+    font-size: 15px;
+    text-align: justify;
+}
 
+.question{
+    background-color: #f0f0f0;
+    height: 10vh;
+}
 
+.percent_bar{
+    background-color: #333030;
+    height: 10vh;   
+}
+
+/*---------------------*/
 
 html, body {
     max-width: 100%;
