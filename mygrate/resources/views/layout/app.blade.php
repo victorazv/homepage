@@ -18,7 +18,7 @@
 </head>
 <body>
 
-@yield('navbar')
+@yield('header')
 @yield('content')
 @yield('footer')
 <script type="text/javascript" src="vendor/bootstrap-4/js/bootstrap.min.js"></script>

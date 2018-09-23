@@ -10,4 +10,9 @@ class WebsiteController extends Controller
     {
         return view('homepage');
     }
+
+    public function profile()
+    {
+        return view('profile');
+    }
 }

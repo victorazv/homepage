@@ -12,3 +12,4 @@
 */
 
 Route::get('/', 'WebsiteController@index');
+Route::get('/profile', 'WebsiteController@profile');
