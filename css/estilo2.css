@@ -99,14 +99,26 @@ section.banner_form {
     background-color: #e6e6e6;
 }
 
+.container{
+    font-family: 'Muli';
+}
+
+.card_title{
+    font-weight: 800;
+}
+
 .text_sec_1{
     font-weight: 300;
+    font-family: 'Muli';
+    color: #000;
+    text-align: justify;
 }
 
 .sec_1a_text{
-    font-size: 14px;
-    font-weight: 200;
+    font-size: 12px;
+    font-weight: 500;
     text-align: justify;
+    font-family: 'Muli';
 }
 
 .title_sec2{
@@ -120,12 +132,15 @@ section.banner_form {
 
 .question{
     background-color: #f0f0f0;
-    height: 10vh;
+    height: 60px;
+    font-family: 'Muli';
 }
 
 .percent_bar{
     background-color: #333030;
-    height: 10vh;   
+    height: 90px;   
+    color: #fff;
+    font-family: 'Muli';
 }
 
 /*---------------------*/
