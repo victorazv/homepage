@@ -172,6 +172,17 @@
 							Things you <br>
 							need to know
 						</h2>
+						
+					</div>
+					<div class="col-md-12" style="background-color: #f2f2f2">
+						<h1 class="ml-5 mb-0" style="font-size: 45px; color: #fff">a.</h1>
+						<div class="d-flex ml-4 mb-0">
+							<h6 class="col-md-10" style="color: #000; font-weight: 700">
+								Legal stuff - Please read
+								and accept this first.
+							</h6>
+							<img src="images/icon_sheet.png" alt="paper">
+						</div>
 					</div>
 				</div>
 				<div class="col-xs-12 col-md-5 d-flex flex-wrap">
@@ -454,13 +465,13 @@
 						
 					<label>Are you the Citizen of more than one Country?*</label>
 					<section class="form">
-						<input type="radio" name="radio1" id="yes" value="Y" checked><label class="four radio_item1" for="yes">Yes</label>
+						<input type="radio" name="radio1" id="yes" value="Y"><label class="four radio_item1" for="yes">Yes</label>
 						<input type="radio" name="radio1" id="no" value="N"><label class="four radio_item1" for="no">No</label>
 					</section>
 				
 					<label>What is the main reason for seeking to apply for an Australian Visa?*</label>
 					<section class="form">
-						<input type="radio" name="radio2" id="1" value="1" checked><label class="radio_item2 ml-0 pl-2" for="1">Visit Australia</label>
+						<input type="radio" name="radio2" id="1" value="1"><label class="radio_item2 ml-0 pl-2" for="1">Visit Australia</label>
 						<input type="radio" name="radio2" id="2" value="2"><label class="radio_item2 ml-0 pl-2" for="2">Study in Australia</label>
 						<input type="radio" name="radio2" id="3" value="3"><label class="radio_item2 ml-0 pl-2" for="3">Work and live in Australia (TEMPORARILY)</label>
 						<input type="radio" name="radio2" id="4" value="4"><label class="radio_item2 ml-0 pl-2" for="4">Work and live in Australia (PERMANENTLY)</label>
@@ -546,7 +557,21 @@
 
 	function updateProgress(el)
 	{
+		var inputs = $('input');
+		var parcial = 0;
+
+		for (var i = 0; i < inputs.length; i++)
+		{
+			if (inputs[i].value != "") 
+			{
+				parcial = parcial + 1;
+			}
+		}
+
+		var total = inputs.length;
+		var new_value = (parcial / total) * 100;
 		var a = $('.progress-bar')[0].style.width;
+
 		a = parseInt(a);
 		if(isNaN(a))
 		{
@@ -556,8 +581,10 @@
 		{
 			a = a + 3;
 		}
+
+		
 		$('.progress-bar').css('width', a+"%");
-		$('.el_percentage').html(a+"%");
+		$('.el_percentage').html(new_value+"%");
 	}
 	
 	function changeBackground(id){
