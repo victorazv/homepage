@@ -143,6 +143,11 @@ section.banner_form {
     font-family: 'Muli';
 }
 
+.progress-bar{
+    background-color:#fff;
+    background-image: linear-gradient(to right, #B495C1 , #8AB5E1);
+}
+
 /*---------------------*/
 
 html, body {

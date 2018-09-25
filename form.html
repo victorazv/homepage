@@ -143,18 +143,18 @@
 		</div>
 
 		<div class="question w-100 offset-md-2 col-md-8 col-xs-12">
-			<button class="float-right mt-4 mr-4">Continue</button>
+			<a href="#sec_1a"><button class="float-right mt-4 mr-4">Continue</button></a>
 		</div>
 
 		<div class="percent_bar col-12 pl-0 d-flex">
 			<div class="offset-1 offset-md-2 col-6 col-md-7 mt-3 pl-0">
-				0% Completed
+				<span class="el_percentage">0%</span> Completed
 				<div class="progress" style="height: 7px; background-color: #f0f0f0">
 					<div class="progress-bar" role="progressbar" style="" aria-valuenow="" aria-valuemin="0" aria-valuemax="100"></div>
 				</div>
 			</div>
 			<div class="col-md-2 mt-2 pl-0">
-				<img src="images/img_previous.png">
+				<img src="images/img_previous_blocked.png">
 				<a href="#sec_1a" id="btn_1"><img src="images/img_next.png"></a>
 			</div>
 		</div>
@@ -219,12 +219,12 @@
 			</div>            
 		</div>
 		<div class="question w-100 offset-md-2 col-md-8 col-xs-12">
-			<button class="float-right mt-4 mr-4">I accept</button>
+			<button class="float-right mt-4 mr-4" onclick="updateProgress()">I accept</button>
 			<button class="float-right mt-4 mr-4">I don't accept</button>
 		</div>
 		<div class="percent_bar col-12 pl-0 d-flex">
 			<div class="offset-1 offset-md-2 col-6 col-md-7 mt-3 pl-0">
-				0% Completed
+				<span class="el_percentage">0%</span> Completed
 				<div class="progress" style="height: 7px; background-color: #f0f0f0">
 					<div class="progress-bar" role="progressbar" style="" aria-valuenow="" aria-valuemin="0" aria-valuemax="100"></div>
 				</div>
@@ -291,7 +291,7 @@
 		</div>
 		<div class="percent_bar col-12 pl-0 d-flex">
 				<div class="offset-1 offset-md-2 col-6 col-md-7 mt-3 pl-0">
-					0% Completed
+					<span class="el_percentage">0%</span> Completed
 					<div class="progress" style="height: 7px; background-color: #f0f0f0">
 						<div class="progress-bar" role="progressbar" style="" aria-valuenow="" aria-valuemin="0" aria-valuemax="100"></div>
 					</div>
@@ -338,18 +338,18 @@
 			</div>
 		</div>
 		<div class="question w-100 offset-md-2 col-md-8 col-xs-12">
-			<button class="float-right mt-4 mr-4">Continue</button>
+			<a href="#sec_2a"><button class="float-right mt-4 mr-4">Continue</button></a>
 		</div>
 		<div class="percent_bar col-12 pl-0 d-flex">
 			<div class="offset-1 offset-md-2 col-6 col-md-7 mt-3 pl-0">
-				0% Completed
+				<span class="el_percentage">0%</span> Completed
 				<div class="progress" style="height: 7px; background-color: #f0f0f0">
 					<div class="progress-bar" role="progressbar" style="" aria-valuenow="" aria-valuemin="0" aria-valuemax="100"></div>
 				</div>
 			</div>
 			<div class="col-md-2 mt-2 pl-0">
 				<img src="images/img_previous.png">
-				<a href="#sec_1b" id="btn_1"><img src="images/img_next.png"></a>
+				<a href="#sec_2a" id="btn_1"><img src="images/img_next.png"></a>
 			</div>
 		</div>
 	</section>
@@ -400,7 +400,7 @@
 		</div>
 			<div class="percent_bar col-12 pl-0 d-flex">
 				<div class="offset-1 offset-md-2 col-6 col-md-7 mt-3 pl-0">
-					0% Completed
+					<span class="el_percentage">0%</span> Completed
 					<div class="progress" style="height: 7px; background-color: #f0f0f0">
 						<div class="progress-bar" role="progressbar" style="" aria-valuenow="" aria-valuemin="0" aria-valuemax="100"></div>
 					</div>
@@ -471,12 +471,12 @@
 			</div>
 		</div>
 			<div class="question w-100 offset-md-2 col-md-8 col-xs-12">
-				<button class="float-right mt-4 mr-4">Continue</button>
+				<a href="#"><button class="float-right mt-4 mr-4">Continue</button></a>
 			</div>
 		</div>
 		<div class="percent_bar col-12 pl-0 d-flex">
 				<div class="offset-1 offset-md-2 col-6 col-md-7 mt-3 pl-0">
-					0% Completed
+					<span class="el_percentage">0%</span> Completed
 					<div class="progress" style="height: 7px; background-color: #f0f0f0">
 						<div class="progress-bar" role="progressbar" style="" aria-valuenow="" aria-valuemin="0" aria-valuemax="100"></div>
 					</div>
@@ -543,6 +543,22 @@
 </div>
 <script type="text/javascript" src="vendor/bootstrap-4/js/bootstrap.min.js"></script>
 <script>
+
+	function updateProgress(el)
+	{
+		var a = $('.progress-bar')[0].style.width;
+		a = parseInt(a);
+		if(isNaN(a))
+		{
+			a = 3;
+		}
+		else
+		{
+			a = a + 3;
+		}
+		$('.progress-bar').css('width', a+"%");
+		$('.el_percentage').html(a+"%");
+	}
 	
 	function changeBackground(id){
 		var a = $('#'+id);
