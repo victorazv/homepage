@@ -46,7 +46,7 @@
                     </div>
                 </div>
                 <div class="d-flex justify-content-center flex-lg-row flex-column">
-                    <div class="card quotation-card mr-md-2 mb-sm-0 mb-3">
+                    <div class="card quotation-card mr-md-2 mb-sm-0 mb-3 mx-auto">
                         <img class="card-img-top p-2" src="{{asset('images/user_01.jpeg')}}" alt="Card image cap">
                         <div class="card-body p-0 pl-2 d-flex flex-column">
                             <div>
@@ -64,7 +64,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="card quotation-card mr-md-2 mb-sm-0 mb-3">
+                    <div class="card quotation-card mr-md-2 mb-sm-0 mb-3 mx-auto">
                         <img class="card-img-top p-2" src="{{asset('images/user_02.jpeg')}}" alt="Card image cap">
                         <div class="card-body p-0 pl-2 d-flex flex-column">
                             <div>
@@ -82,7 +82,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="card quotation-card mr-md-2 mb-sm-0 mb-3">
+                    <div class="card quotation-card mr-md-2 mb-sm-0 mb-3 mx-auto">
                         <img class="card-img-top p-2" src="{{asset('images/user_03.jpeg')}}" alt="Card image cap">
                         <div class="card-body p-0 pl-2 d-flex flex-column">
                             <div>
@@ -100,10 +100,10 @@
                             </div>
                         </div>
                     </div>
-                    <div class="card quotation-card waiting mr-md-2 mb-sm-0 mb-3">
+                    <div class="card quotation-card waiting mr-md-2 mb-sm-0 mb-3 mx-auto">
                         <img class="p-0" src="{{asset('images/waiting_quotation_2x.jpg')}}" alt="Card image cap" style="width: 100%">
                     </div>
-                    <div class="card quotation-card waiting mr-md-2 mb-sm-0 mb-3">
+                    <div class="card quotation-card waiting mr-md-2 mb-sm-0 mb-3 mx-auto">
                         <img class="p-0" src="{{asset('images/waiting_quotation_2x.jpg')}}" alt="Card image cap" style="width: 100%" >
                     </div>
                 </div>

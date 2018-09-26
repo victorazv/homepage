@@ -37,15 +37,17 @@
         </div>
     </div>
 </footer>
-<div class="expert-callout d-sm-none pt-3 pr-3 pl-3">
-    <div class="custom-bg">
-        <div class="row pt-3 pl-3 pr-3">
-            <div class="col-7">
-                <h4 class="text-muted">Are you a <br> Migration Expert?</h4>
-            </div>
-            <div class="col-5 my-auto">
-                <a href="#" class="custom-btn p-2 ml-2">Learn More</a>
+@if(request()->is('/'))
+    <div class="expert-callout d-sm-none pt-3 pr-3 pl-3">
+        <div class="custom-bg">
+            <div class="row pt-3 pl-3 pr-3">
+                <div class="col-7">
+                    <h4 class="text-muted">Are you a <br> Migration Expert?</h4>
+                </div>
+                <div class="col-5 my-auto">
+                    <a href="#" class="custom-btn p-2 ml-2">Learn More</a>
+                </div>
             </div>
         </div>
     </div>
-</div>
+@endif
