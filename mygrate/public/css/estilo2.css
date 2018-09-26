@@ -433,11 +433,21 @@ section.user-messages .agent-subtitle {
 
 }
 
+.profile-name {
+    font-size: 1.4em;
+}
+
 @media (max-width: 425px) {
     .custom-label {
         font-size: 1.1em;
     }
     .custom-label-value {
         font-size: 1.8em;
+    }
+    .profile-name {
+        font-size: 1.7em;
+    }
+    .profile-info {
+        font-size: 0.7em;
     }
 }

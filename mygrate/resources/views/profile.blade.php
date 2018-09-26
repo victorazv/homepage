@@ -50,9 +50,9 @@
                             <img src="https://via.placeholder.com/250x250" alt="" class="img-thumbnail w-100 ml-1">
                         </div>
                         <div class="col-md-12 col-6">
-                            <h2 class="mt-4 mb-4">Abhishek Mohan Kaushal</h2>
-                            <span><i class="fa fa-envelope mr-1"></i> er.abhishekmohan@gmail.com</span>
-                            <span><i class="fa fa-linkedin mr-1"></i> /abhishekmohankaushal</span>
+                            <h2 class="mt-4 mb-4 profile-name">Abhishek Mohan Kaushal</h2>
+                            <div class="profile-info w-100"><i class="fa fa-envelope mr-1"></i> er.abhishekmohan@gmail.com</div>
+                            <div class="profile-info w-100"><i class="fa fa-linkedin mr-1"></i> /abhishekmohankaushal</div>
                         </div>
                     </div>
                     <div class="row mt-4">
