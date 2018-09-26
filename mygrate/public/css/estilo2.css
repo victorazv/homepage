@@ -299,3 +299,30 @@ p.footer-menu {
     font-weight: lighter;
     font-size: 0.7em;
 }
+
+/*
+ User page
+ */
+
+section.user-welcome {
+    background: #f0f0f0;
+    min-height: 100px;
+}
+
+section.user-welcome .nav-link.active {
+    padding-bottom:8px;
+    background: /* gradient can be an image */
+            linear-gradient(
+                    to left,
+                    #B495C1 0%,
+                    #8AB5E1 100%
+            )
+            left
+            bottom
+            no-repeat;
+    background-size:100% 8px ;/* if linear-gradient, we need to resize it */
+}
+
+section.user-welcome .nav-link {
+    color: #000;
+}

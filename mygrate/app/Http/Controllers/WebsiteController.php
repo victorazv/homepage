@@ -11,6 +11,11 @@ class WebsiteController extends Controller
         return view('homepage');
     }
 
+    public function user()
+    {
+        return view('user');
+    }
+
     public function profile()
     {
         return view('profile');
