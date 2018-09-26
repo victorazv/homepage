@@ -5,11 +5,11 @@
                 <h5>Follow Us</h5>
             </div>
             <div class="col-md-8 col-sm-12 mb-5">
-                <a class="mr-1" href="https://www.facebook.com/mygrateme"><img src="images/facebook.png"></a>
-                <a class="mr-1" href="https://twitter.com/mygrateme"><img src="images/twitter.png"></a>
-                <a class="mr-1" href="https://mygrate.me/"><img src="images/instagram.png"></a>
-                <a class="mr-1" href="https://mygrate.me/"><img src="images/youtube.png"></a>
-                <a class="mr-1" href="https://mygrate.me/"><img src="images/linkedin.png"></a>
+                <a class="mr-1" href="https://www.facebook.com/mygrateme"><img src="{{asset('images/facebook.png')}}"></a>
+                <a class="mr-1" href="https://twitter.com/mygrateme"><img src="{{asset('images/twitter.png')}}"></a>
+                <a class="mr-1" href="https://mygrate.me/"><img src="{{asset('images/instagram.png')}}"></a>
+                <a class="mr-1" href="https://mygrate.me/"><img src="{{asset('images/youtube.png')}}"></a>
+                <a class="mr-1" href="https://mygrate.me/"><img src="{{asset('images/linkedin.png')}}"></a>
             </div>
             <div class="col-6 col-md-2">
                 <h5 class="footer-title">Migrant Area</h5>

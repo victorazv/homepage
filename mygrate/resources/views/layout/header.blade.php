@@ -21,7 +21,7 @@
     <div class="d-flex w-100 order-0">
         <span class="w-100"></span>
         <a class="navbar-brand text-center w-100 mr-5" href="#">
-            <img src="images/logo.png" alt="Mygrate">
+            <img src="{{asset('images/logo.png')}}" alt="Mygrate">
         </a>
         <div class="">
             <button class="navbar-toggler" data-target='#modalNavigation' data-toggle='modal' aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">

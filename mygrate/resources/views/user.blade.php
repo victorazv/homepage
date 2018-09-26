@@ -5,7 +5,11 @@
 @endsection
 
 @push('header-scripts')
-
+    <style>
+        html, body {
+            margin-bottom: 0;
+        }
+    </style>
 @endpush
 
 @section('content')

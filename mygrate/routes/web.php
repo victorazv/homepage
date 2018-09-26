@@ -13,4 +13,4 @@
 
 Route::get('/', 'WebsiteController@index');
 Route::get('/user', 'WebsiteController@user');
-Route::get('/profile', 'WebsiteController@profile');
+Route::get('/profile/view', 'WebsiteController@profile');
