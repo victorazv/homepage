@@ -326,3 +326,82 @@ section.user-welcome .nav-link.active {
 section.user-welcome .nav-link {
     color: #000;
 }
+
+section.user-quotations {
+    background: #fff;
+}
+
+section.user-quotations .quotation-card {
+    background: #f2f2f2;
+    border: 0;
+    border-radius: 0;
+    max-width: 15em;
+}
+
+
+@media (max-width: 425px) {
+    section.user-quotations .quotation-card {
+        background: #f2f2f2;
+        border: 0;
+        border-radius: 0;
+        width: 100%;
+    }
+}
+
+.waiting {
+    border: solid 1px #f0f0f0 !important;;
+    background: #FFF !important;
+}
+
+section.user-quotations .quotation-card .agent-name {
+    font-size: medium;
+    font-weight: bold;
+}
+
+section.user-quotations .quotation-card .agent-subtitle {
+    font-size: 10px;
+    font-weight: lighter;
+}
+
+
+.divider {
+    background: /* gradient can be an image */
+            linear-gradient(
+                    to left,
+                    #B495C1 0%,
+                    #8AB5E1 100%
+            )
+            left
+            bottom
+            no-repeat;
+    height: 1px;
+}
+
+.custom-btn-text {
+    font-size: large;
+    font-weight: bold;
+}
+
+section.user-messages .card-message {
+    height: 90px;
+    border: solid #f0f0f0 1px;
+    border-radius: 0;
+}
+
+section.user-messages .card-message.active {
+    background: #f0f0f0;
+}
+
+section.user-messages .agent-name {
+    font-size: medium;
+    font-weight: bold;
+}
+
+section.user-messages .agent-subtitle {
+    font-size: 0.6em;
+    font-weight: lighter;
+}
+
+.card-img-top {
+    height: 130px
+}
