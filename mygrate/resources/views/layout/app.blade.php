@@ -21,7 +21,7 @@
 @yield('header')
 @yield('content')
 @yield('footer')
-<script type="text/javascript" src="vendor/bootstrap-4/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="{{asset('vendor/bootstrap-4/js/bootstrap.min.js')}}"></script>
 @stack('footer-scripts')
 </body>
 </html>
