@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Mygrate</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Muli:200,300,400,600,700,800,900" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.9/css/all.css"
+          integrity="sha384-5SOiIsAziJl6AWe0HWRKTXlfcSHKmYV4RBF18PPJ173Kzn7jzMyFuTtk8JA7QQG1" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <!-- Estilo do Bootstrap -->
+    <link rel="stylesheet" href="vendor/bootstrap-4/css/bootstrap.css">
+    <!-- Estilo de trabalho -->
+    <link rel="stylesheet" href="css/estilo3.css">
+    
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-light">
+    <div class="collapse navbar-collapse w-100 order-1 order-lg-1" id="navbarNav">
+        <ul class="navbar-nav">
+            <li class="nav-item active">
+                <a class="nav-link" href="#">Start Your Journey</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="https://mygrate.me/agents/">Leave a Review</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="https://mygrate.me/agents/">Our Experts</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="https://mygrate.me/blog/">Blog</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Login</a>
+            </li>
+        </ul>
+    </div>
+    <div class="d-flex w-100 order-0">
+        <span class="w-100"></span>
+        <a class="navbar-brand text-center w-100 mr-5" href="#">
+            <img src="images/logo.png" alt="Mygrate">
+        </a>
+        <div class="">
+            <button class="navbar-toggler" data-target='#modalNavigation' data-toggle='modal' aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        </div>
+    </div>
+    <span class="w-100"></span>
+</nav>
+<div class='modal fade modal-fullscreen-menu' id='modalNavigation' role='dialog' tabindex='-1'>
+    <button aria-label='Close' class='close' data-dismiss='modal' type='button'>
+        <span class='sr-only'>Close navigation</span>
+        <span class='fa fa-times text-dark'></span>
+    </button>
+    <div class='modal-dialog'>
+        <nav class='list-group'>
+            <a class='list-group-item' href="#">Start Your Journey</a>
+            <a class='list-group-item' href="https://mygrate.me/agents/">Leave a Review</a>
+            <a class='list-group-item' href="https://mygrate.me/agents/">Our Experts</a>
+            <a class='list-group-item' href="https://mygrate.me/blog/">Blog</a>
+            <a class='list-group-item' href="#">Login</a>
+        </nav>
+    </div>
+</div>
+
+
+  
+
+<main class="mb-3">
+        <section class="user-welcome">
+            <div class="container-fluid m-0 p-0">
+                <div class="d-flex justify-content-around">
+                    <div class="d-flex flex-column p-2">
+                        <div>
+                            <img src="https://via.placeholder.com/80" alt="" class="img-thumbnail img-responsive">
+                        </div>
+                        <div class="">
+                            <h5>Hello, Abhishek Mohan Kaushal</h5>
+                        </div>
+                    </div>
+                    <div class="p-2 align-self-end d-none d-md-flex">
+                        <ul class="nav justify-content-end">
+                            <li class="nav-item">
+                                <a class="nav-link active border-styled" href="#">Dashboard</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">View your Profile</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Edit Profile</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="user-quotations mt-5">
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+                        <h4>Quotations Received</h4>
+                        <hr>
+                    </div>
+                </div>
+                <div class="d-flex justify-content-center flex-lg-row flex-column">
+                    <div class="card quotation-card mr-md-2 mb-sm-0 mb-3 mx-auto">
+                        <img class="card-img-top p-2" src="images/user_01.jpeg" alt="Card image cap">
+                        <div class="card-body p-0 pl-2 d-flex flex-column">
+                            <div>
+                                <div>rating</div>
+                                <div><span class="agent-name">Zenia Khaira</span></div>
+                                <div><span class="agent-subtitle">Registered Migration Agent (RMA)</span></div>
+                            </div>
+                            <div class="row">
+                                <div class="col-6">
+                                    <img src="https://via.placeholder.com/50x50" class="p-1">
+                                </div>
+                                <div class="col-6">
+                                    <img src="https://via.placeholder.com/50x50" class="p-1">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card quotation-card mr-md-2 mb-sm-0 mb-3 mx-auto">
+                        <img class="card-img-top p-2" src="images/user_02.jpeg" alt="Card image cap">
+                        <div class="card-body p-0 pl-2 d-flex flex-column">
+                            <div>
+                                <div>rating</div>
+                                <div><span class="agent-name">Zenia Khaira</span></div>
+                                <div><span class="agent-subtitle">Registered Migration Agent (RMA)</span></div>
+                            </div>
+                            <div class="row">
+                                <div class="col-6">
+                                    <img src="https://via.placeholder.com/50x50" class="p-1">
+                                </div>
+                                <div class="col-6">
+                                    <img src="https://via.placeholder.com/50x50" class="p-1">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card quotation-card mr-md-2 mb-sm-0 mb-3 mx-auto">
+                        <img class="card-img-top p-2" src="images/user_03.jpeg" alt="Card image cap">
+                        <div class="card-body p-0 pl-2 d-flex flex-column">
+                            <div>
+                                <div>rating</div>
+                                <div><span class="agent-name">Zenia Khaira</span></div>
+                                <div><span class="agent-subtitle">Registered Migration Agent (RMA)</span></div>
+                            </div>
+                            <div class="row">
+                                <div class="col-6">
+                                    <img src="https://via.placeholder.com/50x50" class="p-1">
+                                </div>
+                                <div class="col-6">
+                                    <img src="https://via.placeholder.com/50x50" class="p-1">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card quotation-card waiting mr-md-2 mb-sm-0 mb-3 mx-auto">
+                        <img class="p-0" src="images/waiting_quotation_2x.jpg" alt="Card image cap" style="width: 100%">
+                    </div>
+                    <div class="card quotation-card waiting mr-md-2 mb-sm-0 mb-3 mx-auto">
+                        <img class="p-0" src="images/waiting_quotation_2x.jpg" alt="Card image cap" style="width: 100%" >
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="user-messages mt-5 mb-5">
+            <div class="container">
+                <h4 class="mb-0 p-0">Messages</h4>
+                <hr class="divider m-1">
+                <button class="custom-btn btn-block mt-3 p-2 d-sm-none">
+                    <span class="custom-btn-text">Open Messages</span>
+                </button>
+                <div class="row mt-3 d-none d-sm-flex">
+                    <div class="col-4">
+                        <div class="card card-message my-1 active">
+                            <div class="row">
+                                <div class="col-3">
+                                    <img src="https://via.placeholder.com/70x70" alt="" class="img-responsive p-2">
+                                </div>
+                                <div class="col-8 d-flex flex-column align-items-start justify-content-center ml-1">
+                                    <div>
+                                        <span class="agent-name m-0 p-0">
+                                            Zenia Khaira
+                                        </span>
+                                    </div>
+                                    <div>
+                                        <span class="agent-subtitle m-0 p-0">
+                                            Registered Migration Agent (RMA)
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card card-message my-1">
+                            <div class="row">
+                                <div class="col-3">
+                                    <img src="https://via.placeholder.com/70x70" alt="" class="img-responsive p-2">
+                                </div>
+                                <div class="col-8 d-flex flex-column align-items-start justify-content-center ml-1">
+                                    <div>
+                                        <span class="agent-name m-0 p-0">
+                                            Wendy Maitland
+                                        </span>
+                                    </div>
+                                    <div>
+                                        <span class="agent-subtitle m-0 p-0">
+                                            Immigration Lawyer and Migration Agent
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card card-message my-1">
+                            <div class="row">
+                                <div class="col-3">
+                                    <img src="https://via.placeholder.com/70x70" alt="" class="img-responsive p-2">
+                                </div>
+                                <div class="col-8 d-flex flex-column align-items-start justify-content-center ml-1">
+                                    <div>
+                                        <span class="agent-name m-0 p-0">
+                                            Mygrate
+                                        </span>
+                                    </div>
+                                    <div>
+                                        <span class="agent-subtitle m-0 p-0">
+                                            Personal Assistant
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-8" style="background: #f0f0f0; width: 100%; height: 500px">
+
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+<footer class="section-footer">
+    <div class="container">
+        <div class="row ml-4">
+            <div class="col-md-12 mt-5 mb-2">
+                <h5>Follow Us</h5>
+            </div>
+            <div class="col-md-8 col-sm-12 mb-5">
+                <a class="mr-1" href="https://www.facebook.com/mygrateme"><img src="images/facebook.png"></a>
+                <a class="mr-1" href="https://twitter.com/mygrateme"><img src="images/twitter.png"></a>
+                <a class="mr-1" href="https://mygrate.me/"><img src="images/instagram.png"></a>
+                <a class="mr-1" href="https://mygrate.me/"><img src="images/youtube.png"></a>
+                <a class="mr-1" href="https://mygrate.me/"><img src="images/linkedin.png"></a>
+            </div>
+            <div class="col-6 col-md-2">
+                <h5 class="footer-title">Migrant Area</h5>
+                <p class="footer-link">Start Your Jorney</p>
+                <a href="https://mygrate.me/agents/"><p class="footer-link">Leave a review</p></a>
+                <a href="https://mygrate.me/agents/"><p class="footer-link">Our Experts</p></a>
+                <a href="https://mygrate.me/blog/"><p class="footer-link">Blog</p></a>
+            </div>
+            <div class="col-6 col-md-2">
+                <h5 class="footer-title">Expert Area</h5>
+                <p class="footer-link">How it works</p>
+                <p class="footer-link">Sign-In</p>
+            </div>
+        </div>
+        <div class="row mt-5 mx-auto">
+            <div class="col-12 mx-auto">
+                <p class="footer-menu mx-auto text-center">
+                    <span class="font-weight-bold mr-2">MYGRATE SRL</span> /
+                    <span class="mr-2 ml-2">Via Massima D'Azeglia 3. Milan</span> /
+                    <span class="mr-2 ml-2">@ Mygrate 2018</span> /
+                    <span class="mr-2 ml-2">Update Cookie Settings</span> /
+                    <span class="ml-2">Privacy Policy</span>
+                </p>
+            </div>
+        </div>
+    </div>
+</footer><script type="text/javascript" src="vendor/bootstrap-4/js/bootstrap.min.js"></script>
+
+</body>
+</html>

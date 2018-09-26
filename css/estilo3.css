@@ -1,0 +1,407 @@
+/*
+Global
+ */
+
+html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+    margin-bottom: 50px;
+}
+
+a.custom-btn, button.custom-btn {
+    background-image: linear-gradient(to right, #B495C1 , #8AB5E1);
+    color: #fff;
+    border: none;
+    padding: 5px 20px;
+    font-size: 15px;
+    font-weight: 200;
+}
+
+.expert-callout {
+    position: fixed;
+    bottom: 0;
+    background: #fff;
+    width: 100%;
+    height:110px;
+}
+
+.expert-callout .custom-bg {
+    background: #f0f0f0;
+    min-height: 110px;
+}
+
+.expert-callout h4 {
+    font-weight: 200;
+}
+
+@media (min-width: 768px) {
+    html, body {
+        margin-bottom: 0;
+    }
+}
+
+.navbar {
+    background: #fff;
+}
+
+.navbar-brand img {
+    width: 100%;
+}
+
+.nav-link {
+    font-weight: 200;
+    font-size: 0.8em;
+}
+
+.modal-fullscreen-menu .close {
+    color: white;
+    opacity: 1;
+    padding: 10px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 1;
+    font-size: 5vh;
+}
+.modal-fullscreen-menu .modal-dialog {
+    margin: 0 auto;
+    width: 100%;
+    max-width: 768px;
+    display: flex;
+    height: 100%;
+    align-items: center;
+    background: rgba(255,255,255,0.8);
+}
+.modal-fullscreen-menu .modal-content {
+    background-color: transparent;
+    box-shadow: none;
+    border: none;
+}
+.modal-fullscreen-menu .list-group {
+    text-align: center;
+    margin: 0 auto;
+    width: 100%;
+}
+.modal-fullscreen-menu .list-group a {
+    font-weight: 200;
+    letter-spacing: 0.05em;
+    border: none;
+    transition: all 0.25s ease;
+    background-color: transparent;
+    color: #000000;
+    padding: 7.5vh 0;
+    height: 5vh;
+    font-size: 5vh;
+    line-height: 0;
+}
+.modal-fullscreen-menu .list-group a:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: white;
+    z-index: -1;
+    opacity: 0;
+    transform: scale3d(0.7, 1, 1);
+    transition: transform 0.4s, opacity 0.4s;
+}
+.modal-fullscreen-menu .list-group a:hover {
+    color: black;
+}
+.modal-fullscreen-menu .list-group a:hover:before {
+    transform: translate3d(0, 0, 0);
+    opacity: 1;
+}
+
+.modal-backdrop.in {
+    opacity: 1;
+}
+
+/*
+Banner
+ */
+section.banner {
+    background: url("../images/bg-header.jpeg") no-repeat center center fixed;
+    background-size: cover;
+    position: relative;
+    min-height: 500px;
+}
+
+section.banner .card {
+    padding: 10px;
+    background: #FFF;
+    border-radius: 0;
+    height: 250px;
+}
+
+section.banner .card-title {
+    font-weight: 200;
+
+}
+
+section.banner .card-body {
+    background: #f0f0f0;
+}
+
+section.banner .layer {
+    background: -moz-linear-gradient(left, rgba(0,0,0,0.65) 0%, rgba(0,0,0,0) 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(left, rgba(0,0,0,0.65) 0%,rgba(0,0,0,0) 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to right, rgba(0,0,0,0.65) 0%,rgba(0,0,0,0) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a6000000', endColorstr='#00000000',GradientType=1 ); /* IE6-9 */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+section.banner h1 {
+    color: #FFF;
+    font-weight: 400;
+    font-size: 2.6rem;
+}
+
+section.banner p {
+    color: #FFF;
+    font-weight: 200;
+    font-size: 0.9em;
+}
+
+
+/*
+How it Works Section
+ */
+
+section.how-it-works {
+    background: #fff;
+}
+
+section.how-it-works h1 {
+    font-weight: bold;
+    font-size: 2em;
+}
+
+section.how-it-works button {
+    background-image: linear-gradient(to right, #B495C1 , #8AB5E1);
+    color: #fff;
+    border: none;
+    padding: 5px 20px;
+    font-size: 15px;
+}
+
+section.how-it-works .list-icon {
+    width: 6em;
+}
+
+section.how-it-works .item-description {
+    max-width: 70%;
+}
+
+/*
+Blog Section
+ */
+
+section.blog {
+    background: #f0f0f0;
+    position: relative;
+}
+
+section.blog h1 {
+    font-weight: bold;
+    font-size: 2em;
+}
+
+section.blog button {
+    background-image: linear-gradient(to right, #B495C1 , #8AB5E1);
+    color: #fff;
+    border: none;
+    padding: 5px 20px;
+    font-size: 15px;
+}
+
+section.blog .pic-images {
+    position: absolute;
+    top: 20px;
+    right: 50px;
+    width: 120px;
+}
+
+section.blog .img-front {
+    transform: rotate(0deg);
+    margin-top: -65%;
+    margin-left: 0;
+    box-shadow: 0 8px 14px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19) !important;
+}
+
+section.blog  .img-back {
+    transform: rotate(0deg);
+    box-shadow: 0 8px 14px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19) !important;
+}
+
+@media (min-width: 992px) {
+    section.blog {
+        background: #f0f0f0;
+        position: relative;
+        padding-bottom: 6rem !important;
+        padding-top: 6rem !important;
+    }
+    section.blog .pic-images {
+        position: absolute;
+        top: -10px;
+        right: 30%;
+        width: 280px;
+    }
+}
+
+/*
+Expert Section
+ */
+
+section.expert {
+
+}
+
+section.expert h1 {
+    font-weight: bold;
+    font-size: 2em;
+}
+
+
+@media (min-width: 992px) {
+    section.expert {
+        padding-bottom: 6rem !important;
+        padding-top: 6rem !important;
+    }
+}
+
+/*
+   Footer
+ */
+.section-footer {
+    background: #f0f0f0;
+}
+
+h5.footer-title {
+    font-weight: 600;
+    font-size: medium;
+}
+
+p.footer-link {
+    font-weight: 200;
+    font-size: 0.7em;
+    margin-bottom: 5px;
+    color: #000;
+}
+
+p.footer-menu {
+    font-weight: lighter;
+    font-size: 0.7em;
+}
+
+/*
+ User page
+ */
+
+section.user-welcome {
+    background: #f0f0f0;
+    min-height: 100px;
+}
+
+section.user-welcome .nav-link.active {
+    padding-bottom:8px;
+    background: /* gradient can be an image */
+            linear-gradient(
+                    to left,
+                    #B495C1 0%,
+                    #8AB5E1 100%
+            )
+            left
+            bottom
+            no-repeat;
+    background-size:100% 8px ;/* if linear-gradient, we need to resize it */
+}
+
+section.user-welcome .nav-link {
+    color: #000;
+}
+
+section.user-quotations {
+    background: #fff;
+}
+
+section.user-quotations .quotation-card {
+    background: #f2f2f2;
+    border: 0;
+    border-radius: 0;
+    max-width: 15em;
+}
+
+
+@media (max-width: 425px) {
+    section.user-quotations .quotation-card {
+        background: #f2f2f2;
+        border: 0;
+        border-radius: 0;
+        width: 100%;
+    }
+}
+
+.waiting {
+    border: solid 1px #f0f0f0 !important;;
+    background: #FFF !important;
+}
+
+section.user-quotations .quotation-card .agent-name {
+    font-size: medium;
+    font-weight: bold;
+}
+
+section.user-quotations .quotation-card .agent-subtitle {
+    font-size: 10px;
+    font-weight: lighter;
+}
+
+
+.divider {
+    background: /* gradient can be an image */
+            linear-gradient(
+                    to left,
+                    #B495C1 0%,
+                    #8AB5E1 100%
+            )
+            left
+            bottom
+            no-repeat;
+    height: 1px;
+}
+
+.custom-btn-text {
+    font-size: large;
+    font-weight: bold;
+}
+
+section.user-messages .card-message {
+    height: 90px;
+    border: solid #f0f0f0 1px;
+    border-radius: 0;
+}
+
+section.user-messages .card-message.active {
+    background: #f0f0f0;
+}
+
+section.user-messages .agent-name {
+    font-size: medium;
+    font-weight: bold;
+}
+
+section.user-messages .agent-subtitle {
+    font-size: 0.6em;
+    font-weight: lighter;
+}
+
+.card-img-top {
+    height: 130px
+}
