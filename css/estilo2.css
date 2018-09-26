@@ -103,9 +103,25 @@ section.banner_form {
     font-family: 'Muli';
 }
 
-.card_title{
-    font-weight: 800;
 }
+
+@media (min-width: 576px){
+ .card_title{
+        font-weight: 800;
+        font-size: 19px
+    }
+}
+ 
+/* Medium devices (tablets, 768px and up) The navbar toggle appears at this breakpoint */
+@media (min-width: 992px) {  
+ .card_title{
+        font-weight: 800;
+        font-size: 30px;
+    }
+}
+
+
+    
 
 .text_sec_1{
     font-weight: 300;
