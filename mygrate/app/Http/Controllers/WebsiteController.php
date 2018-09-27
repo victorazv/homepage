@@ -20,4 +20,9 @@ class WebsiteController extends Controller
     {
         return view('profile');
     }
+
+    public function profileEdit()
+    {
+        return view('profile_edit');
+    }
 }
