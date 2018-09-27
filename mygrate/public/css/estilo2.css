@@ -438,7 +438,7 @@ section.user-messages .agent-subtitle {
 }
 
 .profile-name {
-    font-size: 1.4em;
+    font-size: 2em;
 }
 
 .div-select {
@@ -479,6 +479,15 @@ select::-ms-expand {display: none;} /* Remove seta padrão do IE*/
     border: 0;
 }
 
+.custom-input-sidebar {
+    background: #f0f0f0;
+    color: #000;
+    font-size: 0.8em;
+    font-weight: bold;
+    border: 0;
+    float: left;
+}
+
 @media (max-width: 425px) {
     .custom-label {
         font-size: 1.1em;
@@ -499,5 +508,44 @@ select::-ms-expand {display: none;} /* Remove seta padrão do IE*/
     height: 80px;
     background: #f0f0f0;
     white-space: normal;
+    color: #fff;
+}
+
+.four {
+    width: 32.26%;
+    max-width: 32.26%;
+}
+
+.radio_item1 {
+    display: block;
+    float:left;
+    padding: 5px;
+    width: 80px;
+    font-size: 1.2em;
+    text-align: center;
+    margin-left: 10px;
+}
+
+.radio_item2 {
+    display: block;
+    margin: 1% 0 1% 1.6%;
+    width: 100%;
+    height: 30px;
+    text-align: left;
+}
+
+.radio_item1:first-of-type { margin-left: 0;}
+
+input[type=radio] {
+    display: none;
+}
+
+input:checked + label{
+    background-image: linear-gradient(to right, #B495C1 , #8AB5E1);
+    color: #fff;
+}
+
+input:not(:checked)+ label{
+    background: #cccccc;
     color: #fff;
 }

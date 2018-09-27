@@ -32,10 +32,10 @@
                                 <a class="nav-link border-styled" href="#">Dashboard</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link active" href="#">View your Profile</a>
+                                <a class="nav-link" href="#">View your Profile</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#">Edit Profile</a>
+                                <a class="nav-link active" href="#">Edit Profile</a>
                             </li>
                         </ul>
                     </div>
@@ -48,11 +48,17 @@
                     <div class="row">
                         <div class="col-md-12 col-6">
                             <img src="https://via.placeholder.com/250x250" alt="" class="img-thumbnail w-100 ml-1">
+                            <button class="btn custom-btn mb-1 mt-4" style="width: 60%; border: 0; border-radius: 0; font-weight: bold; font-size: 1.1em">
+                                Upload Photo
+                            </button>
+                            <button class="btn" style="width: 60%; background: #cccccc; color: #f0f0f0; font-weight: bold; border: 0; border-radius: 0; font-size: 1.1em">
+                                Delete Photo
+                            </button>
                         </div>
-                        <div class="col-md-12 col-6">
+                        <div class="col-md-12 col-6 mt-5">
                             <h2 class="mt-4 mb-4 profile-name">Abhishek Mohan Kaushal</h2>
-                            <div class="profile-info w-100"><i class="fa fa-envelope mr-1"></i> er.abhishekmohan@gmail.com</div>
-                            <div class="profile-info w-100"><i class="fa fa-linkedin mr-1"></i> /abhishekmohankaushal</div>
+                            <div class="profile-info w-100"><i class="fa fa-envelope mr-1"></i> <input title="english_level" type="text" class="form-control custom-input-sidebar" value="er.abhishekmohan@gmail.com"></div>
+                            <div class="profile-info w-100"><i class="fa fa-linkedin mr-1"></i> <input title="english_level" type="text" class="form-control custom-input-sidebar" value="/abhishekmohankaushal"></div>
                         </div>
                     </div>
                     <div class="row mt-4">
@@ -63,26 +69,10 @@
                             <span><b>Abhishek</b> is willing to pay for a consultation</span>
                         </div>
                     </div>
-                    <div class="row mt-5">
-                        <div class="col-6 col-md-12 p-1">
-                            <div class="d-flex justify-content-start btn-custom-gray align-items-center">
-                                <div class="m-3">
-                                    <img src="https://via.placeholder.com/120x50" alt="" class="mr-1 w-100">
-                                </div>
-                                <div class="mr-1">
-                                    Send a Message to Abhishek
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-12 col-6 mt-md-2 p-1">
-                            <div class="d-flex justify-content-start btn-custom-gray align-items-center">
-                                <div class="m-3">
-                                    <img src="https://via.placeholder.com/120x50" alt="" class="mr-1 w-100">
-                                </div>
-                                <div class="mr-1">
-                                    Send a Quotation to Abhishek
-                                </div>
-                            </div>
+                    <div class="row mt-1">
+                        <div class="col-12 pl-5">
+                            <input type="radio" name="sql7" id="yes" value="Y" checked><label class="four radio_item1" for="yes">Yes</label>
+                            <input type="radio" name="sql7" id="no" value="N" ><label class="four radio_item1" for="no">No</label>
                         </div>
                     </div>
                 </div>
@@ -260,14 +250,16 @@
                                     Currently in Australia:
                                 </label>
                                 <br>
-                                <span class="custom-label-value">No</span>
+                                <input type="radio" name="sql4" id="yes" value="Y"><label class="four radio_item1" for="yes">Yes</label>
+                                <input type="radio" name="sql4" id="no" value="N" checked><label class="four radio_item1" for="no">No</label>
                             </div>
                             <div class="field-box w-100">
                                 <label for="age" class="custom-label">
                                     In possess of an Australian Visa:
                                 </label>
                                 <br>
-                                <span class="custom-label-value">No, I don't have any Visa</span>
+                                <input type="radio" name="sql5" id="yes" value="Y"><label class="four radio_item1" for="yes">Yes</label>
+                                <input type="radio" name="sql5" id="no" value="N" checked><label class="four radio_item1" for="no">No</label>
                             </div>
                         </div>
                         <div class="row mt-5">
@@ -333,21 +325,24 @@
                                     Are the qualifications related to the occupation:
                                 </label>
                                 <br>
-                                <input title="occupation" type="text" class="form-control custom-input" value="Yes">
+                                <input type="radio" name="sql1" id="yes" value="Y" checked><label class="four radio_item1" for="yes">Yes</label>
+                                <input type="radio" name="sql1" id="no" value="N"><label class="four radio_item1" for="no">No</label>
                             </div>
                             <div class="field-box w-100">
                                 <label for="age" class="custom-label">
                                     Australia Study Requirements:
                                 </label>
                                 <br>
-                                <input title="study" type="text" class="form-control custom-input" value="No">
+                                <input type="radio" name="sql2" id="yes" value="Y"><label class="four radio_item1" for="yes">Yes</label>
+                                <input type="radio" name="sql2" id="no" value="N" checked><label class="four radio_item1" for="no">No</label>
                             </div>
                             <div class="field-box w-100">
                                 <label for="age" class="custom-label">
                                     Specialist Education Qualification:
                                 </label>
                                 <br>
-                                <input title="specialist" type="text" class="form-control custom-input" value="No">
+                                <input type="radio" name="sql3" id="yes" value="Y"><label class="four radio_item1" for="yes">Yes</label>
+                                <input type="radio" name="sql3" id="no" value="N" checked><label class="four radio_item1" for="no">No</label>
                             </div>
                             <div class="field-box w-100">
                                 <label for="age" class="custom-label">
