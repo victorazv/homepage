@@ -11,7 +11,22 @@
 |
 */
 
+use App\User;
+use Illuminate\Support\Facades\DB;
+
 Route::get('/', 'WebsiteController@index');
 Route::get('/user', 'WebsiteController@user');
 Route::get('/profile/view', 'WebsiteController@profile');
 Route::get('/profile/edit', 'WebsiteController@profileEdit');
+
+Route::get('/con', function() {
+    $user = User::find(73);
+    dd(
+        $user->details->maritalStatusR,
+        $user->details->citizenshipR,
+        $user->details->citizenshipOtherR,
+        $user->details->employmentR,
+        $user->details->qualificationR,
+        $user->details->languageR
+    );
+});
