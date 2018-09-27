@@ -48,10 +48,10 @@
                     <div class="row">
                         <div class="col-md-12 col-6">
                             <img src="https://via.placeholder.com/250x250" alt="" class="img-thumbnail w-100 ml-1">
-                            <button class="btn custom-btn mb-1 mt-4" style="width: 60%; border: 0; border-radius: 0; font-weight: bold; font-size: 1.1em">
+                            <button class="btn custom-btn mb-1 mt-4 btn-block" style="border: 0; border-radius: 0; font-weight: bold; font-size: 1.1em">
                                 Upload Photo
                             </button>
-                            <button class="btn" style="width: 60%; background: #cccccc; color: #f0f0f0; font-weight: bold; border: 0; border-radius: 0; font-size: 1.1em">
+                            <button class="btn btn-block" style="background: #cccccc; color: #f0f0f0; font-weight: bold; border: 0; border-radius: 0; font-size: 1.1em">
                                 Delete Photo
                             </button>
                         </div>
@@ -371,10 +371,10 @@
                                 </label>
                                 <br>
                                 <img src="https://via.placeholder.com/100x100" alt="" class="mb-4">
-                                <button class="btn custom-btn mb-1" style="width: 80%; border: 0; border-radius: 0; font-weight: bold;">
+                                <button class="btn custom-btn mb-1 btn-block" style="border: 0; border-radius: 0; font-weight: bold;">
                                     Upload CV
                                 </button>
-                                <button class="btn" style="width: 80%; background: #cccccc; color: #f0f0f0; font-weight: bold; border: 0; border-radius: 0">
+                                <button class="btn btn-block" style="background: #cccccc; color: #f0f0f0; font-weight: bold; border: 0; border-radius: 0">
                                     Delete File
                                 </button>
                             </div>
