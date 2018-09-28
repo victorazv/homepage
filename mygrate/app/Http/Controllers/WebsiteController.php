@@ -7,6 +7,7 @@ use App\Employment;
 use App\English;
 use App\ExperienceInside;
 use App\ExperienceOutside;
+use App\ExtraPoint;
 use App\Language;
 use App\Occupation;
 use App\Qualification;
@@ -14,6 +15,7 @@ use App\Relationship;
 use App\User;
 use App\VisaType;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class WebsiteController extends Controller
 {
@@ -56,6 +58,7 @@ class WebsiteController extends Controller
         $visaTypes = VisaType::pluck('descr', 'id');
         $englishLevels = English::pluck('descr', 'id');
         $qualifications = Qualification::pluck('descr', 'id');
+        $extraPoints = ExtraPoint::pluck('descr', 'id');
 
         return view('profile_edit')
             ->with('user', $user)
@@ -68,11 +71,15 @@ class WebsiteController extends Controller
             ->with('experienceInside', $experienceInside)
             ->with('visaTypes', $visaTypes)
             ->with('englishLevels', $englishLevels)
-            ->with('qualifications', $qualifications);
+            ->with('qualifications', $qualifications)
+            ->with('extraPoints', $extraPoints);
     }
 
     public function profileUpdate(Request $request)
     {
-        dd($request->all());
+        $user = User::find(73);
+        $details = $user->details()->first()->fill($request->all());
+        $details->save();
+        return redirect(route('profile.view'));
     }
 }

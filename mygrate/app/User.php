@@ -32,6 +32,6 @@ class User extends Authenticatable
 
     public function details()
     {
-        return $this->hasOne(UserDetail::class, 'login_user', 'login');
+        return $this->belongsTo(UserDetail::class, 'login', 'login_user');
     }
 }

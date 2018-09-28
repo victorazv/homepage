@@ -10,6 +10,53 @@ class UserDetail extends Model
 
     protected $dates = ['qualif_date'];
 
+    protected $primaryKey = 'login_user';
+
+    public $incrementing = false;
+
+    public $timestamps = false;
+
+    public $fillable = [
+        'picture',
+        'name',
+        'surname',
+        'want_pay',
+        'age',
+        'citizenship',
+        'ot_citizenship',
+        'application_reason',
+        'marital_status',
+        'in_AU',
+        'visa_hold',
+        'visa_type',
+        'exp_date_visa',
+        'family_AU',
+        'employment',
+        'occupation',
+        'occupation_none',
+        'experience',
+        'experience_AU',
+        'qualification_level',
+        'AU_study_req',
+        'special_edu',
+        'extra_points',
+        'qualif_date',
+        'qualif_occupation',
+        'qualification_name',
+        'language',
+        'english_test',
+        'english_level',
+        'english_notest',
+        'cv',
+        'linkedin',
+        'comment',
+        'where_find',
+        'usr_tel',
+        'usr_skype',
+        'when_leave',
+        'usr_budget'
+    ];
+
     public function maritalStatusR()
     {
         return $this->belongsTo(Relationship::class, 'marital_status', 'id');

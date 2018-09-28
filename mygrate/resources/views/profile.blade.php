@@ -29,13 +29,13 @@
                     <div class="p-2 align-self-end d-none d-md-flex">
                         <ul class="nav justify-content-end">
                             <li class="nav-item">
-                                <a class="nav-link border-styled" href="#">Dashboard</a>
+                                <a class="nav-link border-styled" href="{{route('user')}}">Dashboard</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link active" href="#">View your Profile</a>
+                                <a class="nav-link active" href="{{route('profile.view')}}">View your Profile</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#">Edit Profile</a>
+                                <a class="nav-link" href="{{route('profile.edit')}}">Edit Profile</a>
                             </li>
                         </ul>
                     </div>
@@ -261,7 +261,7 @@
                                     Obtained in:
                                 </label>
                                 <br>
-                                <span class="custom-label-value">{{$user->details->qualif_date ? $user->details->qualif_date : '/'}}</span>
+                                <span class="custom-label-value">{{$user->details->qualif_date ? $user->details->qualif_date->format('Y') : '/'}}</span>
                             </div>
                             <div class="field-box w-100">
                                 <label for="age" class="custom-label">

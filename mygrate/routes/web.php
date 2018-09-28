@@ -15,7 +15,7 @@ use App\User;
 use Illuminate\Support\Facades\DB;
 
 Route::get('/', 'WebsiteController@index');
-Route::get('/user', 'WebsiteController@user')->name('home');
+Route::get('/user', 'WebsiteController@user')->name('user');
 Route::get('/profile/view', 'WebsiteController@profile')->name('profile.view');
 Route::get('/profile/edit', 'WebsiteController@profileEdit')->name('profile.edit');
 Route::post('/profile/update', 'WebsiteController@profileUpdate')->name('profile.update');

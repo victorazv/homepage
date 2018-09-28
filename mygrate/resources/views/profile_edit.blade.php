@@ -29,13 +29,13 @@
                     <div class="p-2 align-self-end d-none d-md-flex">
                         <ul class="nav justify-content-end">
                             <li class="nav-item">
-                                <a class="nav-link border-styled" href="#">Dashboard</a>
+                                <a class="nav-link border-styled" href="{{route('user')}}">Dashboard</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#">View your Profile</a>
+                                <a class="nav-link" href="{{route('profile.view')}}">View your Profile</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link active" href="#">Edit Profile</a>
+                                <a class="nav-link active" href="{{route('profile.edit')}}">Edit Profile</a>
                             </li>
                         </ul>
                     </div>
@@ -353,38 +353,49 @@
                                         Are the qualifications related to the occupation:
                                     </label>
                                     <br>
-                                    <input type="radio" name="sql1" id="yes" value="Y" checked><label
-                                            class="four radio_item1" for="yes">Yes</label>
-                                    <input type="radio" name="sql1" id="no" value="N"><label class="four radio_item1"
-                                                                                             for="no">No</label>
+                                    <input type="radio" name="qualifOccup" id="qualifOccupYes"
+                                           value="1" {{$user->details->qualifOccup ? 'checked' : ''}}><label
+                                            class="four radio_item1" for="qualifOccupYes">Yes</label>
+                                    <input type="radio" name="qualifOccup" id="qualifOccupNo"
+                                           value="0" {{!$user->details->qualifOccup ? 'checked' : ''}}><label
+                                            class="four radio_item1" for="qualifOccupNo">No</label>
                                 </div>
                                 <div class="field-box w-100">
                                     <label for="age" class="custom-label">
                                         Australia Study Requirements:
                                     </label>
                                     <br>
-                                    <input type="radio" name="sql2" id="yes" value="Y"><label class="four radio_item1"
-                                                                                              for="yes">Yes</label>
-                                    <input type="radio" name="sql2" id="no" value="N" checked><label
-                                            class="four radio_item1" for="no">No</label>
+                                    <input type="radio" name="AU_study_req" id="AU_study_reqYes"
+                                           value="1" {{$user->details->AU_study_req ? 'checked' : ''}}><label
+                                            class="four radio_item1" for="AU_study_reqYes">Yes</label>
+                                    <input type="radio" name="AU_study_req" id="AU_study_reqNo"
+                                           value="0" {{!$user->details->AU_study_req ? 'checked' : ''}}><label
+                                            class="four radio_item1" for="AU_study_reqNo">No</label>
                                 </div>
                                 <div class="field-box w-100">
                                     <label for="age" class="custom-label">
                                         Specialist Education Qualification:
                                     </label>
                                     <br>
-                                    <input type="radio" name="sql3" id="yes" value="Y"><label class="four radio_item1"
-                                                                                              for="yes">Yes</label>
-                                    <input type="radio" name="sql3" id="no" value="N" checked><label
-                                            class="four radio_item1" for="no">No</label>
+                                    <input type="radio" name="special_edu" id="special_eduYes"
+                                           value="1" {{$user->details->special_edu ? 'checked' : ''}}><label
+                                            class="four radio_item1" for="special_eduYes">Yes</label>
+                                    <input type="radio" name="special_edu" id="special_eduNo"
+                                           value="0" {{!$user->details->special_edu ? 'checked' : ''}}><label
+                                            class="four radio_item1" for="special_eduNo">No</label>
                                 </div>
                                 <div class="field-box w-100">
                                     <label for="age" class="custom-label">
                                         Other:
                                     </label>
                                     <br>
-                                    <textarea title="level_quali" class="form-control custom-textarea-input" rows="2">Accredited in a community language Partner Skill Qualifications
-                                </textarea>
+                                    <div class="div-select">
+                                        <select name="extra_points">
+                                            @foreach($extraPoints as $key => $opt)
+                                                <option value="{{$key}}" {{$user->details->extra_points == $key ? 'selected' : ''}}>{{$opt}}</option>
+                                            @endforeach
+                                        </select>
+                                    </div>
                                 </div>
                             </div>
                             <div class="row mt-5">
@@ -396,8 +407,7 @@
                                         Comments:
                                     </label>
                                     <br>
-                                    <textarea title="level_quali" class="form-control custom-textarea-input" rows="4">Sure, using a placeholder like lorem ipsum is tempting with its convenience - but ultimately it will hold you back. For starters, using a placeholder perpetuates the idea that content is secondary.
-                                </textarea>
+                                    <textarea title="comment" name="comment" class="form-control custom-textarea-input" rows="4">{{$user->details->comment}}</textarea>
                                 </div>
                                 <div class="field-box w-25 text-center">
                                     <label for="age" class="custom-label">
