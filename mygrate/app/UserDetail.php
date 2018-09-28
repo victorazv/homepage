@@ -8,6 +8,8 @@ class UserDetail extends Model
 {
     protected $table = 'mygrt_usr';
 
+    protected $dates = ['qualif_date'];
+
     public function maritalStatusR()
     {
         return $this->belongsTo(Relationship::class, 'marital_status', 'id');
@@ -66,6 +68,11 @@ class UserDetail extends Model
     public function extraPointR()
     {
         return $this->belongsTo(ExtraPoint::class, 'extra_points', 'id');
+    }
+
+    public function englishR()
+    {
+        return $this->belongsTo(English::class, 'english_test', 'id');
     }
 
 
