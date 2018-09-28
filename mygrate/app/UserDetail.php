@@ -6,7 +6,12 @@ use Illuminate\Database\Eloquent\Model;
 
 class UserDetail extends Model
 {
+    protected $fillable = [
+        'login_user', 'age', 'citizenship', 'ot_citizenship', 'application_reason',
+    ];
+
     protected $table = 'mygrt_usr';
+    public $timestamps = false;
 
     protected $dates = ['qualif_date'];
 
