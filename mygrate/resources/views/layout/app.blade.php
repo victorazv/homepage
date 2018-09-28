@@ -13,7 +13,7 @@
     <!-- Estilo do Bootstrap -->
     <link rel="stylesheet" href="{{asset('vendor/bootstrap-4/css/bootstrap.css')}}">
     <!-- Estilo de trabalho -->
-    <link rel="stylesheet" href="{{asset('css/estilo2.css')}}">
+    <link rel="stylesheet" href="{{asset('css/estilo2.css')}}">    
     @stack('header-scripts')
 </head>
 <body>

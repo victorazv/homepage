@@ -14,6 +14,8 @@ use App\Qualification;
 use App\Relationship;
 use App\User;
 use App\VisaType;
+use App\UserDetail;
+
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -27,6 +29,31 @@ class WebsiteController extends Controller
     public function user()
     {
         return view('user');
+    }
+
+    public function form()
+    {
+        $user = User::with(['details','details.maritalStatusR',
+            'details.citizenshipR',
+            'details.citizenshipOtherR',
+            'details.employmentR',
+            'details.qualificationR',
+            'details.languageR'])->find(73);
+        $citizenship = Country::pluck('descr', 'id');
+        $languages = Language::pluck('descr', 'id');
+        $qualifications = Qualification::pluck('descr', 'id');
+
+        return view('form')
+            ->with('user', $user)
+            ->with('citizenship', $citizenship)
+            ->with('languages', $languages)
+            ->with('qualifications', $qualifications);
+    }
+
+    public function formInsert(Request $request)
+    {           
+        $user = UserDetail::create($request->all());
+        return redirect('form');
     }
 
     public function profile()
