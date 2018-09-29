@@ -19,8 +19,6 @@ class UserDetail extends Model
 
     public $incrementing = false;
 
-    public $timestamps = false;
-
     public $fillable = [
         'picture',
         'name',
