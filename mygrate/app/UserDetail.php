@@ -6,19 +6,6 @@ use Illuminate\Database\Eloquent\Model;
 
 class UserDetail extends Model
 {
-    protected $fillable = [
-        'login_user', 'age', 'citizenship', 'ot_citizenship', 'application_reason',
-    ];
-
-    protected $table = 'mygrt_usr';
-    public $timestamps = false;
-
-    protected $dates = ['qualif_date'];
-
-    protected $primaryKey = 'login_user';
-
-    public $incrementing = false;
-
     public $fillable = [
         'picture',
         'name',
@@ -59,6 +46,16 @@ class UserDetail extends Model
         'when_leave',
         'usr_budget'
     ];
+
+    protected $table = 'mygrt_usr';
+    public $timestamps = false;
+
+    protected $dates = ['qualif_date'];
+
+    protected $primaryKey = 'login_user';
+
+    public $incrementing = false;
+
 
     public function maritalStatusR()
     {
