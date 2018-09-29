@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class UserDetail extends Model
 {
     public $fillable = [
+        'login_user',
         'picture',
         'name',
         'surname',

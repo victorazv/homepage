@@ -46,7 +46,7 @@
 	<section  id="sec_1" class="how-it-works py-3">
 		<div class="container">
 			<div class="row d-sm-flex justify-content-center">
-				<div class="col-md-4 px-0 pr-md-3 d-flex flex-wrap sec_1">
+				<div class="col-md-4 px-0 pr-md-3 flex-wrap sec_1">
 					<div class="sec_3 col-md-12 ">
 						<div class="mt-4 ml-2">
 							<img src="images/img_form_01.png" class="d-none d-md-block" alt="paper">
@@ -102,16 +102,16 @@
 	<section id="sec_1a" class="how-it-works py-3">
 		<div class="container">
 			<div class="row d-sm-flex justify-content-center">
-				<div class="col-md-4 px-0 pr-md-3 d-flex flex-wrap sec_1">
+				<div class="col-md-4 px-0 pr-md-3 flex-wrap sec_1">
 					<div class="sec_3 col-md-12">
 						<div class="mt-4 ml-2">
 							<img src="images/img_form_01.png" class="d-none d-md-block" alt="paper">
 						</div>
-						<p class="col-12 col-md-9 ml-md-3 pl-0 pl-md-3">
+						<span class="col-12 col-md-9 ml-md-3 pl-0 pl-md-3">
 							<img src="images/img1_small.png" class=" d-sm-none">
-							<span class="card_title d-none d-md-block">Things you need to know</span>
+							<span class="card_title d-none d-md-block col-8">Things you need to know</span>
 							<span class="card_title2 d-sm-none">Things you need to know</span>
-						</p>
+						</span>
 						
 					</div>
 					<div class="col-md-12 subcard">
@@ -192,16 +192,16 @@
 	<section id="sec_1b" class="how-it-works py-3">
 		<div class="container">
 			<div class="row d-sm-flex justify-content-center">
-				<div class="col-md-4 px-0 pr-md-3 d-flex flex-wrap sec_1">
+				<div class="col-md-4 px-0 pr-md-3 flex-wrap sec_1">
 					<div class="sec_3 col-md-12">
 						<div class="mt-4 ml-2">
 							<img src="images/img_form_01.png" class="d-none d-md-block" alt="paper">
 						</div>
-						<p class="col-12 col-md-9 ml-md-3 pl-0 pl-md-3">
+						<span class="col-12 col-md-9 ml-md-3 pl-0 pl-md-3">
 							<img src="images/img1_small.png" class="d-sm-none">
-							<span class="card_title d-none d-md-block">Things you need to know</span>
+							<span class="card_title d-none d-md-block col-8">Things you need to know</span>
 							<span class="card_title2 d-sm-none">Things you need to know</span>
-						</p>
+						</span>
 					</div>
 					<div class="col-md-12 subcard">
 						<h1 class="ml-4 mb-0 d-none d-md-block" style="font-size: 50px; color: #fff">b.</h1>
@@ -276,7 +276,7 @@
 	<section id="sec_2" class="how-it-works py-3">
 		<div class="container">
 			<div class="row d-sm-flex justify-content-center">
-				<div class="col-md-4 d-flex px-0 pr-md-4 mb-4 flex-wrap sec_1">
+				<div class="col-md-4 px-0 pr-md-4 mb-4 flex-wrap sec_1">
 					<div class="sec_3 col-md-12">
 						<div class="mt-4 ml-2">
 							<img src="images/img_form_02.png" class="d-none d-md-block" alt="">
@@ -328,17 +328,19 @@
 	<section id="sec_2a" class="how-it-works py-3">		
 		<div class="container">
 			<div class="row d-sm-flex justify-content-center">
-				<div class="col-md-4 px-0 pr-md-3 d-flex flex-wrap sec_1">
+
+			
+				<div class="col-md-4 px-0 pr-md-4 mb-4 flex-wrap sec_1">
 					<div class="sec_3 col-md-12">
 						<div class="mt-4 ml-2">
-							<img src="images/img_form_02.png" class="d-none d-md-block" alt="paper">
-						</div>
-						<p class="col-12 col-md-9 ml-md-3 pl-0 pl-md-3">
+							<img src="images/img_form_02.png" class="d-none d-md-block" alt="">
+						</div>						
+						<span class="col-12 col-md-9 ml-md-3 pl-0 pl-md-3">
 							<img src="images/img2_small.png" class="d-sm-none">
 							<span class="card_title d-none d-md-block">About <br> Migration Agents</span>
 							<span class="card_title2 d-sm-none">About Migration Agents</span>
-						</p>
-					</div>
+						</span>
+					</div>								
 					<div class="col-md-12 subcard">
 						<h1 class="ml-4 mb-0 d-none d-md-block" style="font-size: 50px; color: #fff">a.</h1>
 						<div class="d-flex mb-0 col-md-12 px-0">
