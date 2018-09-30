@@ -14,59 +14,54 @@
 
 @section('content')
     <main class="mb-3">
-        <section class="user-welcome d-none d-md-flex">
-            <div class="container-fluid m-0 p-0">
-                <div class="d-flex justify-content-around">
-                    <div class="d-flex flex-column p-2">
-                        <div>
-                            <img src="https://via.placeholder.com/80" alt=""
-                                 class="img-thumbnail img-responsive invisible">
-                        </div>
-                        <div class="">
-                            <h5 class="d-none">Hello, Abhishek Mohan Kaushal</h5>
-                        </div>
-                    </div>
-                    <div class="p-2 align-self-end d-none d-md-flex">
-                        <ul class="nav justify-content-end">
-                            <li class="nav-item">
-                                <a class="nav-link border-styled" href="{{route('user')}}">Dashboard</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="{{route('profile.view')}}">View your Profile</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link active" href="{{route('profile.edit')}}">Edit Profile</a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
+        <section class="user-welcome d-flex flex-column-reverse">
+            <div class="p-2 align-self-end mr-md-5">
+                <ul class="nav">
+                    <li class="nav-item">
+                        <a class="nav-link border-styled" href="{{route('user')}}">Dashboard</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{route('profile.view')}}">View your Profile</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="{{route('profile.edit')}}">Edit Profile</a>
+                    </li>
+                </ul>
             </div>
         </section>
         <div class="container">
-            <form action="{{route('profile.update')}}" method="post">
+            <form action="{{route('profile.update')}}" method="post" enctype='multipart/form-data'>
                 {{csrf_field()}}
                 <div class="row">
                     <div class="col-md-3 mt-3">
                         <div class="row">
                             <div class="col-md-12 col-6">
-                                <img src="https://via.placeholder.com/250x250" alt="" class="img-thumbnail w-100 ml-1">
-                                <button class="btn custom-btn mb-1 mt-4 btn-block"
-                                        style="border: 0; border-radius: 0; font-weight: bold; font-size: 1.1em">
-                                    Upload Photo
-                                </button>
-                                <button class="btn btn-block"
-                                        style="background: #cccccc; color: #f0f0f0; font-weight: bold; border: 0; border-radius: 0; font-size: 1.1em">
+                                @if($profilePicUrl)
+                                    <img src="{{asset($profilePicUrl)}}" alt="" class="img-thumbnail w-100 ml-1"
+                                         style="max-width: 250px; max-height: 250px">
+                                @else
+                                    <img src="{{asset('images/no_pic.jpg')}}" alt="" class="img-thumbnail w-100 ml-1"
+                                         style="max-width: 250px; max-height: 250px">
+                                @endif
+                                <div class="upload-btn-wrapper">
+                                    <button class="upload-btn btn custom-btn mb-1 mt-4 btn-block">Upload photo</button>
+                                    <input type="file" name="picture"/>
+                                </div>
+                                <a class="btn btn-block" href="{{route('profile.deletePhoto')}}"
+                                   style="background: #cccccc; color: #f0f0f0; font-weight: bold; border: 0; border-radius: 0; font-size: 1.1em">
                                     Delete Photo
-                                </button>
+                                </a>
                             </div>
                             <div class="col-md-12 col-6 mt-5">
-                                <h2 class="mt-4 mb-4 profile-name">Abhishek Mohan Kaushal</h2>
+                                <h2 class="mt-4 mb-4 profile-name"><input
+                                            title="english_level" type="text" class="form-control custom-input-sidebar"
+                                            name="linkedin" value="{{$user->details->name}}"></h2>
                                 <div class="profile-info w-100"><i class="fa fa-envelope mr-1"></i> <input
                                             title="english_level" type="text" class="form-control custom-input-sidebar"
-                                            name="email" value="er.abhishekmohan@gmail.com"></div>
-                                <div class="profile-info w-100"><i class="fa fa-linkedin mr-1"></i> <input
+                                            name="email" value="{{$user->details->login_user}}"></div>
+                                <div class="profile-info w-100"><i class="fa fa-linkedin mr-1"></i> / <input
                                             title="english_level" type="text" class="form-control custom-input-sidebar"
-                                            name="linkedin" value="/abhishekmohankaushal"></div>
+                                            name="linkedin" value="{{$user->details->linkedin}}"></div>
                             </div>
                         </div>
                         <div class="row mt-4">
@@ -74,7 +69,7 @@
                                 <i class="fa fa-exclamation-circle mr-2"></i>
                             </div>
                             <div class="col-10">
-                                <span><b>Abhishek</b> is willing to pay for a consultation</span>
+                                <span><b>{{$user->details->name}}</b> is willing to pay for a consultation</span>
                             </div>
                         </div>
                         <div class="row mt-1">
@@ -407,22 +402,30 @@
                                         Comments:
                                     </label>
                                     <br>
-                                    <textarea title="comment" name="comment" class="form-control custom-textarea-input" rows="4">{{$user->details->comment}}</textarea>
+                                    <textarea title="comment" name="comment" class="form-control custom-textarea-input"
+                                              rows="4">{{$user->details->comment}}</textarea>
                                 </div>
                                 <div class="field-box w-25 text-center">
                                     <label for="age" class="custom-label">
                                         CV:
                                     </label>
                                     <br>
-                                    <img src="https://via.placeholder.com/100x100" alt="" class="mb-4">
-                                    <button class="btn custom-btn mb-1 btn-block"
-                                            style="border: 0; border-radius: 0; font-weight: bold;">
-                                        Upload CV
-                                    </button>
-                                    <button class="btn btn-block"
-                                            style="background: #cccccc; color: #f0f0f0; font-weight: bold; border: 0; border-radius: 0">
+                                    @if($user->details->cv)
+                                        <div class="mt-4">
+                                            <a href="{{$profileCvUrl}}" download target="_blank">
+                                                <i class="fa fa-file fa-5x" aria-hidden="true"></i>
+                                            </a>
+                                        </div>
+                                    @endif
+
+                                    <div class="upload-btn-wrapper">
+                                        <button class="upload-btn btn custom-btn mb-1 mt-4 btn-block">Upload CV</button>
+                                        <input type="file" name="cv"/>
+                                    </div>
+                                    <a class="btn btn-block" href="{{route('profile.deleteCV')}}"
+                                       style="background: #cccccc; color: #f0f0f0; font-weight: bold; border: 0; border-radius: 0; font-size: 1.1em">
                                         Delete File
-                                    </button>
+                                    </a>
                                 </div>
                             </div>
                         </div>

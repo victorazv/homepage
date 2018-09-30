@@ -19,6 +19,8 @@ Route::get('/user', 'WebsiteController@user')->name('user');
 Route::get('/profile/view', 'WebsiteController@profile')->name('profile.view');
 Route::get('/profile/edit', 'WebsiteController@profileEdit')->name('profile.edit');
 Route::post('/profile/update', 'WebsiteController@profileUpdate')->name('profile.update');
+Route::get('/profile/deletePhoto', 'WebsiteController@deletePhoto')->name('profile.deletePhoto');
+Route::get('/profile/deleteCV', 'WebsiteController@deleteCV')->name('profile.deleteCV');
 Route::get('/form', 'WebsiteController@form');
 Route::post('/form_insert', 'WebsiteController@formInsert')->name('form.insert');
 

@@ -18,6 +18,7 @@ use App\UserDetail;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Storage;
 
 class WebsiteController extends Controller
 {
@@ -28,17 +29,35 @@ class WebsiteController extends Controller
 
     public function user()
     {
-        return view('user');
-    }
-
-    public function form()
-    {
-        $user = User::with(['details','details.maritalStatusR',
+        $user = User::with([
+            'details',
+            'details.maritalStatusR',
             'details.citizenshipR',
             'details.citizenshipOtherR',
             'details.employmentR',
             'details.qualificationR',
-            'details.languageR'])->find(73);
+            'details.languageR'
+        ])->find(73);
+        $profilePicUrl = null;
+        if($user->details->picture) {
+            $profilePicUrl = Storage::url($user->details->picture);
+        }
+        return view('user')
+            ->with('user', $user)
+            ->with('profilePicUrl', $profilePicUrl);
+    }
+
+    public function form()
+    {
+        $user = User::with([
+            'details',
+            'details.maritalStatusR',
+            'details.citizenshipR',
+            'details.citizenshipOtherR',
+            'details.employmentR',
+            'details.qualificationR',
+            'details.languageR'
+        ])->find(73);
         $citizenship = Country::pluck('descr', 'id');
         $languages = Language::pluck('descr', 'id');
         $qualifications = Qualification::pluck('descr', 'id');
@@ -51,30 +70,61 @@ class WebsiteController extends Controller
     }
 
     public function formInsert(Request $request)
-    {           
+    {
         $user = UserDetail::create($request->all());
         return redirect('form');
     }
 
     public function profile()
     {
-        $user = User::with(['details','details.maritalStatusR',
+        $user = User::with([
+            'details',
+            'details.maritalStatusR',
             'details.citizenshipR',
             'details.citizenshipOtherR',
             'details.employmentR',
             'details.qualificationR',
-            'details.languageR'])->find(73);
-        return view('profile')->with('user', $user);
+            'details.languageR'
+        ])->find(73);
+
+        $profilePicUrl = null;
+        if($user->details->picture) {
+            $profilePicUrl = Storage::url($user->details->picture);
+        }
+
+        $profileCvUrl = null;
+        if($user->details->picture) {
+            $profileCvUrl = Storage::url($user->details->cv);
+        }
+
+        return view('profile')
+            ->with('user', $user)
+            ->with('profilePicUrl', $profilePicUrl)
+            ->with('profileCvUrl', $profileCvUrl);
     }
 
     public function profileEdit()
     {
-        $user = User::with(['details','details.maritalStatusR',
+        $user = User::with([
+            'details',
+            'details.maritalStatusR',
             'details.citizenshipR',
             'details.citizenshipOtherR',
             'details.employmentR',
             'details.qualificationR',
-            'details.languageR'])->find(73);
+            'details.languageR'
+        ])->find(73);
+
+        $profilePicUrl = null;
+        if($user->details->picture) {
+            $profilePicUrl = Storage::url($user->details->picture);
+        }
+
+        $profileCvUrl = null;
+        if($user->details->picture) {
+            $profileCvUrl = Storage::url($user->details->cv);
+        }
+
         $citizenship = Country::pluck('descr', 'id');
         $languages = Language::pluck('descr', 'id');
         $maritalStatus = Relationship::pluck('descr', 'id');
@@ -99,13 +149,43 @@ class WebsiteController extends Controller
             ->with('visaTypes', $visaTypes)
             ->with('englishLevels', $englishLevels)
             ->with('qualifications', $qualifications)
-            ->with('extraPoints', $extraPoints);
+            ->with('extraPoints', $extraPoints)
+            ->with('profilePicUrl', $profilePicUrl)
+            ->with('profileCvUrl', $profileCvUrl);
     }
 
     public function profileUpdate(Request $request)
     {
         $user = User::find(73);
         $details = $user->details()->first()->fill($request->all());
+        if ($request->hasFile('picture')) {
+            $PicfileName = $user->id . '_pic_' . time() . '.' . $request->file('picture')->getClientOriginalExtension();
+            Storage::putFileAs('public', $request->file('picture'), $PicfileName);
+            $details->picture = $PicfileName;
+        }
+        if ($request->hasFile('cv')) {
+            $CvfileName = $user->id . '_cv_' . time() . '.' . $request->file('cv')->getClientOriginalExtension();
+            Storage::putFileAs('public', $request->file('cv'), $CvfileName);
+            $details->cv = $CvfileName;
+        }
+        $details->save();
+        return redirect(route('profile.view'));
+    }
+
+    public function deletePhoto(Request $request)
+    {
+        $user = User::find(73);
+        $details = $user->details()->first();
+        $details->picture = null;
+        $details->save();
+        return redirect(route('profile.view'));
+    }
+
+    public function deleteCV(Request $request)
+    {
+        $user = User::find(73);
+        $details = $user->details()->first();
+        $details->cv = null;
         $details->save();
         return redirect(route('profile.view'));
     }

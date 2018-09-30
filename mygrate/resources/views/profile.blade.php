@@ -14,32 +14,19 @@
 
 @section('content')
     <main class="mb-3">
-        <section class="user-welcome d-none d-md-flex">
-            <div class="container-fluid m-0 p-0">
-                <div class="d-flex justify-content-around">
-                    <div class="d-flex flex-column p-2">
-                        <div>
-                            <img src="https://via.placeholder.com/80" alt=""
-                                 class="img-thumbnail img-responsive invisible">
-                        </div>
-                        <div class="">
-                            <h5 class="d-none">Hello, {{$user->details->name}}</h5>
-                        </div>
-                    </div>
-                    <div class="p-2 align-self-end d-none d-md-flex">
-                        <ul class="nav justify-content-end">
-                            <li class="nav-item">
-                                <a class="nav-link border-styled" href="{{route('user')}}">Dashboard</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link active" href="{{route('profile.view')}}">View your Profile</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="{{route('profile.edit')}}">Edit Profile</a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
+        <section class="user-welcome d-flex flex-column-reverse">
+            <div class="p-2 align-self-end mr-md-5">
+                <ul class="nav">
+                    <li class="nav-item">
+                        <a class="nav-link border-styled" href="{{route('user')}}">Dashboard</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="{{route('profile.view')}}">View your Profile</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{route('profile.edit')}}">Edit Profile</a>
+                    </li>
+                </ul>
             </div>
         </section>
         <div class="container">
@@ -47,7 +34,11 @@
                 <div class="col-md-3 mt-3">
                     <div class="row">
                         <div class="col-md-12 col-6">
-                            <img src="https://via.placeholder.com/250x250" alt="" class="img-thumbnail w-100 ml-1">
+                            @if($profilePicUrl)
+                                <img src="{{asset($profilePicUrl)}}" alt="" class="img-thumbnail w-100 ml-1" style="max-width: 250px; max-height: 250px">
+                            @else
+                                <img src="{{asset('images/no_pic.jpg')}}" alt="" class="img-thumbnail w-100 ml-1" style="max-width: 250px; max-height: 250px">
+                            @endif
                         </div>
                         <div class="col-md-12 col-6">
                             <h2 class="mt-4 mb-4 profile-name">{{$user->details->name . ' ' . $user->details->surname}}</h2>
@@ -303,15 +294,19 @@
                                 <br>
                                 <p class="custom-label-value">{{$user->details->comment ? $user->details->comment : ''}}</p>
                             </div>
-                            <div class="field-box w-100">
-                                <label for="age" class="custom-label">
-                                    CV:
-                                </label>
-                                <br>
-                                <span class="custom-label-value">
-
-                            </span>
-                            </div>
+                            @if($user->details->cv)
+                                <div class="field-box w-100">
+                                    <label for="age" class="custom-label">
+                                        CV:
+                                    </label>
+                                    <br>
+                                    <div class="mt-4">
+                                        <a href="{{$profileCvUrl}}" download target="_blank">
+                                            <i class="fa fa-file fa-5x" aria-hidden="true"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            @endif
                         </div>
                     </div>
                 </div>

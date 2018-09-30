@@ -19,13 +19,17 @@
                 <div class="d-flex justify-content-around">
                     <div class="d-flex flex-column p-2">
                         <div>
-                            <img src="https://via.placeholder.com/80" alt="" class="img-thumbnail img-responsive">
+                            @if($profilePicUrl)
+                                <img src="{{asset($profilePicUrl)}}" alt="" class="img-thumbnail img-responsive" style="max-width: 80px; max-height: 80px;">
+                            @else
+                                <img src="{{asset('images/no_pic.jpg')}}" alt="" class="img-thumbnail img-responsive" style="max-width: 80px; max-height: 80px;">
+                            @endif
                         </div>
                         <div class="">
-                            <h5>Hello, Abhishek Mohan Kaushal</h5>
+                            <h5>Hello, {{$user->details->name . ' ' . $user->details->surname}}</h5>
                         </div>
                     </div>
-                    <div class="p-2 align-self-end d-none d-md-flex">
+                    <div class="p-2 align-self-end">
                         <ul class="nav justify-content-end">
                             <li class="nav-item">
                                 <a class="nav-link active border-styled" href="{{route('user')}}">Dashboard</a>
