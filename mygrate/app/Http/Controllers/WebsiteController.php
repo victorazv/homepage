@@ -15,6 +15,7 @@ use App\Relationship;
 use App\User;
 use App\VisaType;
 use App\UserDetail;
+use App\EnglishTests;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -84,7 +85,9 @@ class WebsiteController extends Controller
             'details.citizenshipOtherR',
             'details.employmentR',
             'details.qualificationR',
-            'details.languageR'
+            'details.languageR',
+            'details.ListEnglishTestsR',
+            'details.englishR'
         ])->find(73);
 
         $profilePicUrl = null;
@@ -136,6 +139,7 @@ class WebsiteController extends Controller
         $englishLevels = English::pluck('descr', 'id');
         $qualifications = Qualification::pluck('descr', 'id');
         $extraPoints = ExtraPoint::pluck('descr', 'id');
+        $englishTests = EnglishTests::pluck('descr', 'id');
 
         return view('profile_edit')
             ->with('user', $user)
@@ -151,7 +155,8 @@ class WebsiteController extends Controller
             ->with('qualifications', $qualifications)
             ->with('extraPoints', $extraPoints)
             ->with('profilePicUrl', $profilePicUrl)
-            ->with('profileCvUrl', $profileCvUrl);
+            ->with('profileCvUrl', $profileCvUrl)
+            ->with('englishTests', $englishTests);
     }
 
     public function profileUpdate(Request $request)

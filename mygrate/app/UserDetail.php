@@ -123,5 +123,8 @@ class UserDetail extends Model
         return $this->belongsTo(English::class, 'english_test', 'id');
     }
 
-
+    public function ListEnglishTestsR()
+    {
+        return $this->belongsTo(EnglishTests::class, 'english_level', 'id');
+    }
 }

@@ -204,29 +204,21 @@
                                     English language proficiency test in the last 36 months:
                                 </label>
                                 <br>
-                                <span class="custom-label-value">{{$user->details->languageR ? $user->details->languageR->descr : '/'}}</span>
+                                <span class="custom-label-value">{{$user->details->ListEnglishTestsR ? $user->details->ListEnglishTestsR->descr : '/'}}</span>
                             </div>
                             <div class="field-box w-100">
                                 <label for="age" class="custom-label">
                                     Score obtained:
                                 </label>
                                 <br>
-                                <span class="custom-label-value">COMPETENT ENGLISH: Passport
-                                from UK, USA, Ireland, Canada or
-                                NZ; or IELTS 6+ in each component;
-                                or PTE Academic 50+ in each
-                                component; or Cambridge (CAE)
-                                169+ in each component; or
-                                TOEFL iBT 12 in Listening, 13
-                                Reading, 21 Writing, 18 Speaking.
-                            </span>
+                                <span class="custom-label-value">{{$user->details->english_notest ? $user->details->english_notest : '/'}}</span>
                             </div>
                             <div class="field-box w-100">
                                 <label for="age" class="custom-label">
                                     How would you consider your level of English?
                                 </label>
                                 <br>
-                                <span class="custom-label-value">/</span>
+                                <span class="custom-label-value">{{$user->details->englishR ? $user->details->englishR->descr : '/'}}</span>
                             </div>
                         </div>
                         <div class="row mt-5">

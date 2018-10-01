@@ -285,17 +285,9 @@
                                         English language proficiency test in the last 36 months:
                                     </label>
                                     <br>
-                                    <input title="english_level" type="text" class="form-control custom-input"
-                                           value="/">
-                                </div>
-                                <div class="field-box w-100">
-                                    <label for="age" class="custom-label">
-                                        Score obtained:
-                                    </label>
-                                    <br>
                                     <div class="div-select">
                                         <select name="english_test">
-                                            @foreach($englishLevels as $key => $opt)
+                                            @foreach($englishTests as $key => $opt)
                                                 <option value="{{$key}}" {{$user->details->english_test == $key ? 'selected' : ''}}>{{$opt}}</option>
                                             @endforeach
                                         </select>
@@ -303,11 +295,23 @@
                                 </div>
                                 <div class="field-box w-100">
                                     <label for="age" class="custom-label">
+                                        Score obtained:
+                                    </label>
+                                    <br>
+                                    <input name="english_notest" type="text" class="form-control custom-input">
+                                </div>
+                                <div class="field-box w-100">
+                                    <label for="age" class="custom-label">
                                         How would you consider your level of English?
                                     </label>
                                     <br>
-                                    <input title="english_level" type="text" class="form-control custom-input"
-                                           value="/">
+                                    <div class="div-select">
+                                        <select name="english_level">
+                                            @foreach($englishLevels as $key => $opt)
+                                                <option value="{{$key}}" {{$user->details->english_level == $key ? 'selected' : ''}}>{{$opt}}</option>
+                                            @endforeach
+                                        </select>
+                                    </div>
                                 </div>
                             </div>
                             <div class="row mt-5">
@@ -340,7 +344,7 @@
                                         Obtained in:
                                     </label>
                                     <br>
-                                    <input title="english_level" type="text" class="form-control custom-input"
+                                    <input title="english_level" type="number" class="form-control custom-input"
                                            value="{{$user->details->qualif_date ? $user->details->qualif_date->format('Y') : ''}}">
                                 </div>
                                 <div class="field-box w-100">

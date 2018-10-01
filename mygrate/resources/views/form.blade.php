@@ -429,7 +429,7 @@
                         {{csrf_field()}}
                         <div>
 						    <label class="col-md-12 d-flex p-0 flex-lg-wrap">How old are you?*</label>
-						    <input name="age" type="numeric" name="" id="old" value="" onchange="changeBackground('old'); updateProgress();" required>
+						    <input name="age" type="number" name="" id="old" value="" onchange="changeBackground('old'); updateProgress();" required>
                         </div>
                         <div>
                             <label class="col-md-12 d-flex p-0 flex-lg-wrap">What is your Country of Citizenship?*</label>
