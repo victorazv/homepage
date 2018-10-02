@@ -75,7 +75,7 @@
 
 		</div>
 		<div class="question w-100 offset-md-2 col-md-8 col-xs-12">
-			<a href="#"><button class="float-right mt-3 mr-4">Continue</button></a>
+			<a href="paf4"><button class="float-right mt-3 mr-4">Continue</button></a>
 		</div>
 		
 		
@@ -87,8 +87,8 @@
 				</div>
 			</div>
 			<div class="col-md-2 mt-2 pl-0">
-				<a href="paf2"><img src="images/img_previous.png"></a>
-				<a href="#" id="btn_1"><img src="images/img_next.png"></a>
+				<a href="paf2a"><img src="images/img_previous.png"></a>
+				<a href="paf4" id="btn_1"><img src="images/img_next.png"></a>
 			</div>
 		</div>
 	</section>

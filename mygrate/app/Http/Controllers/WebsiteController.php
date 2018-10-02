@@ -247,4 +247,23 @@ class WebsiteController extends Controller
             ->with('qualifications', $qualifications);
     }
 
+    public function paf4()
+    {
+        return view('paf4');
+    }
+
+    public function paf4a()
+    {
+        return view('paf4a');
+    }
+
+    public function paf5()
+    {
+        return view('paf5');
+    }
+
+    public function paf6()
+    {
+        return view('paf6');
+    }
 }

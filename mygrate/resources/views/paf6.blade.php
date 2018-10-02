@@ -17,8 +17,8 @@
 						</div>
 						<p class="col-12 col-md-10 ml-md-3 pl-0 pl-md-3">
 							<img src="images/img1_small.png" class=" d-sm-none">
-							<span class="card_title d-none d-md-block">Something about your Occupation</span>
-							<span class="card_title2 d-sm-none">Something about your Occupation</span>
+							<span class="card_title d-none d-md-block">Your English Language Ability</span>
+							<span class="card_title2 d-sm-none">Your English Language Ability</span>
 						</p>
 					</div>
 				</div>
@@ -27,28 +27,19 @@
 						<img src="images/icon_i.png">
 					</div>
 					<h5 class="text_sec_1 mb-4 offset-xs-2 col-xs-10">
-                        A skills assessment should not be confused with licensing or registration.
+						Any Visa application will require you to provide
+						a certain amount of documents.
+						All documents must be in English or be
+						accompanied with English translations.
 					</h5>
-					<h5 class="text_sec_1 mb-4"> 
-                        - a <strong class="sec_4_strong">skills assessment</strong> helps you to determine
-                        whether your skills and experience is relevant to
-                        Australian standards in your occupation.
-					</h5>
-					<h5 class="text_sec_1 mb-4">
-                      - a <strong class="sec_4_strong">registration</strong> or <strong class="sec_4_strong">licensing</strong> means you have
-                        permission to practise in Australia.
-					</h5>
-                    <h5 class="text_sec_1 mb-4">
-                        In some cases, a successful skills assessment is
-                        also required in addition to meeting the licensing
-                        and registration requirements.
-                   </h5>
+					
+					
 				</div>
 			</div>
 		</div>
 
 		<div class="question w-100 offset-md-2 col-md-8 col-xs-12">
-			<a href="/paf5"><button class="float-right mt-3 mr-4">I Understand</button></a>
+			<a href="/paf6"><button class="float-right mt-3 mr-4">Continue</button></a>
 		</div>
 
 		<div class="percent_bar col-12 pl-0 d-flex">
@@ -59,8 +50,8 @@
 				</div>
 			</div>
 			<div class="col-md-2 mt-2 pl-0">
-				<a href="/paf4a"><img src="images/img_previous.png"></a>
-				<a href="/paf5" id="btn_1"><img src="images/img_next.png"></a>
+				<a href="/paf5"><img src="images/img_previous.png"></a>
+				<a href="/paf6" id="btn_1"><img src="images/img_next.png"></a>
 			</div>
 		</div>
 	</section>

@@ -133,13 +133,13 @@ section.banner_form {
     font-weight: 300;
     font-family: 'Muli';
     color: #000;
-    text-align: justify;
+    text-align: left;
 }
 
 .sec_1a_text{
     font-size: 12px;
     font-weight: 500;
-    text-align: justify;
+    text-align: left;
     font-family: 'Muli';
 }
 
@@ -157,27 +157,27 @@ section.banner_form {
 
 .text_sec_2{
     font-size: 20px;
-    text-align: justify;
+    text-align: left;
 }
 
 .text_sec_2a{
     font-size: 18px;
-    text-align: justify;
+    text-align: left;
 }
 
 .text_sec_2a_minor{
     font-size: 13px;
-    text-align: justify;   
+    text-align: left;   
 }
 
 .text_sec_2_minor{
     font-size: 13px;
-    text-align: justify;
+    text-align: left;
 }
 
 .text_sec_2a_bottom{
     font-size: 18px;
-    text-align: justify;
+    text-align: left;
     font-weight: 800;
 }
 
@@ -218,4 +218,12 @@ section.banner_form {
     border: none;
     padding: 5px 20px;
     font-size: 15px;
+}
+
+.text_sec_4_small{
+    font-size: 0.8em;
+}
+
+.sec_4_strong{
+    font-weight: 700;
 }
