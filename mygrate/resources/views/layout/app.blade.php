@@ -14,6 +14,10 @@
     <link rel="stylesheet" href="{{asset('vendor/bootstrap-4/css/bootstrap.css')}}">
     <!-- Estilo de trabalho -->
     <link rel="stylesheet" href="{{asset('css/estilo2.css')}}">    
+    
+    <link rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+    
     @stack('header-scripts')
 </head>
 <body>

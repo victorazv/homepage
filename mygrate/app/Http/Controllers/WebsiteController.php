@@ -194,4 +194,57 @@ class WebsiteController extends Controller
         $details->save();
         return redirect(route('profile.view'));
     }
+
+    public function paf()
+    {
+        return view('paf');
+    }
+
+    public function paf1()
+    {
+        return view('paf1');
+    }
+
+    public function paf1a()
+    {
+        return view('paf1a');
+    }
+
+    public function paf1b()
+    {
+        return view('paf1b');
+    }
+
+    public function paf2()
+    {
+        return view('paf2');
+    }
+
+    public function paf2a()
+    {
+        return view('paf2a');
+    }
+
+    public function paf3()
+    {
+        $user = User::with([
+            'details',
+            'details.maritalStatusR',
+            'details.citizenshipR',
+            'details.citizenshipOtherR',
+            'details.employmentR',
+            'details.qualificationR',
+            'details.languageR'
+        ])->find(73);
+        $citizenship = Country::pluck('descr', 'id');
+        $languages = Language::pluck('descr', 'id');
+        $qualifications = Qualification::pluck('descr', 'id');
+
+        return view('paf3')
+            ->with('user', $user)
+            ->with('citizenship', $citizenship)
+            ->with('languages', $languages)
+            ->with('qualifications', $qualifications);
+    }
+
 }

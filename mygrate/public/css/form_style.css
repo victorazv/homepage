@@ -203,3 +203,19 @@ section.banner_form {
     background-color:#fff;
     background-image: linear-gradient(to right, #B495C1 , #8AB5E1);
 }
+
+.button_active{
+    background-image: linear-gradient(to right, #B495C1 , #8AB5E1);
+    color: #fff;
+    border: none;
+    padding: 5px 20px;
+    font-size: 15px;
+}
+
+.button_inactive{
+    background-color: #d0d0d1;
+    color: #fff;
+    border: none;
+    padding: 5px 20px;
+    font-size: 15px;
+}

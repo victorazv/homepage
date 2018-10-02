@@ -24,6 +24,14 @@ Route::get('/profile/deleteCV', 'WebsiteController@deleteCV')->name('profile.del
 Route::get('/form', 'WebsiteController@form');
 Route::post('/form_insert', 'WebsiteController@formInsert')->name('form.insert');
 
+Route::get('/paf', 'WebsiteController@paf');
+Route::get('/paf1', 'WebsiteController@paf1');
+Route::get('/paf1a', 'WebsiteController@paf1a');
+Route::get('/paf1b', 'WebsiteController@paf1b');
+Route::get('/paf2', 'WebsiteController@paf2');
+Route::get('/paf2a', 'WebsiteController@paf2a');
+Route::get('/paf3', 'WebsiteController@paf3');
+
 Route::get('/con', function() {
     $user = User::find(73);
     dd(
