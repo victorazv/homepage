@@ -30,6 +30,13 @@
             </div>
         </section>
         <div class="container">
+            @if(session()->has('error'))
+                <div class="row mt-5">
+                    <div class="col">
+                        <p class="alert alert-danger">{{ session()->get('error') }}</p>
+                    </div>
+                </div>
+            @endif
             <form action="{{route('profile.update')}}" method="post" enctype='multipart/form-data'>
                 {{csrf_field()}}
                 <div class="row">
