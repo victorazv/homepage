@@ -296,7 +296,16 @@ class WebsiteController extends Controller
 
     public function paf5a()
     {
-        return view('paf5a');
+        $user = User::with([
+            'details'
+            ])->find(73);
+            $qualifications = Qualification::pluck('descr', 'id');
+            $englishLevels = English::pluck('descr', 'id');
+
+        return view('paf5a')
+        ->with('user', $user)
+        ->with('qualifications', $qualifications)
+        ->with('englishLevels', $englishLevels);
     }
 
     public function paf6()
@@ -309,9 +318,19 @@ class WebsiteController extends Controller
         return view('paf6a');
     }
 
+    public function paf6b()
+    {
+        return view('paf6b');
+    }
+
     public function paf7()
     {
         return view('paf7');
+    }
+
+    public function paf7a()
+    {
+        return view('paf7a');
     }
 
     public function paf8()

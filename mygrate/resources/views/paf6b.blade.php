@@ -23,36 +23,17 @@
 					</div>
 				</div>
 				<div class="col-xs-12 col-md-5 pr-md-0 mt-4 d-flex flex-wrap">
-					<div class="w-100 my-4 col-xs-1 flex-xs-nowrap d-none d-md-block">
-						<img src="images/icon_i.png">
-					</div>
-					<h5 class="text_sec_1 mb-4 offset-xs-2 col-xs-10">
-						It is a well–known fact that applicants are
-						required to demonstrate their English language
-						skills for many Australian visas.
-					</h5>
-					<h5 class="text_sec_1 mb-4 offset-xs-2 col-xs-10">
-						There are several levels and English test types
-						accepted by the Department of Immigration
-						and Border Protection (DIBP) depending on the
-						visa you apply for.
-					</h5>
-					<p class="text_sec_4_small">
-                    	You can prove that your English language ability is at the appropriate level by:
-                    </p>
-					<p class="text_sec_4_small">
-                    	- showing that you have studied in English for at least five years in one
-						or more of the following countries: Australia, United Kingdom, Canada,
-						New Zealand, the United States, South Africa, or the Republic of Ireland; <br>
-						- being enrolled by your education provider; <br>
-						- passing an approved test of your English language ability.
-                    </p>
+					<form action="">
+						<label for="">What is your First language?*</label>
+						<label for="">Have you undertaken one of these English language proficiency tests in the last 36 months?*</label>
+						<label for="">How would your rate your English language Proficiency Level?*</label>
+					</form>
 				</div>
 			</div>
 		</div>
 
 		<div class="question w-100 offset-md-2 col-md-8 col-xs-12">
-			<a href="/paf6b"><button class="float-right mt-3 mr-4">Continue</button></a>
+			<a href="/paf7"><button class="float-right mt-3 mr-4">Continue</button></a>
 		</div>
 
 		<div class="percent_bar col-12 pl-0 d-flex">
@@ -63,8 +44,8 @@
 				</div>
 			</div>
 			<div class="col-md-2 mt-2 pl-0">
-				<a href="/paf6"><img src="images/img_previous.png"></a>
-				<a href="/paf6b" id="btn_1"><img src="images/img_next.png"></a>
+				<a href="/paf6a"><img src="images/img_previous.png"></a>
+				<a href="/paf7" id="btn_1"><img src="images/img_next.png"></a>
 			</div>
 		</div>
 	</section>

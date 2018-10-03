@@ -38,9 +38,9 @@ Route::get('/paf5', 'WebsiteController@paf5');
 Route::get('/paf5a', 'WebsiteController@paf5a');
 Route::get('/paf6', 'WebsiteController@paf6');
 Route::get('/paf6a', 'WebsiteController@paf6a');
-//
+Route::get('/paf6b', 'WebsiteController@paf6b');
 Route::get('/paf7', 'WebsiteController@paf7');
-//
+Route::get('/paf7a', 'WebsiteController@paf7a');
 Route::get('/paf8', 'WebsiteController@paf8');
 
 Route::get('/con', function() {
