@@ -164,11 +164,19 @@ class WebsiteController extends Controller
         $user = User::find(73);
         $details = $user->details()->first()->fill($request->all());
         if ($request->hasFile('picture')) {
+            if(!in_array($request->file('picture')->getClientOriginalExtension(), ['png', 'jpg', 'jpeg'])) {
+                session()->flash('error', 'Please, upload a picture with correct extension. (PNG, JPG or JPEG)');
+                return redirect()->back();
+            }
             $PicfileName = $user->id . '_pic_' . time() . '.' . $request->file('picture')->getClientOriginalExtension();
             Storage::putFileAs('public', $request->file('picture'), $PicfileName);
             $details->picture = $PicfileName;
         }
         if ($request->hasFile('cv')) {
+            if(!in_array($request->file('cv')->getClientOriginalExtension(), ['doc', 'docx', 'pdf'])) {
+                session()->flash('error', 'Please, upload a file with correct extension. (DOC, DOCX or PDF)');
+                return redirect()->back();
+            }
             $CvfileName = $user->id . '_cv_' . time() . '.' . $request->file('cv')->getClientOriginalExtension();
             Storage::putFileAs('public', $request->file('cv'), $CvfileName);
             $details->cv = $CvfileName;
