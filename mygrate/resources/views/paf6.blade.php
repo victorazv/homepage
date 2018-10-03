@@ -13,7 +13,7 @@
 				<div class="col-md-4 px-0 pr-md-3 flex-wrap sec_1">
 					<div class="sec_3 col-md-12 ">
 						<div class="mt-4 ml-2">
-							<img src="images/img_form_01.png" class="d-none d-md-block" alt="paper">
+							<img src="images/img_form_06.png" class="d-none d-md-block" alt="paper">
 						</div>
 						<p class="col-12 col-md-10 ml-md-3 pl-0 pl-md-3">
 							<img src="images/img1_small.png" class=" d-sm-none">
@@ -24,7 +24,7 @@
 				</div>
 				<div class="col-xs-12 col-md-5 pr-md-0 mt-4 d-flex flex-wrap">
 					<div class="w-100 my-4 col-xs-1 flex-xs-nowrap d-none d-md-block">
-						<img src="images/icon_i.png">
+						<img src="images/icon_exclamation.png">
 					</div>
 					<h5 class="text_sec_1 mb-4 offset-xs-2 col-xs-10">
 						Any Visa application will require you to provide
@@ -32,14 +32,19 @@
 						All documents must be in English or be
 						accompanied with English translations.
 					</h5>
-					
+					<h5 class="text_sec_1 mb-4 offset-xs-2 col-xs-10">
+						In Australia English translations must be done
+						by an accredited translator registered with
+						National Accreditation Authority for Translators
+						and Interpreters (NAATI).
+					</h5>
 					
 				</div>
 			</div>
 		</div>
 
 		<div class="question w-100 offset-md-2 col-md-8 col-xs-12">
-			<a href="/paf6"><button class="float-right mt-3 mr-4">Continue</button></a>
+			<a href="/paf6a"><button class="float-right mt-3 mr-4">Got it!</button></a>
 		</div>
 
 		<div class="percent_bar col-12 pl-0 d-flex">
@@ -51,7 +56,7 @@
 			</div>
 			<div class="col-md-2 mt-2 pl-0">
 				<a href="/paf5"><img src="images/img_previous.png"></a>
-				<a href="/paf6" id="btn_1"><img src="images/img_next.png"></a>
+				<a href="/paf6a" id="btn_1"><img src="images/img_next.png"></a>
 			</div>
 		</div>
 	</section>

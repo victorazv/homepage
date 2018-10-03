@@ -64,10 +64,12 @@
 							<input type="radio" name="application_reason" id="3" value="3"><label class="radio_item2 ml-0 pl-2" for="3">Work and live in Australia (TEMPORARILY)</label>
 							<input type="radio" name="application_reason" id="4" value="4"><label class="radio_item2 ml-0 pl-2" for="4">Work and live in Australia (PERMANENTLY)</label>
 						</section>
-                        <input type="text" name="login_user" value="test" class="form">
+						
+                        <!--<input type="text" name="login_user" value="test" class="form">
                         <br>
                         <br>
                         <button type="submit" class="form">Insert</button>
+						-->
 					</form>
 				</div>
 			</div>

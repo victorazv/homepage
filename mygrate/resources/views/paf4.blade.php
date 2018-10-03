@@ -13,7 +13,7 @@
 				<div class="col-md-4 px-0 pr-md-3 flex-wrap sec_1">
 					<div class="sec_3 col-md-12 ">
 						<div class="mt-4 ml-2">
-							<img src="images/img_form_01.png" class="d-none d-md-block" alt="paper">
+							<img src="images/img_form_04.png" class="d-none d-md-block" alt="paper">
 						</div>
 						<p class="col-12 col-md-10 ml-md-3 pl-0 pl-md-3">
 							<img src="images/img1_small.png" class=" d-sm-none">

@@ -222,8 +222,22 @@ section.banner_form {
 
 .text_sec_4_small{
     font-size: 0.8em;
+    font-weight: 500;
+    font-family: 'Muli';
 }
 
 .sec_4_strong{
     font-weight: 700;
+}
+
+.attention_message{
+    background-color: #ff6262;
+}
+
+.string_big{
+    font-size: 5em;
+    color: #f2f2f2;
+    font-weight: 800;
+    font-family: 'muli';
+    word-spacing: unset;
 }

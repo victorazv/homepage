@@ -79,7 +79,7 @@
 				<div class="question w-100 col-md-10 col-xs-12">
 					<button id="yes" class="float-right mt-3 mr-4 button_inactive" onclick="personalizateButton('yes', 'no'); updateProgress()">I accept</button>
 					<button id="no"  class="float-right mt-3 mr-4 button_inactive button_active" onclick="personalizateButton('no', 'yes')">I don't accept</button>
-					<div id="error" style="display:none">You must agree to the terms & conditions</div>
+					<div id="error" style="display:none"><span class="attention_message">You must agree to the terms & conditions</span></div>
 				</div>
 			</div>
 		</div>

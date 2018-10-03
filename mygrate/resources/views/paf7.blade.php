@@ -13,12 +13,12 @@
 				<div class="col-md-4 px-0 pr-md-3 flex-wrap sec_1">
 					<div class="sec_3 col-md-12 ">
 						<div class="mt-4 ml-2">
-							<img src="images/img_form_05.png" class="d-none d-md-block" alt="paper">
+							<img src="images/img_form_07.png" class="d-none d-md-block" alt="paper">
 						</div>
 						<p class="col-12 col-md-10 ml-md-3 pl-0 pl-md-3">
 							<img src="images/img1_small.png" class=" d-sm-none">
-							<span class="card_title d-none d-md-block">Something about your Qualifications</span>
-							<span class="card_title2 d-sm-none">Something about your Qualifications</span>
+							<span class="card_title d-none d-md-block">Your Personal Details</span>
+							<span class="card_title2 d-sm-none">Your Personal Details</span>
 						</p>
 					</div>
 				</div>
@@ -27,31 +27,31 @@
 						<img src="images/icon_i.png">
 					</div>
 					<h5 class="text_sec_1 mb-4 offset-xs-2 col-xs-10">
-						If you hold multiple recognised qualifications,
-						you can only count points for one of your
-						recognised qualifications (e.g. if you have
-						completed a Bachelor degree and a Diploma
-						degree, you can receive points for the Bachelor
-						degree only).
+						Almost done! <br>
+						You have reached the last section of this form.
 					</h5>
-					<h5 class="text_sec_1 mb-4"> 
-						Your relevant skills assessment body will
-						generally determine whether any qualifications
-						earned outside Australia are of a standard that
-						is comparable to the relevant Australian
-						qualification.
-					</h5>
-					<h5 class="text_sec_1 mb-4">
-						You may be able to receive points for a
-						qualification that is not related to your
-						nominated occupation.
-					</h5>
+					
+					<p class="text_sec_4_small">
+						At the end of the form you will be provided with a <strong class="sec_4_strong">feedback</strong> and your
+						<strong class="sec_4_strong">Mygrate profile</strong> will be created. The feedback is only indicative and
+						based on the information you provided. It also gives you a fair
+						estimation of your chances of being eligible to apply for an Australian
+						Visa.
+					</p>
+					
+					<img src="images/icon_exclamation_small.png" class="my-2">
+					
+					<p class="text_sec_4_small">
+						<strong class="sec_4_strong">PLEASE REMEMBER: all information you provided must be
+						supported by evidence</strong> and you need to discuss all this information
+						with a Migration Agents who will assess your situation more accurately.
+                    </p>
 				</div>
 			</div>
 		</div>
 
 		<div class="question w-100 offset-md-2 col-md-8 col-xs-12">
-			<a href="/paf6"><button class="float-right mt-3 mr-4">Continue</button></a>
+			<a href="/paf8"><button class="float-right mt-3 mr-4">Thank You</button></a>
 		</div>
 
 		<div class="percent_bar col-12 pl-0 d-flex">
@@ -62,8 +62,8 @@
 				</div>
 			</div>
 			<div class="col-md-2 mt-2 pl-0">
-				<a href="/paf4a"><img src="images/img_previous.png"></a>
-				<a href="/paf6" id="btn_1"><img src="images/img_next.png"></a>
+				<a href="/paf6"><img src="images/img_previous.png"></a>
+				<a href="/paf8" id="btn_1"><img src="images/img_next.png"></a>
 			</div>
 		</div>
 	</section>

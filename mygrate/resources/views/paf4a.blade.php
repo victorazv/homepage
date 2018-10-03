@@ -13,7 +13,7 @@
 				<div class="col-md-4 px-0 pr-md-3 flex-wrap sec_1">
 					<div class="sec_3 col-md-12 ">
 						<div class="mt-4 ml-2">
-							<img src="images/img_form_01.png" class="d-none d-md-block" alt="paper">
+							<img src="images/img_form_04.png" class="d-none d-md-block" alt="paper">
 						</div>
 						<p class="col-12 col-md-10 ml-md-3 pl-0 pl-md-3">
 							<img src="images/img1_small.png" class=" d-sm-none">
@@ -24,7 +24,7 @@
 				</div>
 				<div class="col-xs-12 col-md-5 pr-md-0 mt-4 d-flex flex-wrap">
 					<div class="w-100 my-4 col-xs-1 flex-xs-nowrap d-none d-md-block">
-						<img src="images/icon_i.png">
+						<img src="images/icon_exclamation.png">
 					</div>
 					<h5 class="text_sec_1 mb-4 offset-xs-2 col-xs-10">
                         A skills assessment should not be confused with licensing or registration.
@@ -59,7 +59,7 @@
 				</div>
 			</div>
 			<div class="col-md-2 mt-2 pl-0">
-				<a href="/paf4a"><img src="images/img_previous.png"></a>
+				<a href="/paf4"><img src="images/img_previous.png"></a>
 				<a href="/paf5" id="btn_1"><img src="images/img_next.png"></a>
 			</div>
 		</div>

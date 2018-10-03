@@ -266,4 +266,19 @@ class WebsiteController extends Controller
     {
         return view('paf6');
     }
+
+    public function paf6a()
+    {
+        return view('paf6a');
+    }
+
+    public function paf7()
+    {
+        return view('paf7');
+    }
+
+    public function paf8()
+    {
+        return view('paf8');
+    }
 }

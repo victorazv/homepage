@@ -30,11 +30,18 @@ Route::get('/paf1a', 'WebsiteController@paf1a');
 Route::get('/paf1b', 'WebsiteController@paf1b');
 Route::get('/paf2', 'WebsiteController@paf2');
 Route::get('/paf2a', 'WebsiteController@paf2a');
-Route::get('/paf3', 'WebsiteController@paf3');
+Route::get('/paf3', 'WebsiteController@paf3');//
 Route::get('/paf4', 'WebsiteController@paf4');
 Route::get('/paf4a', 'WebsiteController@paf4a');
+//
 Route::get('/paf5', 'WebsiteController@paf5');
+//
 Route::get('/paf6', 'WebsiteController@paf6');
+Route::get('/paf6a', 'WebsiteController@paf6a');
+//
+Route::get('/paf7', 'WebsiteController@paf7');
+//
+Route::get('/paf8', 'WebsiteController@paf8');
 
 Route::get('/con', function() {
     $user = User::find(73);
