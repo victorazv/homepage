@@ -25,14 +25,50 @@
 				<div class="col-xs-12 col-md-5 pr-md-0 mt-4 d-flex flex-wrap">
 					<form id="form" class="w-100" action="{{route('form.insert')}}" method="post">
 						<div>
-						<label class="custom-label">What is your current employment status?*</label>
-                        <br>
-						<select name="employment">
-						<option value=""></option>
-							@foreach($employment as $key => $opt)
-								<option value="{{$key}}" {{$user->details->employment == $key ? 'selected' : ''}}>{{$opt}}</option>
-							@endforeach
-						</select>
+							<label class="custom-label">What is your current employment status?*</label>
+							<br>
+							<select name="employment">
+								<option value=""></option>
+								@foreach($employment as $key => $opt)
+									<option value="{{$key}}" {{$user->details->employment == $key ? 'selected' : ''}}>{{$opt}}</option>
+								@endforeach
+							</select>
+						</div>
+
+						<div>
+							<label class="custom-label">Choose your occupation or the one that is closest to what you do.*</label>
+							<br>
+							<div class="">
+								<select name="occupation">
+                                    @foreach($occupation as $key => $opt)
+                                        <option value="{{$key}}" {{$user->details->occupation == $key ? 'selected' : ''}}>{{$opt}}</option>
+                                        @endforeach
+                                </select>
+							</div>
+						</div>
+
+						<div class="field-box w-100">
+						<label for="">What is your work experience in this occupation in the last 10 years - OUTSIDE Australia:*</label>
+							<br>
+							<div class="">
+								<select name="experience">
+									<option value=""></option>
+									@foreach($experienceOutside as $key => $opt)
+										<option value="{{$key}}" {{$user->details->experience == $key ? 'selected' : ''}}>{{$opt}}</option>
+									@endforeach
+								</select>
+							</div>
+						</div>
+
+						<div class="">
+							<label for="">What is your work experience in this occupation in the last 10 years - IN Australia:*</label>
+							<br>
+							<select name="experience_AU">
+								<option value=""></option>
+								@foreach($experienceInside as $key => $opt)
+									<option value="{{$key}}" {{$user->details->experience_AU == $key ? 'selected' : ''}}>{{$opt}}</option>
+								@endforeach
+							</select>
 						</div>
 
 					</form>

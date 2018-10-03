@@ -274,14 +274,19 @@ class WebsiteController extends Controller
     public function paf4b()
     {
         $user = User::with([
-            'details',
-            'details.employmentR'
+            'details'
             ])->find(73);
         $employment = Employment::pluck('descr', 'id');
+        $occupation = Occupation::pluck('descr', 'id');
+        $experienceOutside = ExperienceOutside::pluck('descr', 'id');
+        $experienceInside = ExperienceInside::pluck('descr', 'id');
 
         return view('paf4b')
         ->with('user', $user)
-        ->with('employment', $employment);
+        ->with('occupation', $occupation)
+        ->with('employment', $employment)
+        ->with('experienceOutside', $experienceOutside)
+        ->with('experienceInside', $experienceInside);
     }
 
     public function paf5()
