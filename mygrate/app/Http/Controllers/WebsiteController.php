@@ -320,7 +320,19 @@ class WebsiteController extends Controller
 
     public function paf6b()
     {
-        return view('paf6b');
+        $user = User::with([
+            'details'
+            ])->find(73);
+
+            $englishLevels = English::pluck('descr', 'id');
+            $englishTests = EnglishTests::pluck('descr', 'id');
+            $languages = Language::pluck('descr', 'id');
+
+        return view('paf6b')
+        ->with('user', $user)
+        ->with('englishLevels', $englishLevels)
+        ->with('englishTests', $englishTests)
+        ->with('languages', $languages);
     }
 
     public function paf7()

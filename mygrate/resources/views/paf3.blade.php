@@ -212,8 +212,13 @@
 
 			if (a < 18) {
 				$('#msg_under_age').show();
+				$('#age').val("");
 			}else{
 				$('#msg_under_age').hide();
+			}
+
+			if (a > 65) {
+				$('#age').val("");
 			}
 		}
 		

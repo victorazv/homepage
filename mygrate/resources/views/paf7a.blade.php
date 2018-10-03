@@ -23,6 +23,50 @@
 					</div>
 				</div>
 				<div class="col-xs-12 col-md-5 pr-md-0 mt-4 d-flex flex-wrap">
+				<form action="">
+					<div>
+						<label class="col-md-12 d-flex p-0 flex-lg-wrap">First Name*</label>
+						<input type="text" name="name" id="name" onchange="changeBackground('name')" required>
+					</div>
+
+					<div>
+						<label class="col-md-12 d-flex p-0 flex-lg-wrap">Family Name*</label>
+						<input type="text" name="surname" id="surname" onchange="changeBackground('surname')" required>
+					</div>
+
+					<div>
+						<label class="col-md-12 d-flex p-0 flex-lg-wrap">Your Email Address*</label>
+						<input type="email" name="email" id="email" onchange="changeBackground('email')" required>
+					</div>
+
+					<div>
+						<label class="col-md-12 d-flex p-0 flex-lg-wrap">Your Mygrate Password*</label>
+						<input type="password" name="pswd" id="pswd" onchange="changeBackground('pswd')" required>
+					</div>
+
+					<label class="col-md-12 d-flex p-0 flex-lg-wrap">Upload your CV/Resume</label>
+
+					<div>
+						<label class="col-md-12 d-flex p-0 flex-lg-wrap">LinkedIn Profile</label>
+						<input type="text" name="linkedin" id="linkedin" onchange="changeBackground('linkedin')">
+					</div>
+
+					<div>
+						<label class="col-md-12 d-flex p-0 flex-lg-wrap">Skype/Google Hangout</label>
+						<input type="text" name="usr_skype" id="usr_skype" onchange="changeBackground('usr_skype')">
+					</div>
+
+					<div>
+						<label class="col-md-12 d-flex p-0 flex-lg-wrap">Phone number</label>
+						<input type="tel" name="usr_tel" id="usr_tel" onchange="changeBackground('usr_tel')">
+					</div>
+
+					<div>
+						<label class="col-md-12 d-flex p-0 flex-lg-wrap">One last chance to add useful details:</label>
+						<input type="textarea" name="comment" id="comment" onchange="changeBackground('comment')">
+					</div>
+
+				</form>
 				</div>
 			</div>
 		</div>
