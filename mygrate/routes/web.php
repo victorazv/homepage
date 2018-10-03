@@ -33,10 +33,9 @@ Route::get('/paf2a', 'WebsiteController@paf2a');
 Route::get('/paf3', 'WebsiteController@paf3');//
 Route::get('/paf4', 'WebsiteController@paf4');
 Route::get('/paf4a', 'WebsiteController@paf4a');
-//
 Route::get('/paf4b', 'WebsiteController@paf4b');
 Route::get('/paf5', 'WebsiteController@paf5');
-//
+Route::get('/paf5a', 'WebsiteController@paf5a');
 Route::get('/paf6', 'WebsiteController@paf6');
 Route::get('/paf6a', 'WebsiteController@paf6a');
 //

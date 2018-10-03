@@ -27,7 +27,7 @@
 						<div>
 							<label class="custom-label">What is your current employment status?*</label>
 							<br>
-							<select name="employment">
+							<select id="employment" name="employment" onchange="changeBackground('employment')">
 								<option value=""></option>
 								@foreach($employment as $key => $opt)
 									<option value="{{$key}}" {{$user->details->employment == $key ? 'selected' : ''}}>{{$opt}}</option>
@@ -39,19 +39,28 @@
 							<label class="custom-label">Choose your occupation or the one that is closest to what you do.*</label>
 							<br>
 							<div class="">
-								<select name="occupation">
+								<select id="occupation" name="occupation" onchange="changeBackground('occupation')">
+									<option value=""></option>
                                     @foreach($occupation as $key => $opt)
                                         <option value="{{$key}}" {{$user->details->occupation == $key ? 'selected' : ''}}>{{$opt}}</option>
                                         @endforeach
                                 </select>
 							</div>
+							<p id="msg_under_occupation" style="display:none">
+								You selected “NONE OF THESE” from the list of occupations. <br>
+								Please describe what is/was your occupation. <br>
+								This is important to pre-assess any eligibility for an Australian Visa. <br>
+								Your occupation will only be considered if you can provide enough evidence to prove your
+								work experience in that particular occupation. Evidence of employment varies depending
+								on the type of employment, such as paid employment or own business.
+							</p>
 						</div>
 
 						<div class="field-box w-100">
-						<label for="">What is your work experience in this occupation in the last 10 years - OUTSIDE Australia:*</label>
+						<label class="custom-label" for="">What is your work experience in this occupation in the last 10 years - OUTSIDE Australia:*</label>
 							<br>
 							<div class="">
-								<select name="experience">
+								<select id="experience" name="experience" onchange="changeBackground('experience')">
 									<option value=""></option>
 									@foreach($experienceOutside as $key => $opt)
 										<option value="{{$key}}" {{$user->details->experience == $key ? 'selected' : ''}}>{{$opt}}</option>
@@ -61,9 +70,9 @@
 						</div>
 
 						<div class="">
-							<label for="">What is your work experience in this occupation in the last 10 years - IN Australia:*</label>
+							<label class="custom-label" for="">What is your work experience in this occupation in the last 10 years - IN Australia:*</label>
 							<br>
-							<select name="experience_AU">
+							<select id="experience_AU" name="experience_AU" onchange="changeBackground('experience_AU')">
 								<option value=""></option>
 								@foreach($experienceInside as $key => $opt)
 									<option value="{{$key}}" {{$user->details->experience_AU == $key ? 'selected' : ''}}>{{$opt}}</option>
@@ -98,7 +107,16 @@
 
 @push('footer-scripts')
     <script>
+		$('#occupation').change(function() {
+			var val = $(this).val();
 
+			if (val == "1") {
+				$('#msg_under_occupation').show();
+			}else{
+				$('#msg_under_occupation').hide();
+			}
+
+		});
     </script>
 @endpush
 

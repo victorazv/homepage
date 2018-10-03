@@ -82,6 +82,11 @@ select {
     color: #fff;
 }
 
+.field-filled option{
+    background-image: linear-gradient(to right, #B495C1 , #8AB5E1);
+    color: #000;
+}
+
 section.banner_form {
     background: url("../images/bg-header2.jpeg") no-repeat center center fixed;
     background-size: cover;

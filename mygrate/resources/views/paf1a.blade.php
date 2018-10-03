@@ -77,8 +77,8 @@
 					</div>
 				</div>	
 				<div class="question w-100 col-md-10 col-xs-12">
-					<button id="yes" class="float-right mt-3 mr-4 button_inactive" onclick="personalizateButton('yes', 'no'); updateProgress()">I accept</button>
-					<button id="no"  class="float-right mt-3 mr-4 button_inactive button_active" onclick="personalizateButton('no', 'yes')">I don't accept</button>
+					<button id="yes" class="float-right mt-3 mr-4 button_inactive" onclick="btn_yes(); personalizateButton('yes', 'no'); updateProgress()">I accept</button>
+					<button id="no"  class="float-right mt-3 mr-4 button_inactive button_active" onclick="btn_no(); personalizateButton('no', 'yes')">I don't accept</button>
 					<div id="error" style="display:none"><span class="attention_message">You must agree to the terms & conditions</span></div>
 				</div>
 			</div>
@@ -91,8 +91,8 @@
 				</div>
 			</div>
 			<div class="col-md-2 mt-2 pl-0">
-				<a href="/paf1" id="btn_1"><img src="images/img_previous.png"></a>
-				<a href="/paf1b" id="btn_1"><img src="images/img_next.png"></a>
+				<a href="/paf1" id="btn_prev"><img src="images/img_previous.png"></a>
+				<a id="btn_next"><img src="images/img_next.png"></a>
 			</div>
 		</div>
 	</section>
@@ -101,6 +101,15 @@
 
 @push('footer-scripts')
     <script>
+
+		function btn_yes(){
+			$('#btn_next').attr("href", '/paf1b');	
+		}
+
+		function btn_no(){
+			$('#btn_next').attr("href", '');	
+		}
+
 		function personalizateButton(el1, el2){
 			$('#'+el2).removeClass('button_active');
 			$('#'+el1).addClass('button_active');
@@ -117,5 +126,4 @@
 @section('footer')
     
 @endsection
-
 <script src="{{asset('js/form.js')}}"></script>

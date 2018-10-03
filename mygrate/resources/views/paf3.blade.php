@@ -44,20 +44,27 @@
 
                         <div>
 						    <label class="col-md-12 d-flex p-0 flex-lg-wrap">How old are you?*</label>
-						    <input name="age" type="number" name="" id="old" value="" onchange="changeBackground('old'); updateProgress();" required>
+						    <input name="age" type="number" id="age" value="" max="65" onchange="verifyAgeValue(); changeBackground('age'); updateProgress();" required>
                         </div>
-
+						<span id="msg_under_age" style="display:none">You need to be 18 or older to proceed with this form. Please seek your parents/guardians assistance.</span>
                         <div>
                             <label class="col-md-12 d-flex p-0 flex-lg-wrap">What is your Country of Citizenship?*</label>
-                            <select name="citizenship" id="country" value="" class="w-100" onchange="changeBackground('country'); updateProgress();" required>
-                            <option value="" selected></option>
+                            <select name="citizenship" id="citizenship" value="" class="w-100" onchange="changeBackground('citizenship'); updateProgress();" required>
+                            	<option value="" selected></option>
                                 @foreach($citizenship as $key => $cit)
                                     <option value="{{$key}}" {{$user->details->citizenship == $key ? 'selected' : ''}}>{{$cit}}</option>
                                 @endforeach
                             </select>			
 						</div>
+						<div class="py-2" id="msg_under_citizenship" style="display:none">You will need a passport of this Country</div>
 
-						<div>
+						<label>Are you the Citizen of more than one Country?*</label>
+						<section class="form">
+							<input type="radio" name="verify_ot_citizenship" id="yes" value="1" onclick="verifyOtCountry(); updateProgress()"><label class="four radio_item1" for="yes">Yes</label>
+							<input type="radio" name="verify_ot_citizenship" id="no"  value="0" onclick="verifyOtCountry(); updateProgress()"><label class="four radio_item1" for="no">No</label>
+						</section>
+
+						<div id="field_which_country" style="display:none">
                             <label class="col-md-12 d-flex p-0 flex-lg-wrap">Which Country?*</label>
                             <select name="ot_citizenship" id="ot_citizenship" value="" class="w-100" onchange="changeBackground('ot_citizenship'); updateProgress();" required>
                             <option value="" selected></option>
@@ -66,12 +73,6 @@
                                 @endforeach
                             </select>			
 						</div>
-
-						<label>Are you the Citizen of more than one Country?*</label>
-						<section class="form">
-							<input type="radio" name="ot_citizenship" id="yes" value="1" onclick="updateProgress()"><label class="four radio_item1" for="yes">Yes</label>
-							<input type="radio" name="ot_citizenship" id="no"  value="0" onclick="updateProgress()"><label class="four radio_item1" for="no">No</label>
-						</section>
 
 						<label>What is the main reason for seeking to apply for an Australian Visa?*</label>
 						<section class="form">
@@ -82,66 +83,68 @@
 						</section>
 						<div>
 							<label for="">When would you like to relocate?*</label>
-							<input type="text" name="when_leave" value="" class="form" required>
+							<input type="text" name="when_leave" id="when_leave" value="" class="form" onchange="changeBackground('when_leave')" required>
 						</div>
 						<div>
 							<label for="">What is the estimated budget for your relocation?</label>
-							<input type="text" name="usr_budget" value="" class="form">
+							<input type="text" name="usr_budget" id="usr_budget" value="" class="form" onchange="changeBackground('usr_budget')">
 						</div>
 
 						<label for="" class="">What is your current marital/relationship status?*</label>
 						<br>
 						<div class="">
-							<select name="marital_status" required>
+							<select name="marital_status" id="marital_status" onchange="changeBackground('marital_status')" required>
 							<option value=""></option>
 								@foreach($maritalStatus as $key => $opt)
 									<option value="{{$key}}" {{$user->details->marital_status == $key ? 'selected' : ''}}>{{$opt}}</option>
 								@endforeach
 							</select>
-						</div>
-						
+						</div>		
+
 						<div class="">
+						
 							<label>Are you currently in Australia?*</label>
 							<section class="form">
-								<input type="radio" name="in_AU" id="cur_yes" value="1" onclick="updateProgress()"><label class="four radio_item1" for="yes">Yes</label>
-								<input type="radio" name="in_AU" id="cur_no"  value="0" onclick="updateProgress()"><label class="four radio_item1" for="no">No</label>
+								<input type="radio" name="in_AU" id="cur_yes" value="1" onclick="updateProgress();"><label class="four radio_item1" for="cur_yes">Yes</label>
+								<input type="radio" name="in_AU" id="cur_no"  value="0" onclick="updateProgress();"><label class="four radio_item1" for="cur_no">No</label>
 							</section>
 						</div>
 
 						<div class="">
 							<label>Do you currently hold an Australian Visa?*</label>
 							<section class="form">
-								<input type="radio" name="visa_hold" id="hold_yes" value="1" onclick="updateProgress(); enableVisaHold();"><label class="four radio_item1" for="yes">Yes</label>
-								<input type="radio" name="visa_hold" id="hold_no"  value="0" onclick="updateProgress(); disableVisaHold(); "><label class="four radio_item1" for="no">No</label>
+								<input type="radio" name="visa_hold" id="hold_yes" value="1" onclick="verifyVisaHold(); updateProgress();"><label class="four radio_item1" for="hold_yes">Yes</label>
+								<input type="radio" name="visa_hold" id="hold_no"  value="0" onclick="verifyVisaHold(); updateProgress();"><label class="four radio_item1" for="hold_no">No</label>
 							</section>
 						</div>
-
-						<label for="" class="">What type of Visa do you hold?</label>
-						<br>
-						<div>
-							<select name="visa_type">
-								<option value=""></option>
-								@foreach($visaTypes as $key => $opt)
-									<option value="{{$key}}" {{$user->details->visa_type == $key ? 'selected' : ''}}>{{$opt}}</option>
-								@endforeach
-							</select>
-						</div>
 						
-						<div id="currently_hold_fields">
-							<div class="">
-								<label for="">When does your Visa expire? &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</label>
-								<input type="date" name="exp_date_visa" value="" class="form">
-							</div>
-
+						<div id="field_visa_hold" style="display:none">
+							<label for="" class="">What type of Visa do you hold?</label>
+							<br>
 							<div>
-								<label>Do you have any family member in Australia?</label>
-								<section class="form">
-									<input type="radio" name="family_AU" id="hold_yes" value="1" onclick="updateProgress()"><label class="four radio_item1" for="yes">Yes</label>
-									<input type="radio" name="family_AU" id="hold_no"  value="0" onclick="updateProgress()"><label class="four radio_item1" for="no">No</label>
-								</section>
+								<select id="visa_type" name="visa_type" onchange="changeBackground('visa_type');">
+									<option value=""></option>
+									@foreach($visaTypes as $key => $opt)
+										<option value="{{$key}}" {{$user->details->visa_type == $key ? 'selected' : ''}}>{{$opt}}</option>
+									@endforeach
+								</select>
+							</div>
+							
+							<div id="currently_hold_fields">
+								<div class="">
+									<label for="">When does your Visa expire? &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</label>
+									<input id="exp_date_visa" type="date" name="exp_date_visa" value="" class="form" onchange="changeBackground('exp_date_visa');" >
+								</div>
+
+								<div>
+									<label>Do you have any family member in Australia?</label>
+									<section class="form">
+										<input type="radio" name="family_AU" id="hold_yes" value="1" onclick="updateProgress()"><label class="four radio_item1" for="yes">Yes</label>
+										<input type="radio" name="family_AU" id="hold_no"  value="0" onclick="updateProgress()"><label class="four radio_item1" for="no">No</label>
+									</section>
+								</div>
 							</div>
 						</div>
-
 
 					</form>
 				</div>
@@ -173,18 +176,45 @@
 @push('footer-scripts')
     <script>
 
-		function disableVisaHold()
-		{
-			//var a = $('#visa_hold');
-			console.log('dsds');
-			//console.log(a);
+		function verifyOtCountry(){
+			var val = $('input[name=verify_ot_citizenship]:checked').val();
+
+			if (val == "1") {
+				$('#field_which_country').show();
+			}else{
+				$('#field_which_country').hide();
+			}
 		}
 
-		function enableVisaHold()
-		{
-			//var a = $('#visa_hold');
-			console.log('dsds');
-			//console.log(a);
+		function verifyVisaHold(){
+			console.log('asdsa');
+			var val = $('input[name=visa_hold]:checked').val();
+
+			if (val == "1") {
+				$('#field_visa_hold').show();
+			}else{
+				$('#field_visa_hold').hide();
+			}
+		}
+		
+		$('#citizenship').change(function() {
+			var val = $(this).val();
+
+			if (val != "") {
+				$('#msg_under_citizenship').show();
+			}else{
+				$('#msg_under_citizenship').hide();
+			}
+		});
+		
+		function verifyAgeValue(){
+			var a = $('#age').val();
+
+			if (a < 18) {
+				$('#msg_under_age').show();
+			}else{
+				$('#msg_under_age').hide();
+			}
 		}
 		
 		function personalizateButton(el1, el2){

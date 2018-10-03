@@ -23,35 +23,15 @@
 					</div>
 				</div>
 				<div class="col-xs-12 col-md-5 pr-md-0 mt-4 d-flex flex-wrap">
-					<div class="w-100 my-4 col-xs-1 flex-xs-nowrap d-none d-md-block">
-						<img src="images/icon_i.png">
-					</div>
-					<h5 class="text_sec_1 mb-4 offset-xs-2 col-xs-10">
-						If you hold multiple recognised qualifications,
-						you can only count points for one of your
-						recognised qualifications (e.g. if you have
-						completed a Bachelor degree and a Diploma
-						degree, you can receive points for the Bachelor
-						degree only).
-					</h5>
-					<h5 class="text_sec_1 mb-4"> 
-						Your relevant skills assessment body will
-						generally determine whether any qualifications
-						earned outside Australia are of a standard that
-						is comparable to the relevant Australian
-						qualification.
-					</h5>
-					<h5 class="text_sec_1 mb-4">
-						You may be able to receive points for a
-						qualification that is not related to your
-						nominated occupation.
-					</h5>
+					
+				
+					
 				</div>
 			</div>
 		</div>
 
 		<div class="question w-100 offset-md-2 col-md-8 col-xs-12">
-			<a href="/paf5a"><button class="float-right mt-3 mr-4">Continue</button></a>
+			<a href="/paf6"><button class="float-right mt-3 mr-4">Continue</button></a>
 		</div>
 
 		<div class="percent_bar col-12 pl-0 d-flex">
@@ -63,7 +43,7 @@
 			</div>
 			<div class="col-md-2 mt-2 pl-0">
 				<a href="/paf4b"><img src="images/img_previous.png"></a>
-				<a href="/paf5a" id="btn_1"><img src="images/img_next.png"></a>
+				<a href="/paf6" id="btn_1"><img src="images/img_next.png"></a>
 			</div>
 		</div>
 	</section>

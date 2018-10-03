@@ -294,6 +294,11 @@ class WebsiteController extends Controller
         return view('paf5');
     }
 
+    public function paf5a()
+    {
+        return view('paf5a');
+    }
+
     public function paf6()
     {
         return view('paf6');
