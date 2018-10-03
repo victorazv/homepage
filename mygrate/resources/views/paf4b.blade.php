@@ -23,32 +23,25 @@
 					</div>
 				</div>
 				<div class="col-xs-12 col-md-5 pr-md-0 mt-4 d-flex flex-wrap">
-					<div class="w-100 my-4 col-xs-1 flex-xs-nowrap d-none d-md-block">
-						<img src="images/icon_exclamation.png">
-					</div>
-					<h5 class="text_sec_1 mb-4 offset-xs-2 col-xs-10">
-                        A skills assessment should not be confused with licensing or registration.
-					</h5>
-					<h5 class="text_sec_1 mb-4"> 
-                        - a <strong class="sec_4_strong">skills assessment</strong> helps you to determine
-                        whether your skills and experience is relevant to
-                        Australian standards in your occupation.
-					</h5>
-					<h5 class="text_sec_1 mb-4">
-                      - a <strong class="sec_4_strong">registration</strong> or <strong class="sec_4_strong">licensing</strong> means you have
-                        permission to practise in Australia.
-					</h5>
-                    <h5 class="text_sec_1 mb-4">
-                        In some cases, a successful skills assessment is
-                        also required in addition to meeting the licensing
-                        and registration requirements.
-                   </h5>
+					<form id="form" class="w-100" action="{{route('form.insert')}}" method="post">
+						<div>
+						<label class="custom-label">What is your current employment status?*</label>
+                        <br>
+						<select name="employment">
+						<option value=""></option>
+							@foreach($employment as $key => $opt)
+								<option value="{{$key}}" {{$user->details->employment == $key ? 'selected' : ''}}>{{$opt}}</option>
+							@endforeach
+						</select>
+						</div>
+
+					</form>
 				</div>
 			</div>
 		</div>
 
 		<div class="question w-100 offset-md-2 col-md-8 col-xs-12">
-			<a href="/paf4b"><button class="float-right mt-3 mr-4">I Understand</button></a>
+			<a href="/paf5"><button class="float-right mt-3 mr-4">I Understand</button></a>
 		</div>
 
 		<div class="percent_bar col-12 pl-0 d-flex">
@@ -59,8 +52,8 @@
 				</div>
 			</div>
 			<div class="col-md-2 mt-2 pl-0">
-				<a href="/paf4"><img src="images/img_previous.png"></a>
-				<a href="/paf4b" id="btn_1"><img src="images/img_next.png"></a>
+				<a href="/paf4a"><img src="images/img_previous.png"></a>
+				<a href="/paf5" id="btn_1"><img src="images/img_next.png"></a>
 			</div>
 		</div>
 	</section>

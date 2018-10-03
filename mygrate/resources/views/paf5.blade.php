@@ -62,7 +62,7 @@
 				</div>
 			</div>
 			<div class="col-md-2 mt-2 pl-0">
-				<a href="/paf4a"><img src="images/img_previous.png"></a>
+				<a href="/paf4b"><img src="images/img_previous.png"></a>
 				<a href="/paf6" id="btn_1"><img src="images/img_next.png"></a>
 			</div>
 		</div>

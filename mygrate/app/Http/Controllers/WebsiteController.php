@@ -236,14 +236,20 @@ class WebsiteController extends Controller
             'details.qualificationR',
             'details.languageR'
         ])->find(73);
+        
+        $maritalStatus = Relationship::pluck('descr', 'id');
         $citizenship = Country::pluck('descr', 'id');
         $languages = Language::pluck('descr', 'id');
+        $visaTypes = VisaType::pluck('descr', 'id');
         $qualifications = Qualification::pluck('descr', 'id');
+        
 
         return view('paf3')
             ->with('user', $user)
+            ->with('maritalStatus', $maritalStatus)
             ->with('citizenship', $citizenship)
             ->with('languages', $languages)
+            ->with('visaTypes', $visaTypes)
             ->with('qualifications', $qualifications);
     }
 
@@ -255,6 +261,19 @@ class WebsiteController extends Controller
     public function paf4a()
     {
         return view('paf4a');
+    }
+
+    public function paf4b()
+    {
+        $user = User::with([
+            'details',
+            'details.employmentR'
+            ])->find(73);
+        $employment = Employment::pluck('descr', 'id');
+
+        return view('paf4b')
+        ->with('user', $user)
+        ->with('employment', $employment);
     }
 
     public function paf5()
