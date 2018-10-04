@@ -2,7 +2,7 @@
 Global
  */
 
-.four { 
+ .four { 
     width: 32.26%; 
     max-width: 32.26%;
 }
@@ -78,8 +78,8 @@ select {
 }
 
 .field-filled{
-    background-image: linear-gradient(to right, #B495C1 , #8AB5E1);
-    color: #fff;
+    background-image: linear-gradient(to right, #B495C1 , #8AB5E1) important!;
+    color: #fff important!;
 }
 
 .field-filled option{
@@ -245,4 +245,13 @@ section.banner_form {
     font-weight: 800;
     font-family: 'muli';
     word-spacing: unset;
+}
+
+.sub_label{
+    font-size: 0.9em;
+}
+
+.label_form{
+    font-weight: 800;
+    margin-top: 12px;
 }

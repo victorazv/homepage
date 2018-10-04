@@ -44,28 +44,33 @@
                                 {{csrf_field()}}
 
                                 <div>
-                                    <label class="col-md-12 d-flex p-0 flex-lg-wrap">How old are you?*</label>
-                                    <input name="age" type="number" id="age" value="" max="65"
+                                    <label class="col-md-12 d-flex p-0 flex-lg-wrap label_form">How old are you?*</label>
+                                    <input class="w-100" name="age" type="number" id="age" value="" max="65"
                                            onchange="verifyAgeValue(); changeBackground('age'); updateProgress();"
                                            required>
                                 </div>
-                                <span id="msg_under_age" style="display:none">You need to be 18 or older to proceed with this form. Please seek your parents/guardians assistance.</span>
+                                <span id="msg_under_age" style="display:none">
+                                <img src="images/icon_exclamation_small2.png" alt="">
+                                You need to be 18 or older to proceed with this form. Please seek your parents/guardians assistance.</span>
                                 <div>
-                                    <label class="col-md-12 d-flex p-0 flex-lg-wrap">What is your Country of
+                                    <label class="col-md-12 d-flex p-0 flex-lg-wrap label_form">What is your Country of
                                         Citizenship?*</label>
-                                    <select name="citizenship" id="citizenship" value="" class="w-100"
-                                            onchange="changeBackground('citizenship'); updateProgress();" required>
-                                        <option value="" selected></option>
-                                        @foreach($citizenship as $key => $cit)
-                                            <option value="{{$key}}">{{$cit}}</option>
-                                        @endforeach
-                                    </select>
+                                    <div class="div-select_small">
+                                        <select name="citizenship" id="citizenship" value="" class="w-100"
+                                                onchange="changeBackground('citizenship'); updateProgress();" required>
+                                            <option value="" selected></option>
+                                            @foreach($citizenship as $key => $cit)
+                                                <option value="{{$key}}">{{$cit}}</option>
+                                            @endforeach
+                                        </select>
+                                    </div>
                                 </div>
-                                <div class="py-2" id="msg_under_citizenship" style="display:none">You will need a
-                                    passport of this Country
+                                <div class="py-2" id="msg_under_citizenship" style="display:none">
+                                    <img src="images/icon_exclamation_small2.png" alt="">
+                                    You will need a passport of this Country
                                 </div>
 
-                                <label>Are you the Citizen of more than one Country?*</label>
+                                <label class="label_form">Are you the Citizen of more than one Country?*</label>
                                 <section class="form">
                                     <input type="radio" name="verify_ot_citizenship" id="yes" value="1"
                                            onclick="verifyOtCountry(); updateProgress()"><label class="four radio_item1"
@@ -76,17 +81,19 @@
                                 </section>
 
                                 <div id="field_which_country" style="display:none">
-                                    <label class="col-md-12 d-flex p-0 flex-lg-wrap">Which Country?*</label>
-                                    <select name="ot_citizenship" id="ot_citizenship" value="" class="w-100"
-                                            onchange="changeBackground('ot_citizenship'); updateProgress();" required>
-                                        <option value="" selected></option>
-                                        @foreach($citizenship as $key => $cit)
-                                            <option value="{{$key}}">{{$cit}}</option>
-                                        @endforeach
-                                    </select>
+                                    <label class="col-md-12 d-flex p-0 flex-lg-wrap label_form">Which Country?*</label>
+                                    <div class="div-select_small">
+                                        <select name="ot_citizenship" id="ot_citizenship" value="" class="w-100"
+                                                onchange="changeBackground('ot_citizenship'); updateProgress();">
+                                            <option value="" selected></option>
+                                            @foreach($citizenship as $key => $cit)
+                                                <option value="{{$key}}">{{$cit}}</option>
+                                            @endforeach
+                                        </select>
+                                    </div>
                                 </div>
 
-                                <label>What is the main reason for seeking to apply for an Australian Visa?*</label>
+                                <label class="label_form">What is the main reason for seeking to apply for an Australian Visa?*</label>
                                 <section class="form">
                                     <input type="radio" name="application_reason" id="1" value="1"><label
                                             class="radio_item2 ml-0 pl-2" for="1">Visit Australia</label>
@@ -100,31 +107,33 @@
                                         (PERMANENTLY)</label>
                                 </section>
                                 <div>
-                                    <label for="">When would you like to relocate?*</label>
+                                    <label class="label_form" for="">When would you like to relocate?*</label>
                                     <input type="text" name="when_leave" id="when_leave" value="" class="form"
                                            onchange="changeBackground('when_leave')" required>
                                 </div>
                                 <div>
-                                    <label for="">What is the estimated budget for your relocation?</label>
+                                    <label class="label_form" for="">What is the estimated budget for your relocation?</label>
                                     <input type="text" name="usr_budget" id="usr_budget" value="" class="form"
                                            onchange="changeBackground('usr_budget')">
                                 </div>
 
-                                <label for="" class="">What is your current marital/relationship status?*</label>
+                                <label for="" class="label_form">What is your current marital/relationship status?*</label>
                                 <br>
                                 <div class="">
-                                    <select name="marital_status" id="marital_status"
-                                            onchange="changeBackground('marital_status')" required>
-                                        <option value=""></option>
-                                        @foreach($maritalStatus as $key => $opt)
-                                            <option value="{{$key}}">{{$opt}}</option>
-                                        @endforeach
-                                    </select>
+                                    <div class="div-select_small">
+                                        <select name="marital_status" id="marital_status"
+                                                onchange="changeBackground('marital_status')" required>
+                                            <option value=""></option>
+                                            @foreach($maritalStatus as $key => $opt)
+                                                <option value="{{$key}}">{{$opt}}</option>
+                                            @endforeach
+                                        </select>
+                                    </div>
                                 </div>
 
                                 <div class="">
 
-                                    <label>Are you currently in Australia?*</label>
+                                    <label class="label_form">Are you currently in Australia?*</label>
                                     <section class="form">
                                         <input type="radio" name="in_AU" id="cur_yes" value="1"
                                                onclick="updateProgress();"><label class="four radio_item1"
@@ -135,7 +144,7 @@
                                 </div>
 
                                 <div class="">
-                                    <label>Do you currently hold an Australian Visa?*</label>
+                                    <label class="label_form">Do you currently hold an Australian Visa?*</label>
                                     <section class="form">
                                         <input type="radio" name="visa_hold" id="hold_yes" value="1"
                                                onclick="verifyVisaHold(); updateProgress();"><label
@@ -147,28 +156,30 @@
                                 </div>
 
                                 <div id="field_visa_hold" style="display:none">
-                                    <label for="" class="">What type of Visa do you hold?</label>
+                                    <label for="" class="label_form">What type of Visa do you hold?</label>
                                     <br>
                                     <div>
-                                        <select id="visa_type" name="visa_type"
-                                                onchange="changeBackground('visa_type');">
-                                            <option value=""></option>
-                                            @foreach($visaTypes as $key => $opt)
-                                                <option value="{{$key}}">{{$opt}}</option>
-                                            @endforeach
-                                        </select>
+                                        <div class="div-select_small">
+                                            <select id="visa_type" name="visa_type"
+                                                    onchange="changeBackground('visa_type');">
+                                                <option value=""></option>
+                                                @foreach($visaTypes as $key => $opt)
+                                                    <option value="{{$key}}">{{$opt}}</option>
+                                                @endforeach
+                                            </select>
+                                        </div>
                                     </div>
 
                                     <div id="currently_hold_fields">
                                         <div class="">
-                                            <label for="">When does your Visa expire?
+                                            <label class="label_form" for="">When does your Visa expire?
                                                 &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</label>
                                             <input id="exp_date_visa" type="date" name="exp_date_visa" value=""
                                                    class="form" onchange="changeBackground('exp_date_visa');">
                                         </div>
 
                                         <div>
-                                            <label>Do you have any family member in Australia?</label>
+                                            <label class="label_form" >Do you have any family member in Australia?</label>
                                             <section class="form">
                                                 <input type="radio" name="family_AU" id="hold_yes" value="1"
                                                        onclick="updateProgress()"><label class="four radio_item1"
@@ -206,64 +217,65 @@
                     </div>
                 </div>
             </section>
+            <br>
         </form>
+        
     </main>
 @endsection
 
 @push('footer-scripts')
-    <script>
+<script>
 
-        function verifyOtCountry() {
-            var val = $('input[name=verify_ot_citizenship]:checked').val();
+function verifyOtCountry() {
+    var val = $('input[name=verify_ot_citizenship]:checked').val();
 
-            if (val == "1") {
-                $('#field_which_country').show();
-            } else {
-                $('#field_which_country').hide();
-            }
-        }
+    if (val == "1") {
+        $('#field_which_country').show();
+    } else {
+        $('#field_which_country').hide();
+    }
+}
 
-        function verifyVisaHold() {
-            console.log('asdsa');
-            var val = $('input[name=visa_hold]:checked').val();
+function verifyVisaHold() {
+    var val = $('input[name=visa_hold]:checked').val();
 
-            if (val == "1") {
-                $('#field_visa_hold').show();
-            } else {
-                $('#field_visa_hold').hide();
-            }
-        }
+    if (val == "1") {
+        $('#field_visa_hold').show();
+    } else {
+        $('#field_visa_hold').hide();
+    }
+}
 
-        $('#citizenship').change(function () {
-            var val = $(this).val();
+$('#citizenship').change(function () {
+    var val = $(this).val();
 
-            if (val != "") {
-                $('#msg_under_citizenship').show();
-            } else {
-                $('#msg_under_citizenship').hide();
-            }
-        });
+    if (val != "") {
+        $('#msg_under_citizenship').show();
+    } else {
+        $('#msg_under_citizenship').hide();
+    }
+});
 
-        function verifyAgeValue() {
-            var a = $('#age').val();
+function verifyAgeValue() {
+    var a = $('#age').val();
 
-            if (a < 18) {
-                $('#msg_under_age').show();
-                $('#age').val("");
-            } else {
-                $('#msg_under_age').hide();
-            }
+    if (a < 18) {
+        $('#msg_under_age').show();
+        $('#age').val("");
+    } else {
+        $('#msg_under_age').hide();
+    }
 
-            if (a > 65) {
-                $('#age').val("");
-            }
-        }
+    if (a > 65) {
+        $('#age').val("");
+    }
+}
 
-        function personalizateButton(el1, el2) {
-            $('#' + el2).removeClass('button_active');
-            $('#' + el1).addClass('button_active');
-        }
-    </script>
+function personalizateButton(el1, el2) {
+    $('#' + el2).removeClass('button_active');
+    $('#' + el1).addClass('button_active');
+}
+</script>
 @endpush
 
 @section('footer')

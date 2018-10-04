@@ -25,11 +25,12 @@
                         </div>
                         <div class="col-xs-12 col-md-5 pr-md-0 mt-4 d-flex flex-wrap">
                             {{csrf_field()}}
-                            <div>
-                                <label for="" class="custom-label">What is your Level of qualification*</label>
+                            <div class="col-12">
+                                <label class="label_form" for="" class="custom-label">What is your Level of qualification*</label>
                                 <br>
-                                <div class="">
-                                    <select name="english_level" onchange="changeBackground('english_level')">
+                                <div class="div-select_small">
+                                    <select class="col-12" name="english_level" required onchange="changeBackground('english_level')">
+                                        <option value=""></option>
                                         @foreach($englishLevels as $key => $opt)
                                             <option value="{{$key}}">{{$opt}}</option>
                                         @endforeach
@@ -37,23 +38,122 @@
                                 </div>
                             </div>
 
-                            <div>
-                                <label class="custom-label" for="">In addition to the above qualification, did you
+                            <div class="col-12">
+                                <label class="label_form" for="">In addition to the above qualification, did you
                                     complete
                                     a study course in Australia?*</label>
+                                <br>
+                                <span class="sub_label">
+                                   <img src="images/icon_i_small2.png" alt="">
+                                   This means you have been awarded one or more degrees, diplomas or trade qualifications through a course or courses taken at an Australian educational institution.
+                                </span>
                                 <br>
                                 <input type="text" value="Field name?">
                             </div>
 
-                            <div>
-                                <label class="custom-label" for="">Do you have any Specialist Education
+                            <div class="col-12">
+                                <label class="label_form" for="">Do you have any Specialist Education
                                     Qualification?*</label>
                                 <br>
+                                <p class="sub_label">
+                                   <img src="images/icon_i_small2.png" alt="">
+                                        A Specialist Qualification is a postgraduate degree by research (doctorate or masters)
+                                        that must be awarded from an Australian education institution after at least two academic
+                                        years of study in the following science, technology, engineering, mathematics or specified
+                                        information and communication technology (ICT) fields:
+                                </p>
+                                <p>
+                                    biological sciences; <br>
+                                    chemical sciences;<br>
+                                    earth sciences;<br>
+                                    mathematical sciences;<br>
+                                    natural and physical sciences;<br>
+                                    other natural and physical sciences;<br>
+                                    physics and astronomy;<br>
+                                    computer science;<br>
+                                    information systems;<br>
+                                    information technology;<br>
+                                    other information technology;<br>
+                                    aerospace engineering and technology;<br>
+                                    civil engineering;<br>
+                                    electrical and electronic engineering and technology;<br>
+                                    engineering and related technologies;<br>
+                                    geomatics engineering;<br>
+                                    manufacturing engineering and technology;<br>
+                                    maritime engineering and technology;<br>
+                                    mechanical and industrial engineering and technology;<br>
+                                    other engineering and related technologies;<br>
+                                    process and resources engineering.
+                                </p>
+
                                 <div>
-                                    <select name="qualification_level"
+                                <div class="div-select_small">
+                                    <select class="col-12" name="qualification_level"
                                             onchange="changeBackground('qualification_level')"
                                             required>
                                         @foreach($qualifications as $key => $opt)
+                                            <option value=""></option>
+                                            <option value="{{$key}}">{{$opt}}</option>
+                                        @endforeach
+                                    </select>
+                                </div>
+                                </div>
+                            </div>
+
+                            <div class="col-12">
+                                <label class="label_form">Other points may be granted if you can claim and provide evidence of one or more of the following options:*</label>
+                                <br>
+                                <p class="sub_label"> 
+                                    <strong>Accredited in a Community Language</strong> <br>
+                                    To obtain the community language points, you must be accredited by the National <br>
+                                    Accreditation Authority for Translators and Interpreters (NAATI) at the para-professional 
+                                    level (Level 2) or higher.
+                                </p>
+
+                                <p class="sub_label"> 
+                                    <strong>Partner skills</strong> <br>
+                                    You can claim partner skills if your partner: <br>
+                                    is under 50 years of age;<br>
+                                    has competent English;<br>
+                                    has an occupation that is on the same skilled occupations list as your nominated occupation;<br>
+                                    has been assessed by the relevant assessing authority as having suitable skills<br>
+                                    for their nominated occupation;<br>
+                                    is coming to Australia with you;<br>
+                                    is not an Australian citizen or permanent resident.<br>
+                                </p>
+                                <p class="sub_label">
+                                    <strong>Professional Year Program</strong> <br>
+                                    Your Professional Year must have been: <br>
+                                    completed in Australia in the four years before you are invited to apply for a visa;<br>
+                                    in your nominated occupation or a closely related occupation;<br>
+                                    completed over a period of at least 12 months;<br>
+                                    provided by one of these organisations:<br>
+                                    - the Australian Computer Society<br>
+                                    - CPA Australia<br>
+                                    - Chartered Accountants of Australia and New Zealand<br>
+                                    - the Institute of Public Accountants (formerly the National Institute of Accountants)<br>
+                                    - Engineers Australia.
+                                </p>
+
+                                <p class="sub_label">
+                                    <strong>Study in regional Australia or a low population-growth metropolitan area for 2 years</strong>
+                                </p>
+
+                                <p class="sub_label">
+                                <img src="images/icon_i_small2.png" alt="">
+                                    Proof that you met the Australian study requirement while living in regional Australia or a low 
+                                    population-growth metropolitan area for two years: <br>
+                                    - residential lease agreements <br>
+                                    - utilities bills and bank statements showing your name and residential address. <br>
+                                    - academic transcripts or other documents that show the campus at which you completed <br>
+                                    your study was located in regional Australia or a low population growth metropolitan area.
+                                </p>
+                                <div class="div-select_small">
+                                    <select class="col-12" name="qualification_level"
+                                            onchange="changeBackground('qualification_level')"
+                                            required>
+                                        @foreach($qualifications as $key => $opt)
+                                            <option value=""></option>
                                             <option value="{{$key}}">{{$opt}}</option>
                                         @endforeach
                                     </select>
@@ -61,16 +161,24 @@
                             </div>
 
                             <div class="field-box w-100">
-                                <label for="age" class="custom-label">When did you obtain your highest or most relevant
+                                <label for="age" class="label_form">When did you obtain your highest or most relevant
                                     qualification?*</label>
+                                <br>
+                                <p class="sub_label">
+                                   <img src="images/icon_i_small2.png" alt="">
+                                   A "qualification" is intended as an accomplishment that makes someone suitable for a particular job or activity (for example, Degree/PhD, Diploma, Trade Certificate, etc.).
+                                </p>
+                                <p class="sub_label">
+                                    If you chose any of the qualifications above, when did you obtain the latest? Indicate year ONLY. For example, 2011.
+                                </p>
                                 <br>
                                 <input title="english_level" type="number" class="form-control custom-input">
                             </div>
 
                             <div class="field-box w-100 flex-wrap">
-                                <label class="custom-label">Are your qualifications related to your occupation?*</label>
+                                <label class="label_form">Are your qualifications related to your occupation?*</label>
                                 <section class="form">
-                                    <input type="radio" name="qualif_occupation" id="yes" value="1"
+                                    <input type="radio" required name="qualif_occupation" id="yes" value="1"
                                            onclick="updateProgress()"><label class="four radio_item1"
                                                                              for="yes">Yes</label>
                                     <input type="radio" name="qualif_occupation" id="no" value="0"
@@ -80,16 +188,24 @@
                             </div>
 
                             <div class="field-box w-100">
-                                <label class="custom-label">Qualification name:</label>
+                                <label class="label_form">Qualification name:</label>
+                                <br>
+                                <p class="sub_label">
+                                   <img src="images/icon_i_small2.png" alt="">
+                                   Please indicate the exact name of your qualification
+                                    (i.e. Bachelor's/Master's Degree in Medicine, or Diploma in Accounting, etc.
+                                </p>
+                                 <p>
+                                    If you do not have any qualification, please type N/A
+                                </p>
                                 <br>
                                 <input title="qualification_name" type="text" class="form-control custom-input">
+                                <br>
                             </div>
-
 
                         </div>
                     </div>
-
-
+                </div>
                     <div class="question w-100 offset-md-2 col-md-8 col-xs-12">
                         <button type="submit" class="float-right mt-3 mr-4">Continue</button>
                     </div>
