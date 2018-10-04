@@ -31,7 +31,7 @@
                                 <div class="div-select_small">
                                     <select class="col-12" required name="english_level" required onchange="changeBackground('english_level')">
                                         <option value=""></option>
-                                        @foreach($englishLevels as $key => $opt)
+                                        @foreach($qualifications as $key => $opt)
                                             <option value="{{$key}}">{{$opt}}</option>
                                         @endforeach
                                     </select>
