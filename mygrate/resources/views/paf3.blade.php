@@ -45,7 +45,9 @@
 
                                 <div>
                                     <label class="col-md-12 d-flex p-0 flex-lg-wrap label_form">How old are you?*</label>
-                                    <input class="w-100" name="age" type="number" id="age" value="" max="65"
+                                    <input class="w-100" name="age" type="number" id="age" 
+                                    value="{{session()->get('age')}}"
+                                    max="65"
                                            onchange="verifyAgeValue(); changeBackground('age'); updateProgress();"
                                            required>
                                 </div>
@@ -60,7 +62,9 @@
                                                 onchange="changeBackground('citizenship'); updateProgress();" required>
                                             <option value="" selected></option>
                                             @foreach($citizenship as $key => $cit)
-                                                <option value="{{$key}}">{{$cit}}</option>
+                                                <option
+                                                value="{{$key}}" {{session()->get('citizenship') == $key ? 'selected' : ''}}
+                                                >{{$cit}}</option>
                                             @endforeach
                                         </select>
                                     </div>
@@ -72,7 +76,7 @@
 
                                 <label class="label_form">Are you the Citizen of more than one Country?*</label>
                                 <section class="form">
-                                    <input type="radio" name="verify_ot_citizenship" id="yes" value="1"
+                                    <input type="radio" name="verify_ot_citizenship" id="yes" value="1" 
                                            onclick="verifyOtCountry(); updateProgress()"><label class="four radio_item1"
                                                                                                 for="yes">Yes</label>
                                     <input type="radio" name="verify_ot_citizenship" id="no" value="0"
@@ -108,12 +112,16 @@
                                 </section>
                                 <div>
                                     <label class="label_form" for="">When would you like to relocate?*</label>
-                                    <input type="text" name="when_leave" id="when_leave" value="" class="form"
+                                    <input type="text" name="when_leave" id="when_leave" 
+                                    value="{{session()->get('when_leave')}}"
+                                    class="form"
                                            onchange="changeBackground('when_leave')" required>
                                 </div>
                                 <div>
                                     <label class="label_form" for="">What is the estimated budget for your relocation?</label>
-                                    <input type="text" name="usr_budget" id="usr_budget" value="" class="form"
+                                    <input type="text" name="usr_budget" id="usr_budget" 
+                                    value="{{session()->get('usr_budget')}}"
+                                    class="form"
                                            onchange="changeBackground('usr_budget')">
                                 </div>
 
@@ -125,7 +133,9 @@
                                                 onchange="changeBackground('marital_status')" required>
                                             <option value=""></option>
                                             @foreach($maritalStatus as $key => $opt)
-                                                <option value="{{$key}}">{{$opt}}</option>
+                                                <option 
+                                                value="{{$key}}" {{session()->get('marital_status') == $key ? 'selected' : ''}}
+                                                >{{$opt}}</option>
                                             @endforeach
                                         </select>
                                     </div>
@@ -164,7 +174,8 @@
                                                     onchange="changeBackground('visa_type');">
                                                 <option value=""></option>
                                                 @foreach($visaTypes as $key => $opt)
-                                                    <option value="{{$key}}">{{$opt}}</option>
+                                                    value="{{$key}}" {{session()->get('visa_type') == $key ? 'selected' : ''}}
+                                                    >{{$opt}}</option>
                                                 @endforeach
                                             </select>
                                         </div>
@@ -174,8 +185,9 @@
                                         <div class="">
                                             <label class="label_form" for="">When does your Visa expire?
                                                 &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</label>
-                                            <input id="exp_date_visa" type="date" name="exp_date_visa" value=""
-                                                   class="form" onchange="changeBackground('exp_date_visa');">
+                                            <input id="exp_date_visa" type="date" name="exp_date_visa" 
+                                            value="{{session()->get('exp_date_visa')}}"
+                                            class="form" onchange="changeBackground('exp_date_visa');">
                                         </div>
 
                                         <div>

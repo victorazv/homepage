@@ -32,7 +32,9 @@
                                     <select class="col-12" required name="english_level" required onchange="changeBackground('english_level')">
                                         <option value=""></option>
                                         @foreach($qualifications as $key => $opt)
-                                            <option value="{{$key}}">{{$opt}}</option>
+                                            <option 
+                                            value="{{$key}}" {{session()->get('english_level') == $key ? 'selected' : ''}}
+                                            >{{$opt}}</option>
                                         @endforeach
                                     </select>
                                 </div>
@@ -165,7 +167,9 @@
                                             required>
                                         @foreach($extraPoints as $key => $opt)
                                             <option value=""></option>
-                                            <option value="{{$key}}">{{$opt}}</option>
+                                            <option 
+                                            value="{{$key}}" {{session()->get('extra_points') == $key ? 'selected' : ''}}
+                                            >{{$opt}}</option>
                                         @endforeach
                                     </select>
                                 </div>
@@ -182,7 +186,10 @@
                                 <p class="sub_label">
                                     If you chose any of the qualifications above, when did you obtain the latest? Indicate year ONLY. For example, 2011.
                                 </p>
-                                <input id="qualif_date" onchange="changeBackground('qualif_date')" required title="qualif_date" type="date" class="">
+                                <input id="qualif_date" onchange="changeBackground('qualif_date')" required title="qualif_date" type="date" 
+                                class=""
+                                value="{{session()->get('qualif_date')}}"
+                                >
                             </div>
 
                             <div class="field-box w-100 flex-wrap">
@@ -208,7 +215,9 @@
                                  <p>
                                     If you do not have any qualification, please type N/A
                                 </p>
-                                <input id="qualification_name" onchange="changeBackground('qualification_name')" title="qualification_name" type="text" required class="col-12">
+                                <input id="qualification_name" onchange="changeBackground('qualification_name')" 
+                                 value="{{session()->get('qualification_name')}}"
+                                 title="qualification_name" name="qualification_name" type="text" required class="col-12">
                                 <br>
                             </div>
                         </div>

@@ -26,24 +26,32 @@
                         <div class="col-xs-12 col-md-5 pr-md-0 mt-4 d-flex flex-wrap">
                             <div class="w-100">
                                 <label class="col-md-12 d-flex p-0 flex-lg-wrap label_form">First Name*</label>
-                                <input class="w-100" type="text" name="name" id="name" onchange="changeBackground('name')" required>
+                                <input class="w-100" 
+                                value="{{session()->get('name')}}"
+                                type="text" name="name" id="name" onchange="changeBackground('name')" required>
                             </div>
 
                             <div class="w-100">
                                 <label class="col-md-12 d-flex p-0 flex-lg-wrap label_form">Family Name*</label>
-                                <input class="w-100" type="text" name="surname" id="surname" onchange="changeBackground('surname')" required>
+                                <input class="w-100" 
+                                value="{{session()->get('surname')}}"
+                                type="text" name="surname" id="surname" onchange="changeBackground('surname')" required>
                             </div>
 
                             <div>
                                 <label class="col-md-12 d-flex p-0 flex-lg-wrap label_form">Your Email Address*</label>
                                 <span class="sub_label">Please make sure this is correct as it will be used for all future communication regarding your assessment.</span>
-                                <input class="w-100" type="email" name="email" id="email" onchange="changeBackground('email')" required>						
+                                <input class="w-100" type="email" 
+                                value="{{session()->get('email')}}"
+                                name="email" id="email" onchange="changeBackground('email')" required>						
                             </div>
 
                             <div>
                                 <label class="col-md-12 d-flex p-0 flex-lg-wrap label_form">Your Mygrate Password*</label>
                                 <span class="sub_label">Choose the password to log-in your Mygrate Profile. Password should be at least 8 digit and should contain at least XXXXXXXXXX.</span>
-                                <input class="w-100" type="password" name="pswd" id="pswd" onchange="changeBackground('pswd')" required>
+                                <input class="w-100" type="password" name="pswd" 
+                                value="{{session()->get('pswd')}}"
+                                id="pswd" onchange="changeBackground('pswd')" required>
                             </div>
 
                             <label class="col-md-12 d-flex p-0 flex-lg-wrap label_form">Upload your CV/Resume</label>
@@ -56,19 +64,25 @@
                             <div>
                                 <label class="col-md-12 d-flex p-0 flex-lg-wrap label_form">LinkedIn Profile</label>
                                 <span class="sub_label">If you have a LinkedIn profile, please copy the link and paste it here.</span>
-                                <input class="w-100" type="text" name="linkedin" id="linkedin" onchange="changeBackground('linkedin')">
+                                <input class="w-100" 
+                                value="{{session()->get('linkedin')}}"
+                                type="text" name="linkedin" id="linkedin" onchange="changeBackground('linkedin')">
                             </div>
 
                             <div>
                                 <label class="col-md-12 d-flex p-0 flex-lg-wrap label_form">Skype/Google Hangout</label>
                                 <span class="sub_label">Would you like to be contacted via video-chat? Insert your preferred contact here:</span>
-                                <input class="w-100" type="text" name="usr_skype" id="usr_skype" onchange="changeBackground('usr_skype')">
+                                <input class="w-100" 
+                                value="{{session()->get('usr_skype')}}"
+                                type="text" name="usr_skype" id="usr_skype" onchange="changeBackground('usr_skype')">
                             </div>
 
                             <div>
                                 <label class="col-md-12 d-flex p-0 flex-lg-wrap label_form">Phone number</label>
                                 <span class="sub_label">Feel like a chat? Insert your phone number here (please include the international code - for example +61):</span>
-                                <input class="w-100" type="tel" name="usr_tel" id="usr_tel" onchange="changeBackground('usr_tel')">
+                                <input class="w-100" 
+                                value="{{session()->get('usr_tel')}}"
+                                type="tel" name="usr_tel" id="usr_tel" onchange="changeBackground('usr_tel')">
                             </div>
 
                             <div>
@@ -82,14 +96,16 @@
                                     - Indicatively, when you would like to be in Australia;<br>
                                     - anything that you think it is relevant;
                                 </p>
-                                <input class="w-100" type="textarea" name="comment" id="comment" onchange="changeBackground('comment')">
+                                <input class="w-100" 
+                                value="{{session()->get('comment')}}"
+                                type="textarea" name="comment" id="comment" onchange="changeBackground('comment')">
                             </div>
 
                             <div>
                                 <label class="col-md-12 d-flex p-0 flex-lg-wrap label_form">Where did you find this link?*</label>
                                 <span class="sub_label">Thank you for helping us improving :)</span>
                                 <select class="w-100" name="where_find" id="where_find" onchange="changeBackground('where_find')" required>
-                                    <option value="" selected></option>
+                                <option value="" selected></option>
                                     <option value="1">Google Search</option>
                                     <option value="2">Facebook</option>
                                     <option value="3">Twitter</option>
@@ -102,7 +118,9 @@
                             <div>
                                 <label class="col-md-12 d-flex p-0 flex-lg-wrap label_form">Tell a friend!</label>
                                 <span class="sub_label">Type a friend's email address below and you'll receive our ebook 'A Simple Guide to Australia ed. 2018'</span>
-                                <input class="w-100" type="text" name="email_friend" id="email_friend" onchange="changeBackground('email_friend')">
+                                <input class="w-100" 
+                                value="{{session()->get('email_friend')}}"
+                                type="text" name="email_friend" id="email_friend" onchange="changeBackground('email_friend')">
                             </div>
                             <br>
                         </div>

@@ -38,7 +38,9 @@
                                         <select class="w-100" id="employment" name="employment" onchange="changeBackground('employment')" required>
                                             <option value=""></option>
                                             @foreach($employment as $key => $opt)
-                                                <option value="{{$key}}">{{$opt}}</option>
+                                                <option 
+                                                value="{{$key}}" {{session()->get('employment') == $key ? 'selected' : ''}}
+                                                >{{$opt}}</option>
                                             @endforeach
                                         </select>
                                     </div>
@@ -68,7 +70,9 @@
                                                     onchange="changeBackground('occupation')">
                                                 <option value=""></option>
                                                 @foreach($occupation as $key => $opt)
-                                                    <option value="{{$key}}">{{$opt}}</option>
+                                                    <option 
+                                                    value="{{$key}}" {{session()->get('occupation') == $key ? 'selected' : ''}}
+                                                    >{{$opt}}</option>
                                                 @endforeach
                                             </select>
                                         </div>
@@ -92,7 +96,9 @@
                                                     onchange="changeBackground('experience')">
                                                 <option value=""></option>
                                                 @foreach($experienceOutside as $key => $opt)
-                                                    <option value="{{$key}}">{{$opt}}</option>
+                                                    <option 
+                                                    value="{{$key}}" {{session()->get('experience') == $key ? 'selected' : ''}}
+                                                    >{{$opt}}</option>
                                                 @endforeach
                                             </select>
                                         </div>
@@ -115,7 +121,9 @@
                                                 onchange="changeBackground('experience_AU')">
                                             <option value=""></option>
                                             @foreach($experienceInside as $key => $opt)
-                                                <option value="{{$key}}">{{$opt}}</option>
+                                                <option 
+                                                value="{{$key}}" {{session()->get('experience_AU') == $key ? 'selected' : ''}}
+                                                >{{$opt}}</option>
                                             @endforeach
                                         </select>
                                     </div>
