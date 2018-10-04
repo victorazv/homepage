@@ -15,12 +15,12 @@ use App\User;
 use Illuminate\Support\Facades\DB;
 
 Route::get('/', 'WebsiteController@index');
-Route::get('/user', 'WebsiteController@user')->name('user');
-Route::get('/profile/view', 'WebsiteController@profile')->name('profile.view');
-Route::get('/profile/edit', 'WebsiteController@profileEdit')->name('profile.edit');
-Route::post('/profile/update', 'WebsiteController@profileUpdate')->name('profile.update');
-Route::get('/profile/deletePhoto', 'WebsiteController@deletePhoto')->name('profile.deletePhoto');
-Route::get('/profile/deleteCV', 'WebsiteController@deleteCV')->name('profile.deleteCV');
+Route::get('/user/{id}', 'WebsiteController@user')->name('user');
+Route::get('/profile/{id}/view', 'WebsiteController@profile')->name('profile.view');
+Route::get('/profile/{id}/edit', 'WebsiteController@profileEdit')->name('profile.edit');
+Route::post('/profile/{id}/update', 'WebsiteController@profileUpdate')->name('profile.update');
+Route::get('/profile/{id}/deletePhoto', 'WebsiteController@deletePhoto')->name('profile.deletePhoto');
+Route::get('/profile/{id}/deleteCV', 'WebsiteController@deleteCV')->name('profile.deleteCV');
 Route::get('/form', 'WebsiteController@form');
 Route::post('/form_insert', 'WebsiteController@formInsert')->name('form.insert');
 
@@ -42,6 +42,7 @@ Route::get('/paf6b', 'WebsiteController@paf6b')->name('paf6b');
 Route::get('/paf7', 'WebsiteController@paf7')->name('paf7');
 Route::get('/paf7a', 'WebsiteController@paf7a')->name('paf7a');
 Route::get('/paf8', 'WebsiteController@paf8')->name('paf8');
+Route::post('/paf8', 'WebsiteController@paf8store')->name('paf8.store');
 
 Route::get('/con', function() {
     $user = User::find(73);

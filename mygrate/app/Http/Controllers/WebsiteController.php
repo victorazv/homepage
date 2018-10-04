@@ -28,7 +28,7 @@ class WebsiteController extends Controller
         return view('homepage');
     }
 
-    public function user()
+    public function user($id)
     {
         $user = User::with([
             'details',
@@ -38,7 +38,7 @@ class WebsiteController extends Controller
             'details.employmentR',
             'details.qualificationR',
             'details.languageR'
-        ])->find(73);
+        ])->find($id);
         $profilePicUrl = null;
         if ($user->details->picture) {
             $profilePicUrl = Storage::url($user->details->picture);
@@ -76,7 +76,7 @@ class WebsiteController extends Controller
         return redirect('form');
     }
 
-    public function profile()
+    public function profile($id)
     {
         $user = User::with([
             'details',
@@ -88,7 +88,7 @@ class WebsiteController extends Controller
             'details.languageR',
             'details.ListEnglishTestsR',
             'details.englishR'
-        ])->find(73);
+        ])->find($id);
 
         $profilePicUrl = null;
         if ($user->details->picture) {
@@ -106,7 +106,7 @@ class WebsiteController extends Controller
             ->with('profileCvUrl', $profileCvUrl);
     }
 
-    public function profileEdit()
+    public function profileEdit($id)
     {
         $user = User::with([
             'details',
@@ -116,7 +116,7 @@ class WebsiteController extends Controller
             'details.employmentR',
             'details.qualificationR',
             'details.languageR'
-        ])->find(73);
+        ])->find($id);
 
         $profilePicUrl = null;
         if ($user->details->picture) {
@@ -159,9 +159,9 @@ class WebsiteController extends Controller
             ->with('englishTests', $englishTests);
     }
 
-    public function profileUpdate(Request $request)
+    public function profileUpdate($id, Request $request)
     {
-        $user = User::find(73);
+        $user = User::find($id);
         $details = $user->details()->first()->fill($request->all());
         if ($request->hasFile('picture')) {
             if (!in_array($request->file('picture')->getClientOriginalExtension(), ['png', 'jpg', 'jpeg'])) {
@@ -182,25 +182,25 @@ class WebsiteController extends Controller
             $details->cv = $CvfileName;
         }
         $details->save();
-        return redirect(route('profile.view'));
+        return redirect(route('profile.view', $user->id));
     }
 
-    public function deletePhoto(Request $request)
+    public function deletePhoto($id, Request $request)
     {
-        $user = User::find(73);
+        $user = User::find($id);
         $details = $user->details()->first();
         $details->picture = null;
         $details->save();
-        return redirect(route('profile.view'));
+        return redirect(route('profile.view', $user->id));
     }
 
-    public function deleteCV(Request $request)
+    public function deleteCV($id, Request $request)
     {
-        $user = User::find(73);
+        $user = User::find($id);
         $details = $user->details()->first();
         $details->cv = null;
         $details->save();
-        return redirect(route('profile.view'));
+        return redirect(route('profile.view', $user->id));
     }
 
     public function paf()
@@ -352,6 +352,10 @@ class WebsiteController extends Controller
             session()->put($key, $input);
         }
         session()->save();
+        return view('paf8');
+    }
+
+    public function paf8store(Request $request) {
         $user = User::create([
             'login' => session()->get('email'),
             'pswd' => md5(session()->get('pswd')),
@@ -363,7 +367,6 @@ class WebsiteController extends Controller
         ]);
         session()->put('login_user', $user->login);
         $userDetails = UserDetail::create(session()->all());
-        //dd(session()->all(), $user, $userDetails);
-        return view('paf8');
+        return redirect(route('user', $user->id));
     }
 }

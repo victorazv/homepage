@@ -18,13 +18,13 @@
             <div class="p-2 align-self-end mr-md-5">
                 <ul class="nav">
                     <li class="nav-item">
-                        <a class="nav-link border-styled" href="{{route('user')}}">Dashboard</a>
+                        <a class="nav-link border-styled" href="{{route('user', $user->id)}}">Dashboard</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{route('profile.view')}}">View your Profile</a>
+                        <a class="nav-link" href="{{route('profile.view', $user->id)}}">View your Profile</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" href="{{route('profile.edit')}}">Edit Profile</a>
+                        <a class="nav-link active" href="{{route('profile.edit', $user->id)}}">Edit Profile</a>
                     </li>
                 </ul>
             </div>
@@ -37,7 +37,7 @@
                     </div>
                 </div>
             @endif
-            <form action="{{route('profile.update')}}" method="post" enctype='multipart/form-data'>
+            <form action="{{route('profile.update', $user->id)}}" method="post" enctype='multipart/form-data'>
                 {{csrf_field()}}
                 <div class="row">
                     <div class="col-md-3 mt-3">
@@ -54,7 +54,7 @@
                                     <button class="upload-btn btn custom-btn mb-1 mt-4 btn-block">Upload photo</button>
                                     <input type="file" name="picture"/>
                                 </div>
-                                <a class="btn btn-block" href="{{route('profile.deletePhoto')}}"
+                                <a class="btn btn-block" href="{{route('profile.deletePhoto', $user->id)}}"
                                    style="background: #cccccc; color: #f0f0f0; font-weight: bold; border: 0; border-radius: 0; font-size: 1.1em">
                                     Delete Photo
                                 </a>
@@ -433,7 +433,7 @@
                                         <button class="upload-btn btn custom-btn mb-1 mt-4 btn-block">Upload CV</button>
                                         <input type="file" name="cv"/>
                                     </div>
-                                    <a class="btn btn-block" href="{{route('profile.deleteCV')}}"
+                                    <a class="btn btn-block" href="{{route('profile.deleteCV', $user->id)}}"
                                        style="background: #cccccc; color: #f0f0f0; font-weight: bold; border: 0; border-radius: 0; font-size: 1.1em">
                                         Delete File
                                     </a>

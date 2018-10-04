@@ -32,13 +32,13 @@
                     <div class="p-2 align-self-end">
                         <ul class="nav justify-content-end">
                             <li class="nav-item">
-                                <a class="nav-link active border-styled" href="{{route('user')}}">Dashboard</a>
+                                <a class="nav-link active border-styled" href="{{route('user', $user->id)}}">Dashboard</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="{{route('profile.view')}}">View your Profile</a>
+                                <a class="nav-link" href="{{route('profile.view', $user->id)}}">View your Profile</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="{{route('profile.edit')}}">Edit Profile</a>
+                                <a class="nav-link" href="{{route('profile.edit', $user->id)}}">Edit Profile</a>
                             </li>
                         </ul>
                     </div>
