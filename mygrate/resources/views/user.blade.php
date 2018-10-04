@@ -13,6 +13,39 @@
 @endpush
 
 @section('content')
+
+<!-- The Modal -->
+<div id="myModal" class="modal">
+
+  <!-- Modal content -->
+  <div class="modal-content">
+    <span class="close"><p id="btn_close">&times;</p></span>
+    <p class="modal_header">Congratulations {{$user->details->name}}, Welcome to Mygrate!</p>
+    <p class="text_modal">Here is your personal feedback based on the information you provided:</p>
+
+
+<div class="py-3 modal_card">
+    <div class="ml-4 text_modal">
+        <strong>Hey there, chances seem pretty low...</strong> <br>
+        Are you sure you answered correctly to all the questions?<br>
+        It looks like something is missing or needs to be reviewed.<br>
+        If everything is correct, you might not have the requirements to obtain<br>
+        the visa you are looking for.<br>
+        <p>Contact one of our agents to find out what you can do.</p>
+    </div>
+</div>
+
+<div class="text_modal mt-3 col-11 px-0 mx-0">
+    Your profile has been created and you will be able to explore it as soon as you
+    close this message. You will also find this feedback in your personal Messages
+    in Mygrate Dashboard.
+</div>
+
+  </div>
+
+</div>
+
+
     <main class="mb-3">
         <section class="user-welcome">
             <div class="container-fluid m-0 p-0">
@@ -194,9 +227,38 @@
 @endsection
 
 @push('footer-scripts')
-    <script>
+   
+<script>
+    var modal = document.getElementById('myModal');
+    var btn_close = document.getElementById("btn_close");
+    btn_close.onclick = function() {
+        modal.style.display = "none";
+    }
 
-    </script>
+    // Get the button that opens the modal
+    //var btn = document.getElementById("myBtn");
+    // Get the <span> element that closes the modal
+    //var span = document.getElementsByClassName("close")[0];
+    // When the user clicks the button, open the modal 
+    /*
+    btn.onclick = function() {
+        modal.style.display = "block";
+    }
+    */
+    // When the user clicks on <span> (x), close the modal    
+
+    // When the user clicks anywhere outside of the modal, close it
+    /*
+    window.onclick = function(event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
+    */
+</script>
+
+
+
 @endpush
 
 @section('footer')

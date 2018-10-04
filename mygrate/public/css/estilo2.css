@@ -597,3 +597,79 @@ input:not(:checked)+ label{
 }
 
 .remove-btn-style { border:none !important; padding: 0 !important; }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.text_modal{
+    font-size: 1.2em;
+}
+
+.modal_header{
+    font-size: 2.1em;
+    font-weight: 800;
+    font-family:Muli;
+}
+
+.modal_card{
+    background-image: linear-gradient(to right, #B495C1 , #8AB5E1);
+    color: #fff;
+    font-family:Muli;
+}
+
+#myModal{
+    display: block;
+}
+
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    font-family:Muli;
+    /*background-color: rgb(0,0,0);  Fallback color 
+    background-color: rgba(0,0,0,0.4);  Black w/ opacity
+    */
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #fff;
+    width: 60%;
+    border-radius: 0;
+    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+}
+
+/* The Close Button */
+.close {
+    color: #000;
+    float: right;
+    font-size: 3em;
+    font-weight: bold;
+    text-align: right;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}

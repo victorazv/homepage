@@ -58,11 +58,11 @@
                         </div>
                     </div>
                 </div>
-                <div class="question w-100 offset-md-2 col-md-8 col-xs-12">
-                    <input type="radio" name="agent_without_free_first_consultation" id="no"
+                <div id="buttons" class="question w-100 offset-md-2 col-md-8 col-xs-12">
+                    <input class="" type="radio" name="agent_without_free_first_consultation" id="no"
                            value="0"><label
                             class="four radio_item1 float-right mt-3 mr-4" for="no">No</label>
-                    <input type="radio" name="agent_without_free_first_consultation" id="yes"
+                    <input class="" type="radio" name="agent_without_free_first_consultation" id="yes"
                            value="1" checked><label
                             class="four radio_item1 float-right mt-3 mr-4" for="yes">Yes</label>
                 </div>

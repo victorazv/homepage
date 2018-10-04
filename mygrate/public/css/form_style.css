@@ -78,8 +78,8 @@ select {
 }
 
 .field-filled{
-    background-image: linear-gradient(to right, #B495C1 , #8AB5E1) important!;
-    color: #fff important!;
+    background-image: linear-gradient(to right, #B495C1 , #8AB5E1);
+    color: #fff;
 }
 
 .field-filled option{
@@ -259,4 +259,8 @@ section.banner_form {
 input:not(:checked)+ label{
     background-color: #f0f0f0;
     color: #000;
+}
+
+#buttons input:not(:checked)+ label{
+    background-color: #cccccc;
 }

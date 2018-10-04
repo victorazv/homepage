@@ -181,12 +181,12 @@
                                         <div>
                                             <label class="label_form" >Do you have any family member in Australia?</label>
                                             <section class="form">
-                                                <input type="radio" name="family_AU" id="hold_yes" value="1"
+                                                <input type="radio" name="family_AU" id="family_yes" value="1"
                                                        onclick="updateProgress()"><label class="four radio_item1"
-                                                                                         for="yes">Yes</label>
-                                                <input type="radio" name="family_AU" id="hold_no" value="0"
+                                                                                         for="family_yes">Yes</label>
+                                                <input type="radio" name="family_AU" id="family_no" value="0"
                                                        onclick="updateProgress()"><label class="four radio_item1"
-                                                                                         for="no">No</label>
+                                                                                         for="family_no">No</label>
                                             </section>
                                         </div>
                                     </div>

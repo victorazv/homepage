@@ -48,7 +48,17 @@
                                    This means you have been awarded one or more degrees, diplomas or trade qualifications through a course or courses taken at an Australian educational institution.
                                 </span>
                                 <br>
-                                <input type="text" value="Field name?">
+                                <div class="field-box w-100 flex-wrap">
+                                    <section class="form">
+                                        <input type="radio" required name="AU_study_req" id="AU_study_req_yes" value="1"
+                                            onclick="updateProgress()"><label class="four radio_item1"
+                                                                                for="AU_study_req_yes">Yes</label>
+                                        <input type="radio" name="AU_study_req" id="AU_study_req_no" value="0"
+                                            onclick="updateProgress()"><label class="four radio_item1"
+                                                                                for="AU_study_req_no">No</label>
+                                    </section>
+                                </div>
+
                             </div>
 
                             <div class="col-12">
@@ -172,8 +182,7 @@
                                 <p class="sub_label">
                                     If you chose any of the qualifications above, when did you obtain the latest? Indicate year ONLY. For example, 2011.
                                 </p>
-                                <br>
-                                <input required title="qualif_date" type="date" class="">
+                                <input id="qualif_date" onchange="changeBackground('qualif_date')" required title="qualif_date" type="date" class="">
                             </div>
 
                             <div class="field-box w-100 flex-wrap">
@@ -199,7 +208,7 @@
                                  <p>
                                     If you do not have any qualification, please type N/A
                                 </p>
-                                <input title="qualification_name" type="text" required class="col-12">
+                                <input id="qualification_name" onchange="changeBackground('qualification_name')" title="qualification_name" type="text" required class="col-12">
                                 <br>
                             </div>
                         </div>

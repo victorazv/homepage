@@ -102,7 +102,7 @@
                             <div>
                                 <label class="col-md-12 d-flex p-0 flex-lg-wrap label_form">Tell a friend!</label>
                                 <span class="sub_label">Type a friend's email address below and you'll receive our ebook 'A Simple Guide to Australia ed. 2018'</span>
-                                <input class="w-100" type="text" name="email_friend" id="comemail_friendment" onchange="changeBackground('email_friend')">
+                                <input class="w-100" type="text" name="email_friend" id="email_friend" onchange="changeBackground('email_friend')">
                             </div>
                             <br>
                         </div>
