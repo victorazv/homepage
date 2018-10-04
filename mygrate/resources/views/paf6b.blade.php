@@ -66,22 +66,7 @@
 
                             <div id="msg_under_english_test" style="display:none">
 
-                                <div class="field-box w-100">
-                                    <label for="age" class="label_form">
-                                        How would your rate your English language Proficiency Level?*
-                                    </label>
-                                    <br>
-                                    <div class="div-select_small">
-                                        <select name="english_level">
-                                            <option value=""></option>                                        
-                                            <option value="1">Poor</option>
-                                            <option value="2">Fair</option>
-                                            <option value="3">Good</option>
-                                            <option value="4">Fluent</option>
-                                            <option value="5">Native Speaker</option>
-                                        </select>
-                                    </div>
-                                </div>
+                          
 
                                 <p>
                                     If you are applying for Skilled Migration, you will need to prove your English
@@ -117,6 +102,39 @@
                                     Australia Visa,
                                     your English ability <strong>will need to be certified</strong>.
                                 </p>
+                                
+                                <div class="field-box w-100">
+                                    <label for="age" class="label_form">
+                                        In the meantime, how would you consider your level of English?*
+                                    </label>
+                                    <br>
+                                    <div class="div-select_small">
+                                        <select name="english_level">
+                                            <option value=""></option>                                        
+                                            <option value="1">Poor</option>
+                                            <option value="2">Fair</option>
+                                            <option value="3">Good</option>
+                                            <option value="4">Fluent</option>
+                                            <option value="5">Native Speaker</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <div id="field_original" class="field-box w-100">
+                                <label for="age" class="label_form">
+                                    How would your rate your English language Proficiency Level?*
+                                </label>
+                                <br>
+                                <div class="div-select_small">
+                                    <select required name="english_level">
+                                        <option value=""></option>
+                                        @foreach($englishLevels as $key => $opt)
+                                            <option value="{{$key}}">{{$opt}}</option>
+                                        @endforeach
+                                    </select>
+                                </div>
                             </div>
 
                         </div>
@@ -165,8 +183,10 @@
             console.log(val);
             if (val == 6) {
                 $('#msg_under_english_test').show();
+                $('#field_original').hide();
             } else {
                 $('#msg_under_english_test').hide();
+                $('#field_original').show();
             }
         });
     </script>

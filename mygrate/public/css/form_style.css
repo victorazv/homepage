@@ -255,3 +255,8 @@ section.banner_form {
     font-weight: 800;
     margin-top: 12px;
 }
+
+input:not(:checked)+ label{
+    background-color: #f0f0f0;
+    color: #000;
+}
