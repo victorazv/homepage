@@ -29,7 +29,7 @@
                                 <label class="label_form" for="" class="custom-label">What is your Level of qualification*</label>
                                 <br>
                                 <div class="div-select_small">
-                                    <select class="col-12" name="english_level" required onchange="changeBackground('english_level')">
+                                    <select class="col-12" required name="english_level" required onchange="changeBackground('english_level')">
                                         <option value=""></option>
                                         @foreach($englishLevels as $key => $opt)
                                             <option value="{{$key}}">{{$opt}}</option>
@@ -87,16 +87,17 @@
                                 </p>
 
                                 <div>
-                                <div class="div-select_small">
-                                    <select class="col-12" name="qualification_level"
-                                            onchange="changeBackground('qualification_level')"
-                                            required>
-                                        @foreach($qualifications as $key => $opt)
-                                            <option value=""></option>
-                                            <option value="{{$key}}">{{$opt}}</option>
-                                        @endforeach
-                                    </select>
-                                </div>
+                                    <div class="field-box w-100 flex-wrap">
+                                        <section class="form">
+                                            <input type="radio" required name="special_edu" id="yes" value="1"
+                                                onclick="updateProgress()"><label class="four radio_item1"
+                                                                                    for="yes">Yes</label>
+                                            <input type="radio" name="special_edu" id="no" value="0"
+                                                onclick="updateProgress()"><label class="four radio_item1"
+                                                                                    for="no">No</label>
+                                        </section>
+                                    </div>
+                                
                                 </div>
                             </div>
 
@@ -149,10 +150,10 @@
                                     your study was located in regional Australia or a low population growth metropolitan area.
                                 </p>
                                 <div class="div-select_small">
-                                    <select class="col-12" name="qualification_level"
-                                            onchange="changeBackground('qualification_level')"
+                                    <select class="col-12" name="extra_points"
+                                            onchange="changeBackground('extra_points')"
                                             required>
-                                        @foreach($qualifications as $key => $opt)
+                                        @foreach($extraPoints as $key => $opt)
                                             <option value=""></option>
                                             <option value="{{$key}}">{{$opt}}</option>
                                         @endforeach
@@ -172,23 +173,23 @@
                                     If you chose any of the qualifications above, when did you obtain the latest? Indicate year ONLY. For example, 2011.
                                 </p>
                                 <br>
-                                <input title="english_level" type="number" class="form-control custom-input">
+                                <input required title="qualif_date" type="date" class="">
                             </div>
 
                             <div class="field-box w-100 flex-wrap">
                                 <label class="label_form">Are your qualifications related to your occupation?*</label>
                                 <section class="form">
-                                    <input type="radio" required name="qualif_occupation" id="yes" value="1"
+                                    <input type="radio" required name="qualif_occupation" id="yesq" value="1"
                                            onclick="updateProgress()"><label class="four radio_item1"
-                                                                             for="yes">Yes</label>
-                                    <input type="radio" name="qualif_occupation" id="no" value="0"
+                                                                             for="yesq">Yes</label>
+                                    <input type="radio" name="qualif_occupation" id="noq" value="0"
                                            onclick="updateProgress()"><label class="four radio_item1"
-                                                                             for="no">No</label>
+                                                                             for="noq">No</label>
                                 </section>
                             </div>
 
                             <div class="field-box w-100">
-                                <label class="label_form">Qualification name:</label>
+                                <label class="label_form">Qualification name*</label>
                                 <br>
                                 <p class="sub_label">
                                    <img src="images/icon_i_small2.png" alt="">
@@ -198,13 +199,12 @@
                                  <p>
                                     If you do not have any qualification, please type N/A
                                 </p>
-                                <br>
-                                <input title="qualification_name" type="text" class="form-control custom-input">
+                                <input title="qualification_name" type="text" required class="col-12">
                                 <br>
                             </div>
-
                         </div>
                     </div>
+                    <br>
                 </div>
                     <div class="question w-100 offset-md-2 col-md-8 col-xs-12">
                         <button type="submit" class="float-right mt-3 mr-4">Continue</button>

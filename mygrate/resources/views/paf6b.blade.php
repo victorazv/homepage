@@ -26,12 +26,12 @@
                         <div class="col-xs-12 col-md-5 pr-md-0 mt-4 d-flex flex-wrap">
 
                             <div class="field-box w-100">
-                                <label for="" class="custom-label">
+                                <label for="" class="label_form">
                                     What is your First language?*
                                 </label>
                                 <br>
-                                <div class="div-select">
-                                    <select id="language" name="language">
+                                <div class="div-select_small">
+                                    <select required id="language" name="language">
                                         <option value=""></option>
                                         @foreach($languages as $key => $opt)
                                             <option value="{{$key}}">{{$opt}}</option>
@@ -39,25 +39,23 @@
                                     </select>
                                 </div>
                             </div>
-
                             <div id="msg_under_language" style="display:none">
-                                If you are a citizen of, and hold a valid passport from, Canada, New Zealand, the
-                                Republic
-                                of Ireland, the United Kingdom, or the United States, we consider that you have <strong>Competent
-                                    English.</strong> <br>
-                                However, if you want to claim points for <strong>Proficient</strong> or
-                                <strong>Superior</strong> English, you need to achieve
-                                the required score from one of the English language test providers.
+							<span class="sub_label">
+								<img src="images/icon_i_small2.png" alt="">
+								If you are a citizen of, and hold a valid passport from, Canada, New Zealand, the Republic
+								of Ireland, the United Kingdom, or the United States, we consider that you have <strong>Competent English.</strong> <br>
+								However, if you want to claim points for <strong>Proficient</strong> or <strong>Superior</strong> English, you need to achieve
+								the required score from one of the English language test providers.
+							</span>
                             </div>
-
                             <div class="field-box w-100">
-                                <label for="" class="custom-label">
+                                <label for="" class="label_form">
                                     Have you undertaken one of these English language proficiency tests in the last 36
                                     months?*
                                 </label>
                                 <br>
-                                <div class="div-select">
-                                    <select id="english_test" name="english_test">
+                                <div class="div-select_small">
+                                    <select required id="english_test" name="english_test">
                                         <option value=""></option>
                                         @foreach($englishTests as $key => $opt)
                                             <option value="{{$key}}">{{$opt}}</option>
@@ -104,22 +102,24 @@
                             </div>
 
                             <div class="field-box w-100">
-                                <label for="age" class="custom-label">
+                                <label for="age" class="label_form">
                                     How would your rate your English language Proficiency Level?*
                                 </label>
                                 <br>
-                                <div class="div-select">
-                                    <select name="english_level">
+                                <div class="div-select_small">
+                                    <select required name="english_level">
+                                        <option value=""></option>
                                         @foreach($englishLevels as $key => $opt)
                                             <option value="{{$key}}">{{$opt}}</option>
                                         @endforeach
                                     </select>
                                 </div>
                             </div>
-
                         </div>
                     </div>
                 </div>
+                <br>
+
 
                 <div class="question w-100 offset-md-2 col-md-8 col-xs-12">
                     <button type="submit" class="float-right mt-3 mr-4">Continue</button>

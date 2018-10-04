@@ -298,10 +298,12 @@ class WebsiteController extends Controller
 
         $qualifications = Qualification::pluck('descr', 'id');
         $englishLevels = English::pluck('descr', 'id');
+        $extraPoints = ExtraPoint::pluck('descr', 'id');
 
         return view('paf5a')
             ->with('qualifications', $qualifications)
-            ->with('englishLevels', $englishLevels);
+            ->with('englishLevels', $englishLevels)
+            ->with('extraPoints', $extraPoints);
     }
 
     public function paf6(Request $request)
