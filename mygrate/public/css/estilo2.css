@@ -575,3 +575,5 @@ input:not(:checked)+ label{
     top: 0;
     opacity: 0;
 }
+
+.remove-btn-style { border:none !important; padding: 0 !important; }

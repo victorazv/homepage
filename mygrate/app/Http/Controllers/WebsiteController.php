@@ -40,7 +40,7 @@ class WebsiteController extends Controller
             'details.languageR'
         ])->find(73);
         $profilePicUrl = null;
-        if($user->details->picture) {
+        if ($user->details->picture) {
             $profilePicUrl = Storage::url($user->details->picture);
         }
         return view('user')
@@ -91,12 +91,12 @@ class WebsiteController extends Controller
         ])->find(73);
 
         $profilePicUrl = null;
-        if($user->details->picture) {
+        if ($user->details->picture) {
             $profilePicUrl = Storage::url($user->details->picture);
         }
 
         $profileCvUrl = null;
-        if($user->details->picture) {
+        if ($user->details->picture) {
             $profileCvUrl = Storage::url($user->details->cv);
         }
 
@@ -119,12 +119,12 @@ class WebsiteController extends Controller
         ])->find(73);
 
         $profilePicUrl = null;
-        if($user->details->picture) {
+        if ($user->details->picture) {
             $profilePicUrl = Storage::url($user->details->picture);
         }
 
         $profileCvUrl = null;
-        if($user->details->picture) {
+        if ($user->details->picture) {
             $profileCvUrl = Storage::url($user->details->cv);
         }
 
@@ -164,7 +164,7 @@ class WebsiteController extends Controller
         $user = User::find(73);
         $details = $user->details()->first()->fill($request->all());
         if ($request->hasFile('picture')) {
-            if(!in_array($request->file('picture')->getClientOriginalExtension(), ['png', 'jpg', 'jpeg'])) {
+            if (!in_array($request->file('picture')->getClientOriginalExtension(), ['png', 'jpg', 'jpeg'])) {
                 session()->flash('error', 'Please, upload a picture with correct extension. (PNG, JPG or JPEG)');
                 return redirect()->back();
             }
@@ -173,7 +173,7 @@ class WebsiteController extends Controller
             $details->picture = $PicfileName;
         }
         if ($request->hasFile('cv')) {
-            if(!in_array($request->file('cv')->getClientOriginalExtension(), ['doc', 'docx', 'pdf'])) {
+            if (!in_array($request->file('cv')->getClientOriginalExtension(), ['doc', 'docx', 'pdf'])) {
                 session()->flash('error', 'Please, upload a file with correct extension. (DOC, DOCX or PDF)');
                 return redirect()->back();
             }
@@ -233,27 +233,22 @@ class WebsiteController extends Controller
         return view('paf2a');
     }
 
-    public function paf3()
+    public function paf3(Request $request)
     {
-        $user = User::with([
-            'details',
-            'details.maritalStatusR',
-            'details.citizenshipR',
-            'details.citizenshipOtherR',
-            'details.employmentR',
-            'details.qualificationR',
-            'details.languageR'
-        ])->find(73);
-        
+        if ($request->has('agent_without_free_first_consultation')) {
+            session()->put('agent_without_free_first_consultation',
+                $request->input('agent_without_free_first_consultation'));
+            session()->save();
+        }
+
         $maritalStatus = Relationship::pluck('descr', 'id');
         $citizenship = Country::pluck('descr', 'id');
         $languages = Language::pluck('descr', 'id');
         $visaTypes = VisaType::pluck('descr', 'id');
         $qualifications = Qualification::pluck('descr', 'id');
-        
+
 
         return view('paf3')
-            ->with('user', $user)
             ->with('maritalStatus', $maritalStatus)
             ->with('citizenship', $citizenship)
             ->with('languages', $languages)
@@ -261,8 +256,12 @@ class WebsiteController extends Controller
             ->with('qualifications', $qualifications);
     }
 
-    public function paf4()
+    public function paf4(Request $request)
     {
+        foreach ($request->all() as $key => $input) {
+            session()->put($key, $input);
+        }
+        session()->save();
         return view('paf4');
     }
 
@@ -273,43 +272,44 @@ class WebsiteController extends Controller
 
     public function paf4b()
     {
-        $user = User::with([
-            'details'
-            ])->find(73);
         $employment = Employment::pluck('descr', 'id');
         $occupation = Occupation::pluck('descr', 'id');
         $experienceOutside = ExperienceOutside::pluck('descr', 'id');
         $experienceInside = ExperienceInside::pluck('descr', 'id');
 
         return view('paf4b')
-        ->with('user', $user)
-        ->with('occupation', $occupation)
-        ->with('employment', $employment)
-        ->with('experienceOutside', $experienceOutside)
-        ->with('experienceInside', $experienceInside);
+            ->with('occupation', $occupation)
+            ->with('employment', $employment)
+            ->with('experienceOutside', $experienceOutside)
+            ->with('experienceInside', $experienceInside);
     }
 
-    public function paf5()
+    public function paf5(Request $request)
     {
+        foreach ($request->all() as $key => $input) {
+            session()->put($key, $input);
+        }
+        session()->save();
         return view('paf5');
     }
 
     public function paf5a()
     {
-        $user = User::with([
-            'details'
-            ])->find(73);
-            $qualifications = Qualification::pluck('descr', 'id');
-            $englishLevels = English::pluck('descr', 'id');
+
+        $qualifications = Qualification::pluck('descr', 'id');
+        $englishLevels = English::pluck('descr', 'id');
 
         return view('paf5a')
-        ->with('user', $user)
-        ->with('qualifications', $qualifications)
-        ->with('englishLevels', $englishLevels);
+            ->with('qualifications', $qualifications)
+            ->with('englishLevels', $englishLevels);
     }
 
-    public function paf6()
+    public function paf6(Request $request)
     {
+        foreach ($request->all() as $key => $input) {
+            session()->put($key, $input);
+        }
+        session()->save();
         return view('paf6');
     }
 
@@ -320,23 +320,22 @@ class WebsiteController extends Controller
 
     public function paf6b()
     {
-        $user = User::with([
-            'details'
-            ])->find(73);
-
-            $englishLevels = English::pluck('descr', 'id');
-            $englishTests = EnglishTests::pluck('descr', 'id');
-            $languages = Language::pluck('descr', 'id');
+        $englishLevels = English::pluck('descr', 'id');
+        $englishTests = EnglishTests::pluck('descr', 'id');
+        $languages = Language::pluck('descr', 'id');
 
         return view('paf6b')
-        ->with('user', $user)
-        ->with('englishLevels', $englishLevels)
-        ->with('englishTests', $englishTests)
-        ->with('languages', $languages);
+            ->with('englishLevels', $englishLevels)
+            ->with('englishTests', $englishTests)
+            ->with('languages', $languages);
     }
 
-    public function paf7()
+    public function paf7(Request $request)
     {
+        foreach ($request->all() as $key => $input) {
+            session()->put($key, $input);
+        }
+        session()->save();
         return view('paf7');
     }
 
@@ -345,8 +344,24 @@ class WebsiteController extends Controller
         return view('paf7a');
     }
 
-    public function paf8()
+    public function paf8(Request $request)
     {
+        foreach ($request->all() as $key => $input) {
+            session()->put($key, $input);
+        }
+        session()->save();
+        $user = User::create([
+            'login' => session()->get('email'),
+            'pswd' => md5(session()->get('pswd')),
+            'name' => session()->get('name') . ' ' . session()->get('surname'),
+            'email' => session()->get('email'),
+            'active' => 'Y',
+            'priv_admin' => 'N',
+            'user_type' => 'usr',
+        ]);
+        session()->put('login_user', $user->login);
+        $userDetails = UserDetail::create(session()->all());
+        //dd(session()->all(), $user, $userDetails);
         return view('paf8');
     }
 }

@@ -12,13 +12,15 @@ class User extends Authenticatable
 
     protected $table = 'sec_users';
 
+    public $timestamps = false;
+
     /**
      * The attributes that are mass assignable.
      *
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'name', 'email', 'pswd', 'active', 'priv_admin', 'user_type', 'login'
     ];
 
     /**
