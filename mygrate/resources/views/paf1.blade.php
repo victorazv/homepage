@@ -6,7 +6,7 @@
 @endsection
 
 @section('content')
-<main class="mb-3 animated bounceInRight">
+<main class="mb-3 animated {{$return ? 'bounceInLeft' : 'bounceInRight'}}">
 	<section  id="sec_1" class="how-it-works py-3">
 		<div class="container">
 			<div class="row d-sm-flex justify-content-center">

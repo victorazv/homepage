@@ -210,31 +210,49 @@ class WebsiteController extends Controller
 
     public function paf1()
     {
-        return view('paf1');
+        $return = (isset($_GET['return']) ? true : false);
+
+        return view('paf1')
+        ->with('return', $return);
     }
 
     public function paf1a()
     {
-        return view('paf1a');
+        $return = (isset($_GET['return']) ? true : false);
+
+        return view('paf1a')
+        ->with('return', $return);
     }
 
     public function paf1b()
     {
-        return view('paf1b');
+        $return = (isset($_GET['return']) ? true : false);
+        
+        return view('paf1b')
+        ->with('return', $return);
     }
 
     public function paf2()
     {
-        return view('paf2');
+        $return = (isset($_GET['return']) ? true : false);
+
+        return view('paf2')
+        ->with('return', $return);
     }
 
     public function paf2a()
     {
-        return view('paf2a');
+        $return = (isset($_GET['return']) ? true : false);
+
+        return view('paf2a')
+        ->with('return', $return);
+
     }
 
     public function paf3(Request $request)
     {
+        $return = (isset($_GET['return']) ? true : false);
+
         if ($request->has('agent_without_free_first_consultation')) {
             session()->put('agent_without_free_first_consultation',
                 $request->input('agent_without_free_first_consultation'));
@@ -253,25 +271,33 @@ class WebsiteController extends Controller
             ->with('citizenship', $citizenship)
             ->with('languages', $languages)
             ->with('visaTypes', $visaTypes)
-            ->with('qualifications', $qualifications);
+            ->with('qualifications', $qualifications)
+            ->with('return', $return);
     }
 
     public function paf4(Request $request)
     {
+        $return = (isset($_GET['return']) ? true : false);
+
         foreach ($request->all() as $key => $input) {
             session()->put($key, $input);
         }
         session()->save();
-        return view('paf4');
+        return view('paf4')
+        ->with('return', $return);
     }
 
     public function paf4a()
     {
+        $return = (isset($_GET['return']) ? true : false);
+
         return view('paf4a');
     }
 
     public function paf4b()
     {
+        $return = (isset($_GET['return']) ? true : false);
+
         $employment = Employment::pluck('descr', 'id');
         $occupation = Occupation::pluck('descr', 'id');
         $experienceOutside = ExperienceOutside::pluck('descr', 'id');
@@ -281,20 +307,25 @@ class WebsiteController extends Controller
             ->with('occupation', $occupation)
             ->with('employment', $employment)
             ->with('experienceOutside', $experienceOutside)
-            ->with('experienceInside', $experienceInside);
+            ->with('experienceInside', $experienceInside)
+            ->with('return', $return);
     }
 
     public function paf5(Request $request)
     {
+        $return = (isset($_GET['return']) ? true : false);
+
         foreach ($request->all() as $key => $input) {
             session()->put($key, $input);
         }
         session()->save();
-        return view('paf5');
+        return view('paf5')
+        ->with('return', $return);
     }
 
     public function paf5a()
     {
+        $return = (isset($_GET['return']) ? true : false);
 
         $qualifications = Qualification::pluck('descr', 'id');
         $englishLevels = English::pluck('descr', 'id');
@@ -303,25 +334,34 @@ class WebsiteController extends Controller
         return view('paf5a')
             ->with('qualifications', $qualifications)
             ->with('englishLevels', $englishLevels)
-            ->with('extraPoints', $extraPoints);
+            ->with('extraPoints', $extraPoints)
+            ->with('return', $return);
     }
 
     public function paf6(Request $request)
     {
+        $return = (isset($_GET['return']) ? true : false);
+
         foreach ($request->all() as $key => $input) {
             session()->put($key, $input);
         }
         session()->save();
-        return view('paf6');
+        return view('paf6')
+        ->with('return', $return);
     }
 
     public function paf6a()
     {
-        return view('paf6a');
+        $return = (isset($_GET['return']) ? true : false);
+
+        return view('paf6a')
+        ->with('return', $return);
     }
 
     public function paf6b()
     {
+        $return = (isset($_GET['return']) ? true : false);
+
         $englishLevels = English::pluck('descr', 'id');
         $englishTests = EnglishTests::pluck('descr', 'id');
         $languages = Language::pluck('descr', 'id');
@@ -329,21 +369,28 @@ class WebsiteController extends Controller
         return view('paf6b')
             ->with('englishLevels', $englishLevels)
             ->with('englishTests', $englishTests)
-            ->with('languages', $languages);
+            ->with('languages', $languages)
+            ->with('return', $return);
     }
 
     public function paf7(Request $request)
     {
+        $return = (isset($_GET['return']) ? true : false);
+
         foreach ($request->all() as $key => $input) {
             session()->put($key, $input);
         }
         session()->save();
-        return view('paf7');
+        return view('paf7')
+        ->with('return', $return);
     }
 
     public function paf7a()
     {
-        return view('paf7a');
+        $return = (isset($_GET['return']) ? true : false);
+        
+        return view('paf7a')
+        ->with('return', $return);
     }
 
     public function paf8(Request $request)

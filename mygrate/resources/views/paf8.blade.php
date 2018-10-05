@@ -75,7 +75,7 @@
                         </div>
                     </div>
                     <div class="col-md-2 mt-2 pl-0">
-                        <a href="/paf7a"><img src="images/img_previous.png"></a>
+                        <a href="/paf7a?return=1"><img src="images/img_previous.png"></a>
                         <button type="submit" id="btn_1" class="remove-btn-style"><img src="images/img_next.png">
                         </button>
                     </div>

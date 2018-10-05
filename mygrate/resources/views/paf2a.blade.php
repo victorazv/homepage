@@ -6,7 +6,7 @@
 @endsection
 
 @section('content')
-    <main class="mb-3 animated bounceInRight">
+    <main class="mb-3 animated {{$return ? 'bounceInLeft' : 'bounceInRight'}}">
         <section id="sec_2a" class="py-3">
             <form action="{{route('paf3')}}" method="get">
                 <div class="container">
@@ -75,7 +75,7 @@
                         </div>
                     </div>
                     <div class="col-md-2 mt-2 pl-0">
-                        <a href="/paf2"><img src="images/img_previous.png"></a>
+                        <a href="/paf2?return=1"><img src="images/img_previous.png"></a>
                         <button type="submit" id="btn_1" class="remove-btn-style"><img src="images/img_next.png"></button>
                     </div>
                 </div>

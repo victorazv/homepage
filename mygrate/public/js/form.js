@@ -11,6 +11,8 @@ function updateProgress()
     }
     
     var new_value = (parcial / total) * 100;
+    new_value = new_value.toFixed(2);
+
     $('.progress-bar').css('width', new_value+"%");
     $('.el_percentage').html(new_value+"%");
 }

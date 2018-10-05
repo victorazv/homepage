@@ -6,7 +6,7 @@
 @endsection
 
 @section('content')
-<main class="mb-3 animated bounceInRight">
+<main class="mb-3 animated {{$return ? 'bounceInLeft' : 'bounceInRight'}}">
     <section id="sec_1a" class="py-3">
 		<div class="container">
 			<div class="row d-sm-flex justify-content-center">
@@ -91,7 +91,7 @@
 				</div>
 			</div>
 			<div class="col-md-2 mt-2 pl-0">
-				<a href="/paf1" id="btn_prev"><img src="images/img_previous.png"></a>
+				<a href="/paf1?return=1" id="btn_prev"><img src="images/img_previous.png"></a>
 				<a id="btn_next"><img src="images/img_next.png"></a>
 			</div>
 		</div>
