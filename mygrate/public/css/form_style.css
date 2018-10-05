@@ -264,3 +264,4 @@ input:not(:checked)+ label{
 #buttons input:not(:checked)+ label{
     background-color: #cccccc;
 }
+

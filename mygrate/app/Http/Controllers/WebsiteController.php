@@ -291,7 +291,8 @@ class WebsiteController extends Controller
     {
         $return = (isset($_GET['return']) ? true : false);
 
-        return view('paf4a');
+        return view('paf4a')
+        ->with('return', $return);
     }
 
     public function paf4b()

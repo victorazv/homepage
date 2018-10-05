@@ -73,15 +73,15 @@
                                     <img src="images/icon_exclamation_small2.png" alt="">
                                     You will need a passport of this Country
                                 </div>
-
+                                <!--var val = $('input[name=verify_ot_citizenship]:checked').val();-->
                                 <label class="label_form">Are you the Citizen of more than one Country?*</label>
                                 <section class="form">
-                                    <input type="radio" name="verify_ot_citizenship" id="yes" value="1" 
-                                           onclick="verifyOtCountry(); "><label class="four radio_item1"
-                                                                                                for="yes">Yes</label>
-                                    <input type="radio" name="verify_ot_citizenship" id="no" value="0"
-                                           onclick="verifyOtCountry(); "><label class="four radio_item1"
-                                                                                                for="no">No</label>
+                                    <input type="radio" name="verify_ot_citizenship" id="verify_ot_citizenship" value="1" 
+                                           onclick="changeBackground('verify_ot_citizenship'); verifyOtCountry(); "><label class="four radio_item1"
+                                                                                                for="verify_ot_citizenship">Yes</label>
+                                    <input type="radio" name="verify_ot_citizenship" id="verify_ot_citizenship_no" value="0"
+                                           onclick="changeBackground('verify_ot_citizenship'); verifyOtCountry(); "><label class="four radio_item1"
+                                                                                                for="verify_ot_citizenship_no">No</label>
                                 </section>
 
                                 <div id="field_which_country" style="display:none">
