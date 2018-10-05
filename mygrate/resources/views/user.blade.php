@@ -32,6 +32,20 @@
         If everything is correct, you might not have the requirements to obtain<br>
         the visa you are looking for.<br>
         <p>Contact one of our agents to find out what you can do.</p>
+        
+        <div class="d-none">
+            The information you provided tell us there is a good
+            chance you can obtain the Visa you are looking for. <br>
+            Our Agents will review your case and get in touch soon.
+        </div>
+        <div class="d-none">
+            You're a Unicorn!
+            Your chances to get the Visa you are looking for are
+            high...
+            Our Agents shouldn't take long to contact you in order
+            to discuss the next steps.
+            Good luck!
+        </div>
     </div>
 </div>
 
