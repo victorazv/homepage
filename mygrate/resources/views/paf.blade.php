@@ -46,7 +46,7 @@
 
 @push('footer-scripts')
     <script>
-
+		localStorage.clear();
     </script>
 @endpush
 
