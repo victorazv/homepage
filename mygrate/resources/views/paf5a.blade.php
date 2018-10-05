@@ -29,7 +29,7 @@
                                 <label class="label_form" for="" class="custom-label">What is your Level of qualification*</label>
                                 <br>
                                 <div class="div-select_small">
-                                    <select class="col-12" required name="english_level" required onchange="changeBackground('english_level')">
+                                    <select class="col-12" id="english_level" name="english_level" required onchange="changeBackground('english_level')" required>
                                         <option value=""></option>
                                         @foreach($qualifications as $key => $opt)
                                             <option 
@@ -52,10 +52,12 @@
                                 <br>
                                 <div class="field-box w-100 flex-wrap">
                                     <section class="form">
-                                        <input type="radio" required name="AU_study_req" id="AU_study_req_yes" value="1"
+                                        <input type="radio" required name="AU_study_req" id="AU_study_req" value="1" 
+                                            {{session()->get('AU_study_req') == '1' ? 'checked' : ''}}
                                             onclick="changeBackground('AU_study_req')"><label class="four radio_item1"
-                                                                                for="AU_study_req_yes">Yes</label>
-                                        <input type="radio" name="AU_study_req" id="AU_study_req_no" value="0"
+                                                                                for="AU_study_req">Yes</label>
+                                        <input type="radio" name="AU_study_req" id="AU_study_req_no" value="0" 
+                                            {{session()->get('AU_study_req') == '0' ? 'checked' : ''}}
                                             onclick="changeBackground('AU_study_req')"><label class="four radio_item1"
                                                                                 for="AU_study_req_no">No</label>
                                     </section>
@@ -101,10 +103,12 @@
                                 <div>
                                     <div class="field-box w-100 flex-wrap">
                                         <section class="form">
-                                            <input type="radio" required name="special_edu" id="yes" value="1"
+                                            <input type="radio" required name="special_edu" id="special_edu" value="1" 
+                                                {{session()->get('special_edu') == '1' ? 'checked' : ''}}
                                                 onclick="updateProgress()"><label class="four radio_item1"
-                                                                                    for="yes">Yes</label>
-                                            <input type="radio" name="special_edu" id="no" value="0"
+                                                                                    for="special_edu">Yes</label>
+                                            <input type="radio" name="special_edu" id="no" value="0" 
+                                                {{session()->get('special_edu') == '0' ? 'checked' : ''}}
                                                 onclick="updateProgress()"><label class="four radio_item1"
                                                                                     for="no">No</label>
                                         </section>
@@ -162,7 +166,7 @@
                                     your study was located in regional Australia or a low population growth metropolitan area.
                                 </p>
                                 <div class="div-select_small">
-                                    <select class="col-12" name="extra_points"
+                                    <select id="extra_points" class="col-12" name="extra_points"
                                             onchange="changeBackground('extra_points')"
                                             required>
                                         @foreach($extraPoints as $key => $opt)
@@ -186,7 +190,7 @@
                                 <p class="sub_label">
                                     If you chose any of the qualifications above, when did you obtain the latest? Indicate year ONLY. For example, 2011.
                                 </p>
-                                <input id="qualif_date" onchange="changeBackground('qualif_date')" required title="qualif_date" type="date" 
+                                <input id="qualif_date" name="qualif_date" onchange="changeBackground('qualif_date')" required title="qualif_date" type="date" 
                                 class=""
                                 value="{{session()->get('qualif_date')}}"
                                 >
@@ -195,13 +199,17 @@
                             <div class="field-box w-100 flex-wrap">
                                 <label class="label_form">Are your qualifications related to your occupation?*</label>
                                 <section class="form">
-                                    <input type="radio" required name="qualif_occupation" id="yesq" value="1"
-                                           onclick="updateProgress()"><label class="four radio_item1"
+                                    <input type="radio" required name="qualif_occupation" id="yesq" value="1" 
+                                        {{session()->get('qualif_occupation') == '1' ? 'checked' : ''}}
+                                        onclick="updateProgress()"><label class="four radio_item1"
                                                                              for="yesq">Yes</label>
-                                    <input type="radio" name="qualif_occupation" id="noq" value="0"
+                                    <input type="radio" name="qualif_occupation" id="noq" value="0" 
+                                    {{session()->get('qualif_occupation') == '0' ? 'checked' : ''}}
                                            onclick="updateProgress()"><label class="four radio_item1"
-                                                                             for="noq">No</label>
+                                                                             for="noq">No</label> 
+                                                                             
                                 </section>
+                                
                             </div>
 
                             <div class="field-box w-100">
@@ -213,11 +221,13 @@
                                     (i.e. Bachelor's/Master's Degree in Medicine, or Diploma in Accounting, etc.
                                 </p>
                                  <p>
-                                    If you do not have any qualification, please type N/A
+                                    If you do not have any qualification, please type N/A 
                                 </p>
+                                
                                 <input id="qualification_name" onchange="changeBackground('qualification_name')" 
-                                 value="{{session()->get('qualification_name')}}"
-                                 title="qualification_name" name="qualification_name" type="text" required class="col-12">
+                                 value="{{session()->get('qualification_name')}}" 
+                                 class="w-100 {{session()->get('qualification_name') ? 'field-filled' : ''}}"
+                                 title="qualification_name" name="qualification_name" type="text" required class="col-12">                                
                                 <br>
                             </div>
                         </div>
@@ -249,6 +259,7 @@
 
 @push('footer-scripts')
     <script>
+        applyCss();
         updateProgress();
     </script>
 @endpush

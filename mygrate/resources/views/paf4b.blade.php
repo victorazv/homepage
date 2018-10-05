@@ -169,7 +169,7 @@
             }
 
         });
-
+        applyCss();
         updateProgress();
     </script>
 @endpush

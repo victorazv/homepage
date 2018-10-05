@@ -195,7 +195,8 @@
                 $('#field_original').show();
             }
         });
-
+        
+        applyCss();
         updateProgress();
     </script>
 @endpush

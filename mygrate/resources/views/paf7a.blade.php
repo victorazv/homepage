@@ -106,12 +106,12 @@
                                 <span class="sub_label">Thank you for helping us improving :)</span>
                                 <select class="w-100" name="where_find" id="where_find" onchange="changeBackground('where_find')" required>
                                 <option value="" selected></option>
-                                    <option value="1">Google Search</option>
-                                    <option value="2">Facebook</option>
-                                    <option value="3">Twitter</option>
-                                    <option value="4">Instagram</option>
-                                    <option value="5">Email</option>
-                                    <option value="6">Other</option>
+                                    <option {{session()->get('where_find') == '1' ? 'selected' : ''}} value="1">Google Search</option>
+                                    <option {{session()->get('where_find') == '2' ? 'selected' : ''}} value="2">Facebook</option>
+                                    <option {{session()->get('where_find') == '3' ? 'selected' : ''}} value="3">Twitter</option>
+                                    <option {{session()->get('where_find') == '4' ? 'selected' : ''}} value="4">Instagram</option>
+                                    <option {{session()->get('where_find') == '5' ? 'selected' : ''}} value="5">Email</option>
+                                    <option {{session()->get('where_find') == '6' ? 'selected' : ''}} value="6">Other</option>
                                 </select>
                             </div>
                             
@@ -152,6 +152,7 @@
 
 @push('footer-scripts')
     <script>
+        applyCss();
         updateProgress();
     </script>
 @endpush

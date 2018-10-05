@@ -1,6 +1,6 @@
 function updateProgress()
 {
-    var total = 32;
+    var total = 25;
     var parcial = 0;
 
     for (var i = 0; i < localStorage.length; i++)
@@ -12,10 +12,12 @@ function updateProgress()
             parcial = parcial + parseInt(value);
         }      
     }
-    
+   
     var new_value = (parcial / total) * 100;
-    new_value = new_value.toFixed(1);
-
+    new_value = new_value.toFixed(0);
+    if (new_value > 100) {
+        new_value = 100;
+    }
     $('.progress-bar').css('width', new_value+"%");
     $('.el_percentage').html(new_value+"%");
 }
@@ -51,20 +53,19 @@ function applyCss(){
         for(var i=0; i<input[0].length; i++)
         {
             var val = input[0][i].value;
-
+            console.log(input[0][i].name);
             if (input[0][i].type == 'radio')
             {
-                console.log(input[0][i].type);
-                //console.log(input[0][i]);
-                //console.log('RADIO');
-                var val = $('input[name='+input[0][i].id+']:checked').val();
+                //console.log(input[0][i].type);
+                
+                var val = $('input[name='+input[0][i].name+']:checked').val();
                 console.log(val);
             }
             
             var val_id = '#' + input[0][i].id;
             if (val != '' && val_id != "#")
             {
-                changeBackground(input[0][i].id);                
+                changeBackground(input[0][i].name);                
             }
         }
     });

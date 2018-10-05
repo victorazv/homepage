@@ -77,9 +77,11 @@
                                 <label class="label_form">Are you the Citizen of more than one Country?*</label>
                                 <section class="form">
                                     <input type="radio" name="verify_ot_citizenship" id="verify_ot_citizenship" value="1" 
+                                           {{session()->get('verify_ot_citizenship') == '1' ? 'checked' : ''}}
                                            onclick="changeBackground('verify_ot_citizenship'); verifyOtCountry(); "><label class="four radio_item1"
                                                                                                 for="verify_ot_citizenship">Yes</label>
-                                    <input type="radio" name="verify_ot_citizenship" id="verify_ot_citizenship_no" value="0"
+                                    <input type="radio" name="verify_ot_citizenship" id="verify_ot_citizenship_no" value="0" 
+                                            {{session()->get('verify_ot_citizenship') == '0' ? 'checked' : ''}}
                                            onclick="changeBackground('verify_ot_citizenship'); verifyOtCountry(); "><label class="four radio_item1"
                                                                                                 for="verify_ot_citizenship_no">No</label>
                                 </section>
@@ -99,15 +101,23 @@
 
                                 <label class="label_form">What is the main reason for seeking to apply for an Australian Visa?*</label>
                                 <section class="form">
-                                    <input type="radio" name="application_reason" id="1" value="1"><label
-                                            class="radio_item2 ml-0 pl-2" for="1">Visit Australia</label>
-                                    <input type="radio" name="application_reason" id="2" value="2"><label
-                                            class="radio_item2 ml-0 pl-2" for="2">Study in Australia</label>
-                                    <input type="radio" name="application_reason" id="3" value="3"><label
-                                            class="radio_item2 ml-0 pl-2" for="3">Work and live in Australia
+                                    <input onclick="changeBackground('application_reason');" type="radio" 
+                                    {{session()->get('application_reason') == '1' ? 'checked' : ''}} 
+                                    name="application_reason" id="application_reason" value="1"><label
+                                            class="radio_item2 ml-0 pl-2" for="application_reason">Visit Australia</label>
+                                    <input onclick="changeBackground('application_reason');" type="radio" 
+                                            {{session()->get('application_reason') == '2' ? 'checked' : ''}}
+                                            name="application_reason" id="application_reason2" value="2"><label
+                                            class="radio_item2 ml-0 pl-2" for="application_reason2">Study in Australia</label>
+                                    <input onclick="changeBackground('application_reason');" 
+                                            {{session()->get('application_reason') == '3' ? 'checked' : ''}}
+                                            type="radio" name="application_reason" id="application_reason3" value="3"><label
+                                            class="radio_item2 ml-0 pl-2" for="application_reason3">Work and live in Australia
                                         (TEMPORARILY)</label>
-                                    <input type="radio" name="application_reason" id="4" value="4"><label
-                                            class="radio_item2 ml-0 pl-2" for="4">Work and live in Australia
+                                    <input onclick="changeBackground('application_reason');" type="radio" 
+                                            {{session()->get('application_reason') == '4' ? 'checked' : ''}}
+                                            name="application_reason" id="application_reason4" value="4"><label
+                                            class="radio_item2 ml-0 pl-2" for="application_reason4">Work and live in Australia
                                         (PERMANENTLY)</label>
                                 </section>
                                 <div>
@@ -145,22 +155,26 @@
 
                                     <label class="label_form">Are you currently in Australia?*</label>
                                     <section class="form">
-                                        <input type="radio" name="in_AU" id="cur_yes" value="1"
-                                               onclick=""><label class="four radio_item1"
-                                                                                  for="cur_yes">Yes</label>
-                                        <input type="radio" name="in_AU" id="cur_no" value="0"
-                                               onclick=""><label class="four radio_item1" for="cur_no">No</label>
+                                        <input type="radio" name="in_AU" id="in_AU" value="1" 
+                                            {{session()->get('in_AU') == '1' ? 'checked' : ''}}
+                                            onclick="changeBackground('in_AU');"><label class="four radio_item1"
+                                                                                  for="in_AU">Yes</label>
+                                        <input type="radio" name="in_AU" id="in_AU_no" value="0" 
+                                            {{session()->get('in_AU') == '0' ? 'checked' : ''}}
+                                            onclick="changeBackground('in_AU');"><label class="four radio_item1" for="in_AU_no">No</label>
                                     </section>
                                 </div>
 
                                 <div class="">
                                     <label class="label_form">Do you currently hold an Australian Visa?*</label>
                                     <section class="form">
-                                        <input type="radio" name="visa_hold" id="hold_yes" value="1"
-                                               onclick="verifyVisaHold(); "><label
-                                                class="four radio_item1" for="hold_yes">Yes</label>
-                                        <input type="radio" name="visa_hold" id="hold_no" value="0"
-                                               onclick="verifyVisaHold(); "><label
+                                        <input type="radio" name="visa_hold" id="visa_hold" value="1" 
+                                                {{session()->get('visa_hold') == '1' ? 'checked' : ''}}
+                                               onclick="changeBackground('visa_hold'); verifyVisaHold(); "><label
+                                                class="four radio_item1" for="visa_hold">Yes</label>
+                                        <input type="radio" name="visa_hold" id="hold_no" value="0" 
+                                                {{session()->get('visa_hold') == '0' ? 'checked' : ''}}
+                                               onclick="changeBackground('visa_hold'); verifyVisaHold(); "><label
                                                 class="four radio_item1" for="hold_no">No</label>
                                     </section>
                                 </div>
@@ -193,11 +207,13 @@
                                         <div>
                                             <label class="label_form" >Do you have any family member in Australia?</label>
                                             <section class="form">
-                                                <input type="radio" name="family_AU" id="family_yes" value="1"
-                                                       onclick=""><label class="four radio_item1"
-                                                                                         for="family_yes">Yes</label>
-                                                <input type="radio" name="family_AU" id="family_no" value="0"
-                                                       onclick=""><label class="four radio_item1"
+                                                <input type="radio" name="family_AU" id="family_AU" value="1" 
+                                                        {{session()->get('family_AU') == '1' ? 'checked' : ''}}
+                                                       onclick="changeBackground('family_AU');"><label class="four radio_item1"
+                                                                                         for="family_AU">Yes</label>
+                                                <input type="radio" name="family_AU" id="family_no" value="0" 
+                                                        {{session()->get('family_AU') == '0' ? 'checked' : ''}}
+                                                       onclick="changeBackground('family_AU');"><label class="four radio_item1"
                                                                                          for="family_no">No</label>
                                             </section>
                                         </div>
