@@ -95,7 +95,7 @@
 
 @push('footer-scripts')
     <script>
-
+		updateProgress();
     </script>
 @endpush
 

@@ -48,7 +48,7 @@
                                     <input class="w-100" name="age" type="number" id="age" 
                                     value="{{session()->get('age')}}"
                                     max="65"
-                                           onchange="verifyAgeValue(); changeBackground('age'); updateProgress();"
+                                           onchange="verifyAgeValue(); changeBackground('age');"
                                            required>
                                 </div>
                                 <span id="msg_under_age" style="display:none">
@@ -59,7 +59,7 @@
                                         Citizenship?*</label>
                                     <div class="div-select_small">
                                         <select name="citizenship" id="citizenship" value="" class="w-100"
-                                                onchange="changeBackground('citizenship'); updateProgress();" required>
+                                                onchange="changeBackground('citizenship'); " required>
                                             <option value="" selected></option>
                                             @foreach($citizenship as $key => $cit)
                                                 <option
@@ -77,10 +77,10 @@
                                 <label class="label_form">Are you the Citizen of more than one Country?*</label>
                                 <section class="form">
                                     <input type="radio" name="verify_ot_citizenship" id="yes" value="1" 
-                                           onclick="verifyOtCountry(); updateProgress()"><label class="four radio_item1"
+                                           onclick="verifyOtCountry(); "><label class="four radio_item1"
                                                                                                 for="yes">Yes</label>
                                     <input type="radio" name="verify_ot_citizenship" id="no" value="0"
-                                           onclick="verifyOtCountry(); updateProgress()"><label class="four radio_item1"
+                                           onclick="verifyOtCountry(); "><label class="four radio_item1"
                                                                                                 for="no">No</label>
                                 </section>
 
@@ -88,7 +88,7 @@
                                     <label class="col-md-12 d-flex p-0 flex-lg-wrap label_form">Which Country?*</label>
                                     <div class="div-select_small">
                                         <select name="ot_citizenship" id="ot_citizenship" value="" class="w-100"
-                                                onchange="changeBackground('ot_citizenship'); updateProgress();">
+                                                onchange="changeBackground('ot_citizenship'); ">
                                             <option value="" selected></option>
                                             @foreach($citizenship as $key => $cit)
                                                 <option value="{{$key}}">{{$cit}}</option>
@@ -146,10 +146,10 @@
                                     <label class="label_form">Are you currently in Australia?*</label>
                                     <section class="form">
                                         <input type="radio" name="in_AU" id="cur_yes" value="1"
-                                               onclick="updateProgress();"><label class="four radio_item1"
+                                               onclick=""><label class="four radio_item1"
                                                                                   for="cur_yes">Yes</label>
                                         <input type="radio" name="in_AU" id="cur_no" value="0"
-                                               onclick="updateProgress();"><label class="four radio_item1" for="cur_no">No</label>
+                                               onclick=""><label class="four radio_item1" for="cur_no">No</label>
                                     </section>
                                 </div>
 
@@ -157,10 +157,10 @@
                                     <label class="label_form">Do you currently hold an Australian Visa?*</label>
                                     <section class="form">
                                         <input type="radio" name="visa_hold" id="hold_yes" value="1"
-                                               onclick="verifyVisaHold(); updateProgress();"><label
+                                               onclick="verifyVisaHold(); "><label
                                                 class="four radio_item1" for="hold_yes">Yes</label>
                                         <input type="radio" name="visa_hold" id="hold_no" value="0"
-                                               onclick="verifyVisaHold(); updateProgress();"><label
+                                               onclick="verifyVisaHold(); "><label
                                                 class="four radio_item1" for="hold_no">No</label>
                                     </section>
                                 </div>
@@ -194,10 +194,10 @@
                                             <label class="label_form" >Do you have any family member in Australia?</label>
                                             <section class="form">
                                                 <input type="radio" name="family_AU" id="family_yes" value="1"
-                                                       onclick="updateProgress()"><label class="four radio_item1"
+                                                       onclick=""><label class="four radio_item1"
                                                                                          for="family_yes">Yes</label>
                                                 <input type="radio" name="family_AU" id="family_no" value="0"
-                                                       onclick="updateProgress()"><label class="four radio_item1"
+                                                       onclick=""><label class="four radio_item1"
                                                                                          for="family_no">No</label>
                                             </section>
                                         </div>
@@ -282,11 +282,16 @@ function verifyAgeValue() {
         $('#age').val("");
     }
 }
-
+/*
 function personalizateButton(el1, el2) {
     $('#' + el2).removeClass('button_active');
     $('#' + el1).addClass('button_active');
 }
+*/
+
+applyCss();
+updateProgress();
+
 </script>
 @endpush
 

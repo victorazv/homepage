@@ -53,10 +53,10 @@
                                 <div class="field-box w-100 flex-wrap">
                                     <section class="form">
                                         <input type="radio" required name="AU_study_req" id="AU_study_req_yes" value="1"
-                                            onclick="updateProgress()"><label class="four radio_item1"
+                                            onclick="changeBackground('AU_study_req')"><label class="four radio_item1"
                                                                                 for="AU_study_req_yes">Yes</label>
                                         <input type="radio" name="AU_study_req" id="AU_study_req_no" value="0"
-                                            onclick="updateProgress()"><label class="four radio_item1"
+                                            onclick="changeBackground('AU_study_req')"><label class="four radio_item1"
                                                                                 for="AU_study_req_no">No</label>
                                     </section>
                                 </div>
@@ -249,7 +249,7 @@
 
 @push('footer-scripts')
     <script>
-
+        updateProgress();
     </script>
 @endpush
 

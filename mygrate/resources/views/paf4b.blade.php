@@ -35,7 +35,7 @@
                                     </span>
                                     <br>
                                     <div class="div-select_small">
-                                        <select class="w-100" id="employment" name="employment" onchange="changeBackground('employment')" required>
+                                        <select class="w-100" id="employment" name="employment" onchange="changeBackground('employment'); updateProgress();" required>
                                             <option value=""></option>
                                             @foreach($employment as $key => $opt)
                                                 <option 
@@ -67,7 +67,7 @@
                                     <div class="">
                                         <div class="div-select_small">
                                             <select class="w-100" id="occupation" name="occupation" required 
-                                                    onchange="changeBackground('occupation')">
+                                                    onchange="changeBackground('occupation'); updateProgress();">
                                                 <option value=""></option>
                                                 @foreach($occupation as $key => $opt)
                                                     <option 
@@ -118,7 +118,7 @@
                                 <br>
                                     <div class="div-select_small">
                                         <select class="w-100" id="experience_AU" name="experience_AU" required 
-                                                onchange="changeBackground('experience_AU')">
+                                                onchange="changeBackground('experience_AU'); updateProgress();">
                                             <option value=""></option>
                                             @foreach($experienceInside as $key => $opt)
                                                 <option 
@@ -169,6 +169,8 @@
             }
 
         });
+
+        updateProgress();
     </script>
 @endpush
 

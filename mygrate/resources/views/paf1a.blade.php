@@ -120,6 +120,8 @@
 				$('#error').css('display', 'none');
 			}
 		}
+
+		updateProgress();
     </script>
 @endpush
 

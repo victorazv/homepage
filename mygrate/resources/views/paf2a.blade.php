@@ -86,10 +86,13 @@
 
 @push('footer-scripts')
     <script>
+    /*
         function personalizateButton(el1, el2) {
             $('#' + el2).removeClass('button_active');
             $('#' + el1).addClass('button_active');
         }
+    */
+        updateProgress();
     </script>
 @endpush
 

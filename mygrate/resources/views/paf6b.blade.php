@@ -31,10 +31,12 @@
                                 </label>
                                 <br>
                                 <div class="div-select_small">
-                                    <select required id="language" name="language">
+                                    <select required id="language" name="language" onchange="changeBackground('language')">
                                         <option value=""></option>
                                         @foreach($languages as $key => $opt)
-                                            <option value="{{$key}}">{{$opt}}</option>
+                                            <option 
+                                            value="{{$key}}" {{session()->get('language') == $key ? 'selected' : ''}}
+                                            >{{$opt}}</option>
                                         @endforeach
                                     </select>
                                 </div>
@@ -55,10 +57,12 @@
                                 </label>
                                 <br>
                                 <div class="div-select_small">
-                                    <select required id="english_test" name="english_test">
+                                    <select required id="english_test" name="english_test" onchange="changeBackground('english_test')">
                                         <option value=""></option>
                                         @foreach($englishTests as $key => $opt)
-                                            <option value="{{$key}}">{{$opt}}</option>
+                                            <option 
+                                            value="{{$key}}" {{session()->get('english_test') == $key ? 'selected' : ''}}
+                                            >{{$opt}}</option>
                                         @endforeach
                                     </select>
                                 </div>
@@ -109,7 +113,7 @@
                                     </label>
                                     <br>
                                     <div class="div-select_small">
-                                        <select name="english_level">
+                                        <select name="english_level" onchange="changeBackground('english_level')">
                                             <option value=""></option>                                        
                                             <option value="1">Poor</option>
                                             <option value="2">Fair</option>
@@ -128,10 +132,12 @@
                                 </label>
                                 <br>
                                 <div class="div-select_small">
-                                    <select required name="english_level">
+                                    <select required name="english_level" id="english_level" onchange="changeBackground('english_level')">
                                         <option value=""></option>
                                         @foreach($englishLevels as $key => $opt)
-                                            <option value="{{$key}}">{{$opt}}</option>
+                                            <option 
+                                            value="{{$key}}" {{session()->get('english_level') == $key ? 'selected' : ''}}
+                                            >{{$opt}}</option>
                                         @endforeach
                                     </select>
                                 </div>
@@ -189,6 +195,8 @@
                 $('#field_original').show();
             }
         });
+
+        updateProgress();
     </script>
 @endpush
 
