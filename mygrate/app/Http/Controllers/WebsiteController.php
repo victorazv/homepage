@@ -391,16 +391,29 @@ class WebsiteController extends Controller
         $return = (isset($_GET['return']) ? true : false);
         
         return view('paf7a')
+        ->with('email_error', true)
         ->with('return', $return);
     }
 
     public function paf8(Request $request)
-    {
+    {   
+        $return = (isset($_GET['return']) ? true : false);
+
         foreach ($request->all() as $key => $input) {
             session()->put($key, $input);
         }
         session()->save();
-        return view('paf8');
+
+        $user = UserDetail::find(session()->get('email'));
+        
+        if(isset($user->login_user)){
+            return view('paf7a')
+            ->with('return', $return);
+        }
+        else{
+            return view('paf8')
+            ->with('return', $return);
+        }   
     }
 
     public function paf8store(Request $request) {

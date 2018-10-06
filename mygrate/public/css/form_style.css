@@ -265,3 +265,8 @@ input:not(:checked)+ label{
     background-color: #cccccc;
 }
 
+.error_message{
+    color: #ff6262;
+    font-size: 1.1em;
+    font-weight: 600;
+}

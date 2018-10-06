@@ -113,7 +113,7 @@
                                     </label>
                                     <br>
                                     <div class="div-select_small">
-                                        <select name="english_level" onchange="changeBackground('english_level')">
+                                        <select name="english_level" id="english_level" onchange="changeBackground('english_level')">
                                             <option value=""></option>                                        
                                             <option value="1">Poor</option>
                                             <option value="2">Fair</option>

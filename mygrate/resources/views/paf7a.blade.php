@@ -43,7 +43,10 @@
                                 <span class="sub_label">Please make sure this is correct as it will be used for all future communication regarding your assessment.</span>
                                 <input class="w-100" type="email" 
                                 value="{{session()->get('email')}}"
-                                name="email" id="email" onchange="changeBackground('email')" required>						
+                                name="email" id="email" onchange="changeBackground('email')" required>
+                                
+                                <span class="error_message" style="display: {{isset($email_error) ? 'none' : ''}}">This email is already registered, please use another.</span>
+                                
                             </div>
 
                             <div>

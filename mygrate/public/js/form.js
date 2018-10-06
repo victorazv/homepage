@@ -1,6 +1,6 @@
 function updateProgress()
 {
-    var total = 25;
+    var total = 28;
     var parcial = 0;
 
     for (var i = 0; i < localStorage.length; i++)
@@ -29,8 +29,8 @@ function changeBackground(id){
     {
         var val = $('input[name='+id+']:checked').val();
         localStorage.setItem(id, 1);
-        console.log(val);
-        console.log(localStorage.getItem(id));
+        //console.log(val);
+        //console.log(localStorage.getItem(id));
     }
     else
     {
@@ -53,13 +53,15 @@ function applyCss(){
         for(var i=0; i<input[0].length; i++)
         {
             var val = input[0][i].value;
-            console.log(input[0][i].name);
+            //console.log(input[0][i].name);
             if (input[0][i].type == 'radio')
-            {
-                //console.log(input[0][i].type);
-                
+            {                
                 var val = $('input[name='+input[0][i].name+']:checked').val();
-                console.log(val);
+                //console.log(val);
+                if (val == undefined) {
+                    val = '';
+                }
+                //console.log(val);
             }
             
             var val_id = '#' + input[0][i].id;
