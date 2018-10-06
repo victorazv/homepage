@@ -185,7 +185,8 @@
                                     <label for="" class="label_form">What type of Visa do you hold?</label>
                                     <br>
                                     <div>
-                                        <div class="div-select_small">
+                                        <input type="text" name="visa_type" id="visa_type" class="" onchange="changeBackground('visa_type');">
+                                        <!--<div class="div-select_small">
                                             <select id="visa_type" name="visa_type"
                                                     onchange="changeBackground('visa_type');">
                                                 <option value=""></option>
@@ -194,7 +195,7 @@
                                                     >{{$opt}}</option>
                                                 @endforeach
                                             </select>
-                                        </div>
+                                        </div>-->
                                     </div>
 
                                     <div id="currently_hold_fields">
