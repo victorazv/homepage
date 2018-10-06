@@ -93,7 +93,9 @@
                                                 onchange="changeBackground('ot_citizenship'); ">
                                             <option value="" selected></option>
                                             @foreach($citizenship as $key => $cit)
-                                                <option value="{{$key}}">{{$cit}}</option>
+                                                <option 
+                                                    value="{{$key}}" {{session()->get('ot_citizenship') == $key ? 'selected' : ''}}
+                                                >{{$cit}}</option>
                                             @endforeach
                                         </select>
                                     </div>
@@ -254,60 +256,67 @@
 @push('footer-scripts')
 <script>
 
-function verifyOtCountry() {
-    var val = $('input[name=verify_ot_citizenship]:checked').val();
+    function verifyOtCountry() {
+        var val = $('input[name=verify_ot_citizenship]:checked').val();
 
-    if (val == "1") {
-        $('#field_which_country').show();
-    } else {
-        $('#field_which_country').hide();
-    }
-}
-
-function verifyVisaHold() {
-    var val = $('input[name=visa_hold]:checked').val();
-
-    if (val == "1") {
-        $('#field_visa_hold').show();
-    } else {
-        $('#field_visa_hold').hide();
-    }
-}
-
-$('#citizenship').change(function () {
-    var val = $(this).val();
-
-    if (val != "") {
-        $('#msg_under_citizenship').show();
-    } else {
-        $('#msg_under_citizenship').hide();
-    }
-});
-
-function verifyAgeValue() {
-    var a = $('#age').val();
-
-    if (a < 18) {
-        $('#msg_under_age').show();
-        $('#age').val("");
-    } else {
-        $('#msg_under_age').hide();
+        if (val == "1") {
+            $('#field_which_country').show();
+            $('#ot_citizenship').attr("required", "true");
+        } else {
+            $('#field_which_country').hide();
+            $('#ot_citizenship').removeAttr('required');
+        }
     }
 
-    if (a > 65) {
-        $('#age').val("");
+    function verifyVisaHold() {
+        var val = $('input[name=visa_hold]:checked').val();
+
+        if (val == "1") {
+            $('#field_visa_hold').show();
+        } else {
+            $('#field_visa_hold').hide();
+        }
     }
-}
-/*
-function personalizateButton(el1, el2) {
-    $('#' + el2).removeClass('button_active');
-    $('#' + el1).addClass('button_active');
-}
-*/
 
-applyCss();
-updateProgress();
+    $('#citizenship').change(function () {
+        var val = $(this).val();
 
+        if (val != "") {
+            $('#msg_under_citizenship').show();
+        } else {
+            $('#msg_under_citizenship').hide();
+        }
+    });
+
+    function verifyAgeValue() {
+        var a = $('#age').val();
+
+        if (a < 18) {
+            $('#msg_under_age').show();
+            $('#age').val("");
+        } else {
+            $('#msg_under_age').hide();
+        }
+
+        if (a > 65) {
+            $('#age').val("");
+        }
+    }
+
+    applyCss();
+    updateProgress();
+
+    $( document ).ready(function() {
+        verifyVisaHold();
+        verifyOtCountry();
+    });
+
+    /*
+    function personalizateButton(el1, el2) {
+        $('#' + el2).removeClass('button_active');
+        $('#' + el1).addClass('button_active');
+    }
+    */
 </script>
 @endpush
 
