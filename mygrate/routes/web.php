@@ -42,7 +42,8 @@ Route::get('/paf6b', 'WebsiteController@paf6b')->name('paf6b');
 Route::get('/paf7', 'WebsiteController@paf7')->name('paf7');
 Route::get('/paf7a', 'WebsiteController@paf7a')->name('paf7a');
 Route::get('/paf8', 'WebsiteController@paf8')->name('paf8');
-Route::post('/paf8', 'WebsiteController@paf8store')->name('paf8.store');
+Route::post('/paf8', 'WebsiteController@paf8')->name('paf8p');
+Route::post('/paf8store', 'WebsiteController@paf8store')->name('paf8.store');
 
 Route::get('/con', function() {
     $user = User::find(73);

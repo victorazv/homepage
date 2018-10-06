@@ -96,7 +96,7 @@ class WebsiteController extends Controller
         }
 
         $profileCvUrl = null;
-        if ($user->details->picture) {
+        if ($user->details->cv) {
             $profileCvUrl = Storage::url($user->details->cv);
         }
 
@@ -124,7 +124,7 @@ class WebsiteController extends Controller
         }
 
         $profileCvUrl = null;
-        if ($user->details->picture) {
+        if ($user->details->cv) {
             $profileCvUrl = Storage::url($user->details->cv);
         }
 
@@ -396,13 +396,25 @@ class WebsiteController extends Controller
     }
 
     public function paf8(Request $request)
-    {   
+    {
         $return = (isset($_GET['return']) ? true : false);
 
         foreach ($request->all() as $key => $input) {
+            if($key == 'cv') continue;
             session()->put($key, $input);
         }
         session()->save();
+        if ($request->hasFile('cv')) {
+            if (!in_array($request->file('cv')->getClientOriginalExtension(), ['doc', 'docx', 'pdf'])) {
+                session()->flash('error', 'Please, upload a file with correct extension. (DOC, DOCX or PDF)');
+                return redirect()->back();
+            }
+            $CvfileName = 'temp_cv_' . time() . '.' . $request->file('cv')->getClientOriginalExtension();;
+            Storage::putFileAs('public', $request->file('cv'), $CvfileName);
+            session()->put('cv_temp', $CvfileName);
+            session()->save();
+        }
+
 
         $user = UserDetail::find(session()->get('email'));
         
@@ -428,6 +440,10 @@ class WebsiteController extends Controller
         ]);
         session()->put('login_user', $user->login);
         $userDetails = UserDetail::create(session()->all());
+        $newCvfileName = str_replace('temp', $user->id, session()->get('cv_temp'));
+        $result = Storage::move('public/'.session()->get('cv_temp'), 'public/'.$newCvfileName);
+        $userDetails->cv = $newCvfileName;
+        $userDetails->save();
         return redirect(route('user', $user->id));
     }
 }

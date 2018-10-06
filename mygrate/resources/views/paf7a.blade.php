@@ -7,7 +7,8 @@
 
 @section('content')
     <main class="mb-3 animated {{$return ? 'bounceInLeft' : 'bounceInRight'}}">
-        <form id="form" action="{{route('paf8')}}" method="get">
+        <form id="form" action="{{route('paf8p')}}" method="post" enctype="multipart/form-data">
+            {{csrf_field()}}
             <section id="sec_1" class="how-it-works py-3">
                 <div class="container">
                     <div class="row d-sm-flex justify-content-center">
